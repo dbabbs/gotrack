@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C566A1232EEB6949E305887 /* libPods-gotrack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27599341701A64829F6FBB84 /* libPods-gotrack.a */; };
 		A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */; };
 		A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */; };
 		A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27599341701A64829F6FBB84 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
 		A49C6C451DEEAFAF00622ACC /* gotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		A49C6C641DEEAFAF00622ACC /* gotrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gotrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C681DEEAFAF00622ACC /* gotrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gotrackUITests.swift; sourceTree = "<group>"; };
 		A49C6C6A1DEEAFAF00622ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C566A1232EEB6949E305887 /* libPods-gotrack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481734ACA67880FED5B2AF36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27599341701A64829F6FBB84 /* libPods-gotrack.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A49C6C3C1DEEAFAF00622ACC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,8 @@
 				A49C6C5C1DEEAFAF00622ACC /* gotrackTests */,
 				A49C6C671DEEAFAF00622ACC /* gotrackUITests */,
 				A49C6C461DEEAFAF00622ACC /* Products */,
+				EB7A79938A9E8E8EF3C7A05B /* Pods */,
+				481734ACA67880FED5B2AF36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +140,15 @@
 			path = gotrackUITests;
 			sourceTree = "<group>";
 		};
+		EB7A79938A9E8E8EF3C7A05B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */,
+				603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A49C6C6D1DEEAFAF00622ACC /* Build configuration list for PBXNativeTarget "gotrack" */;
 			buildPhases = (
+				E36301C4A9EE59659069F464 /* [CP] Check Pods Manifest.lock */,
 				A49C6C411DEEAFAF00622ACC /* Sources */,
 				A49C6C421DEEAFAF00622ACC /* Frameworks */,
 				A49C6C431DEEAFAF00622ACC /* Resources */,
+				4C01420C9B1834B4FE5FDFD6 /* [CP] Embed Pods Frameworks */,
+				B61AF558CBEF75507D6F3A64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C01420C9B1834B4FE5FDFD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gotrack/Pods-gotrack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B61AF558CBEF75507D6F3A64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gotrack/Pods-gotrack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E36301C4A9EE59659069F464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A49C6C411DEEAFAF00622ACC /* Sources */ = {
@@ -408,6 +483,7 @@
 		};
 		A49C6C6E1DEEAFAF00622ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = gotrack/Info.plist;
@@ -420,6 +496,7 @@
 		};
 		A49C6C6F1DEEAFAF00622ACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = gotrack/Info.plist;
