@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C566A1232EEB6949E305887 /* libPods-gotrack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27599341701A64829F6FBB84 /* libPods-gotrack.a */; };
 		3CAE6AB81DFC60D30086BCAC /* GoTrackDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CAE6AB61DFC60D30086BCAC /* GoTrackDataModel.xcdatamodeld */; };
+		94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */; };
 		A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */; };
 		A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */; };
 		A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		27599341701A64829F6FBB84 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CAE6AB71DFC60D30086BCAC /* GoTrackDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoTrackDataModel.xcdatamodel; sourceTree = "<group>"; };
 		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
+		94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HamburgerMenu.storyboard; sourceTree = "<group>"; };
 		A49C6C451DEEAFAF00622ACC /* gotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				A49C6C511DEEAFAF00622ACC /* LaunchScreen.storyboard */,
 				A49C6C541DEEAFAF00622ACC /* Info.plist */,
 				3CAE6AB61DFC60D30086BCAC /* GoTrackDataModel.xcdatamodeld */,
+				94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */,
 			);
 			path = gotrack;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A49C6C531DEEAFAF00622ACC /* LaunchScreen.storyboard in Resources */,
+				94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */,
 				A49C6C501DEEAFAF00622ACC /* Assets.xcassets in Resources */,
 				A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */,
 			);
