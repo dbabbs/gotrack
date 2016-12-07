@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1C566A1232EEB6949E305887 /* libPods-gotrack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27599341701A64829F6FBB84 /* libPods-gotrack.a */; };
 		94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */; };
+		94D29A2B1DF7B30E002955BB /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
+		94D29A2D1DF7B330002955BB /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2C1DF7B330002955BB /* MockDB.swift */; };
+		94D29A321DF7B9BE002955BB /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A311DF7B9BE002955BB /* TripsModule.swift */; };
+		94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A331DF7BAEB002955BB /* Utilities.swift */; };
 		A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */; };
 		A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */; };
 		A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 		27599341701A64829F6FBB84 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
 		94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HamburgerMenu.storyboard; sourceTree = "<group>"; };
+		94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		94D29A2C1DF7B330002955BB /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
+		94D29A311DF7B9BE002955BB /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
+		94D29A331DF7BAEB002955BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A49C6C451DEEAFAF00622ACC /* gotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +97,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		94D29A291DF7B2B3002955BB /* Keegans Code */ = {
+			isa = PBXGroup;
+			children = (
+				94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */,
+				94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */,
+				94D29A2C1DF7B330002955BB /* MockDB.swift */,
+				94D29A311DF7B9BE002955BB /* TripsModule.swift */,
+				94D29A331DF7BAEB002955BB /* Utilities.swift */,
+			);
+			name = "Keegans Code";
+			sourceTree = "<group>";
+		};
 		A49C6C3C1DEEAFAF00622ACC = {
 			isa = PBXGroup;
 			children = (
@@ -114,13 +134,13 @@
 		A49C6C471DEEAFAF00622ACC /* gotrack */ = {
 			isa = PBXGroup;
 			children = (
+				94D29A291DF7B2B3002955BB /* Keegans Code */,
 				A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */,
 				A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */,
 				A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */,
 				A49C6C4F1DEEAFAF00622ACC /* Assets.xcassets */,
 				A49C6C511DEEAFAF00622ACC /* LaunchScreen.storyboard */,
 				A49C6C541DEEAFAF00622ACC /* Info.plist */,
-				94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */,
 			);
 			path = gotrack;
 			sourceTree = "<group>";
@@ -338,8 +358,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */,
+				94D29A2B1DF7B30E002955BB /* HelperFunctions.swift in Sources */,
+				94D29A321DF7B9BE002955BB /* TripsModule.swift in Sources */,
+				94D29A2D1DF7B330002955BB /* MockDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
