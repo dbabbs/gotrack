@@ -1,0 +1,6 @@
+framework module Pods_gotrack {
+  umbrella header "Pods-gotrack-umbrella.h"
+
+  export *
+  module * { export * }
+}

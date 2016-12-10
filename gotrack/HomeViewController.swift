@@ -1,14 +1,15 @@
 //
-//  MainController.swift
+//  HomeViewController.swift
 //  gotrack
 //
-//  Created by Keegs on 12/6/16.
+//  Created by Keegs on 12/10/16.
 //  Copyright © 2016 Babbs, Dylan. All rights reserved.
 //
 
+import RESideMenu
 import UIKit
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,9 +17,11 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func hamburgerButtonPressed(_ sender: UIBarButtonItem) {
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

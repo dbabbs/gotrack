@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target 'gotrack' do
+  use_frameworks!
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'MMDrawerController', '~> 0.5.7'

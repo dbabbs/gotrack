@@ -7,144 +7,133 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39AB26F92933572EDC87136FB6A128AD /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = C10718045439967E5C5F107107EC3D13 /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4561291FB5CEFAAD68B53ECB684A8CBD /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE40FEA464B6C0E82C22138725190B /* RESideMenu.m */; };
-		5478D00600E3D04347709CCCF780D759 /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7545A47F309489190B6FA065325D03 /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5890250F26A67FCAACA446614E39DD9B /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 844217C8EA57FA7F9ABEE864E56F4B4E /* UIViewController+RESideMenu.m */; };
-		5A48A08B3A3531230D54F398FADB18A1 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 783D41C4FF948B78851C99569C12493C /* MMDrawerVisualState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		607A5E34696706A88B1B3B8900D59949 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
-		7D18984473F6E10EF09232A3DA6745F4 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B19671D64C31E18EB8006C4912F0F54 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DC4E343B048206692EF96B42F98CA6B /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0202A46F6219C58C6A94E291095B7 /* MMDrawerBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		999F543CD75AF90671F015D41D40A8E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
-		A1A217BEC95999B773C51C532D19BF9A /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64318F03C53588FBE84FCC8C72147685 /* MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AA0251C21913E03E33FABE1F0A04F934 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC24407E9047D9278D369C6CE822165 /* UIViewController+MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		ABA873564FE59CA9B000C945543B2D23 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C88B2F6E51B01A13F692A593DACAA /* RESideMenu-dummy.m */; };
-		B063DA2E76610E356B666A416CE95D10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
-		C6982A8C9FE225528F2CA66140567331 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D335D1A40D36943FCAE9A9AB6231056 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC1FA78F9025640B26D5EE393F03CD5B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 792F6E22C96749203B5540F0397CF4BF /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D77389120E74211C48A13FB25271B11C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
-		DDB9C877F9D372F7EAD9F0EF0728DF81 /* Pods-gotrack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */; };
-		E38EED2ACDF83EC4738E27C0239CDE3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
-		EA32A0D05EE28DA9CA7E9E24BEF2135E /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5F7830D0BB3E1354A267BA95CAF55D /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEABE4B972CF4163EC44D6DDEC8590CE /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A79CF609AEB05DF5E2DD69E50A59F507 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F04FB7CC6732BF3F167D86DA7DD08B3A /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 476CDDC270ED4066BA375E26EF3ECE77 /* MMDrawerController-dummy.m */; };
-		F2625B5D43189FE34FFA111D68414F42 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C5054173B2E4877C713C0DDFA5EA164 /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3ADBE80DCE9CE595FFB827433CC49FA /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2D900C55569E990BDFEA35740B3A3B /* RECommonFunctions.m */; };
+		03E6EFE7F604EC34AF593AA077338933 /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = B7059A341A4C42AA0D99BA28604FBACE /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0807511CB3C9011579B9B1592C0AE478 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		0AF05F9F482094B2B8426233E3A43F9E /* Pods-gotrack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E35BCE743E64A79EA701C47457769F8 /* Pods-gotrack-dummy.m */; };
+		1D3D20440B8D32593456A1559D5B1D39 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249B4E85FA31BCBFC2A002A5345472F5 /* UIViewController+MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		20D17BE674C32866C4B25FB678C6A8BD /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AF302416384E6F38A4041A82066EEA0D /* RESideMenu.m */; };
+		3E5A5FC9904FB8B051576B3DD83B6D30 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB674CDF13A5340AF3CB3F1217CC1BA /* RESideMenu-dummy.m */; };
+		425C78BBD8D16CEBA09A4C40E639DEA8 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 5182E0C6BAC9647D5D306F60B3EAB6AB /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		538DB07D45E461E58A0D0DBC32F39A9A /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = F5DA1E75B269C8BEDBFEA2B46C409803 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75631659677A9B2C3F358DB7943D7425 /* MMDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1B1E582DC10A35BE81828A82AF4CCCA /* MMDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77E93A18A810CBB64E5F962D45099695 /* RESideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1A551BF0E75D46EF7DA8CEB79CC1E95 /* RESideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7863AFA89E2E1D5C7040EF871E29528C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		786D2E330E6D2316ABBB12687A91E6C4 /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEC64CEB1C962E7ABEE2956D3F8D3E3 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E8311B58E7E3F5F1FC6066EFEE3D17E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		7EFA4DCE0323EDC2B4A0CCCF9FF0F605 /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8769634E1A5B1EA71923C55DAC0EBB /* MMDrawerController-dummy.m */; };
+		898A00A366623FEDB727E919A2D336E8 /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 4265096E7B2DAFFA0FF0555B60C7A98D /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		976AE3B8EDE4A22F33EC8AB6188050A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		B47D98C5D329CB8A549641DB3C187B6B /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E688B33FACA7B8579186355F1274094 /* UIViewController+RESideMenu.m */; };
+		B7ED4ECFF0DB2E5684B02200DC9D409E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		B83DBAF9155D882F8F28E042945F75C1 /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E12E7267B9C7310DFC53C59E7B87403 /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D29D2579BC0C51E0E9ADFB279E21579C /* Pods-gotrack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA018FF07B72AFBD944C7C9DB321384E /* Pods-gotrack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6C3630B0D957BEEE6BFB2202BE07B8 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE588149BC11D25AC40EC492DFAAF84 /* RECommonFunctions.m */; };
+		DC7DD6CB87486154CC026301E7353674 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F372B237244600D34FBFCBD2BE260255 /* MMDrawerBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E255CFB2515FFC5E1E902771E7D6A8A3 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A686903CC8F5C8EF0317843A172DAB2 /* MMDrawerVisualState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E596A22B4A708B9FF6EDD0B66E9BCA56 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E3D2FF9EED09CF1E4A8A77E20B54BC9 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F16CF1CB1FC1AD42A4703176D7663DAE /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 8112D16DFD377A4647CF0DAB5E35CC71 /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F510828EE3319D22B806448721E3B65D /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0865C87CA7E6F8B5DD350ECC6482F6C5 /* MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		01C524D95578F10BED9102F31FA6AE87 /* PBXContainerItemProxy */ = {
+		25225B579EBBA3F9B33979A3F7CC29A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 00E9BA659F07C221ECD1688B29DFB337;
-			remoteInfo = RESideMenu;
-		};
-		970997CB61BA0DAA827556DB24140B52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78D29FDDA61F65D7244C402E10584DB5;
+			remoteGlobalIDString = A8FAB4675B15F8258B6C19B71077B859;
 			remoteInfo = MMDrawerController;
+		};
+		F0CC08478541DD2FAA372D1D17983F41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 982838A7FA040C9A08BB839E80ECE8B4;
+			remoteInfo = RESideMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gotrack-dummy.m"; sourceTree = "<group>"; };
-		0B19671D64C31E18EB8006C4912F0F54 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		0B5F7830D0BB3E1354A267BA95CAF55D /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		129C88B2F6E51B01A13F692A593DACAA /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
-		20EB22BCD8699008DD1457721B328B1D /* Pods-gotrack-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-resources.sh"; sourceTree = "<group>"; };
-		2F9FDC084414632F6336F9333370EC64 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		0865C87CA7E6F8B5DD350ECC6482F6C5 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		0A8769634E1A5B1EA71923C55DAC0EBB /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		0DE588149BC11D25AC40EC492DFAAF84 /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
+		0E07246B0E6FA779A8182AD1FCE893FE /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
+		0E688B33FACA7B8579186355F1274094 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		104D9DE46563C953FC96C536AD97532F /* RESideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RESideMenu.modulemap; sourceTree = "<group>"; };
+		1740D38791A9652C1BCE715DA12C2FD6 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
+		249B4E85FA31BCBFC2A002A5345472F5 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		24D2741C8DE5D1909B94E2317E459683 /* Pods-gotrack-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-resources.sh"; sourceTree = "<group>"; };
 		3487A55382C52F75B6FA3840EF4CADC3 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		3843367142A219A62A938A5B05A82639 /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
 		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3D335D1A40D36943FCAE9A9AB6231056 /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
-		3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.debug.xcconfig"; sourceTree = "<group>"; };
-		405E9ED56EA05062E4411F459F0A448C /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
-		476CDDC270ED4066BA375E26EF3ECE77 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		3E12E7267B9C7310DFC53C59E7B87403 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		4265096E7B2DAFFA0FF0555B60C7A98D /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		49D3518939CC3F670597A9291FAC4837 /* Pods-gotrack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gotrack-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4E35BCE743E64A79EA701C47457769F8 /* Pods-gotrack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gotrack-dummy.m"; sourceTree = "<group>"; };
+		5182E0C6BAC9647D5D306F60B3EAB6AB /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
 		524E6857B5C0AF93997802DA30C77842 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		64318F03C53588FBE84FCC8C72147685 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
-		6DA0202A46F6219C58C6A94E291095B7 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		71151F6E251383633C7E31890FCB4A90 /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
-		783D41C4FF948B78851C99569C12493C /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
-		792F6E22C96749203B5540F0397CF4BF /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		83FD79E65683066F2696FCFF711E256F /* Pods-gotrack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gotrack-acknowledgements.plist"; sourceTree = "<group>"; };
-		844217C8EA57FA7F9ABEE864E56F4B4E /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		89C943A520124FDE7835C3F900DD87BF /* Pods-gotrack-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-frameworks.sh"; sourceTree = "<group>"; };
-		8C5054173B2E4877C713C0DDFA5EA164 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		5AF2677D078C0C92CCA4015EC340A8B9 /* Pods-gotrack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-gotrack.modulemap"; sourceTree = "<group>"; };
+		5D11B1C50118C640C5BEF690899F8AB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66868B447A176C972F6F9437585FE1DE /* MMDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MMDrawerController.framework; path = MMDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6AA80E355C335AB3F42136D03F6098 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
+		7A673FFD99E0D47C7E9CD24E70A8947E /* Pods-gotrack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gotrack-acknowledgements.plist"; sourceTree = "<group>"; };
+		8112D16DFD377A4647CF0DAB5E35CC71 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		8A686903CC8F5C8EF0317843A172DAB2 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		8FD14CDEB3D690B211131F48DFDBB89E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F09953D91FD9E877C94A7577A2412B /* MMDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MMDrawerController.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F7545A47F309489190B6FA065325D03 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
-		A17DDF779F3565F788477F3C104F8D4B /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
-		A79CF609AEB05DF5E2DD69E50A59F507 /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
-		AAC24407E9047D9278D369C6CE822165 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		B82B27A7F4B37D9E6329B929A508E613 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-gotrack.a"; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E3D2FF9EED09CF1E4A8A77E20B54BC9 /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
+		A9FF31CD5B56F133323706A0D5C1F32E /* RESideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RESideMenu.framework; path = RESideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA018FF07B72AFBD944C7C9DB321384E /* Pods-gotrack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gotrack-umbrella.h"; sourceTree = "<group>"; };
+		AE7C7D6144E501DFD30E626743461988 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		AF302416384E6F38A4041A82066EEA0D /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
+		B7059A341A4C42AA0D99BA28604FBACE /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
 		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		BD2D900C55569E990BDFEA35740B3A3B /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
-		BE806541A635BA24AA14F7DCFC108718 /* Pods-gotrack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gotrack-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C10718045439967E5C5F107107EC3D13 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		C16D447B422F171964CA666FA191B687 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		C2BE40FEA464B6C0E82C22138725190B /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
-		C8415D0235DDE59C4F297EF2008F8FA6 /* libMMDrawerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMMDrawerController.a; path = libMMDrawerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A551BF0E75D46EF7DA8CEB79CC1E95 /* RESideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-umbrella.h"; sourceTree = "<group>"; };
+		CBEC64CEB1C962E7ABEE2956D3F8D3E3 /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
+		CCEDE936144DC114AB93FADB027F11A6 /* Pods_gotrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_gotrack.framework; path = "Pods-gotrack.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1B1E582DC10A35BE81828A82AF4CCCA /* MMDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-umbrella.h"; sourceTree = "<group>"; };
+		D96CDECD4943C16C307EE8A5109CE425 /* Pods-gotrack-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-frameworks.sh"; sourceTree = "<group>"; };
 		DC6869160207E1CF3FB5DD20131E2FDD /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		DCEDC821EA54674E43673A931B1A72C1 /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
-		E0DA69A515BBBBE76BD893E10F65FF41 /* libRESideMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRESideMenu.a; path = libRESideMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E822B768AA8CF51C844C3D7DE583EBA4 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		E869345E7C2FBCB6F2959A2E229BFAA4 /* Pods-gotrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.debug.xcconfig"; sourceTree = "<group>"; };
+		F372B237244600D34FBFCBD2BE260255 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		F5DA1E75B269C8BEDBFEA2B46C409803 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		F853A19F25AA22F4CE19CC6BB2FA6A3B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB063FC059F458E36A67C2AAAB0C9D8C /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		FFB674CDF13A5340AF3CB3F1217CC1BA /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C9663D19EEE92721C2C154C8AC75839 /* Frameworks */ = {
+		355009164ACD5152F09953B20155E2CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999F543CD75AF90671F015D41D40A8E6 /* Foundation.framework in Frameworks */,
-				D77389120E74211C48A13FB25271B11C /* QuartzCore.framework in Frameworks */,
+				7E8311B58E7E3F5F1FC6066EFEE3D17E /* Foundation.framework in Frameworks */,
+				976AE3B8EDE4A22F33EC8AB6188050A0 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E2B0F0AEB2C90D6A5FA3EA773E93D15 /* Frameworks */ = {
+		6839EE16E9C40BEE0A48FAC84C59B89D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E38EED2ACDF83EC4738E27C0239CDE3C /* Foundation.framework in Frameworks */,
-				607A5E34696706A88B1B3B8900D59949 /* QuartzCore.framework in Frameworks */,
+				7863AFA89E2E1D5C7040EF871E29528C /* Foundation.framework in Frameworks */,
+				B7ED4ECFF0DB2E5684B02200DC9D409E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9F11A174F6F88EDC6C422D677972015 /* Frameworks */ = {
+		EDBD77C374EC2189BE40BC9231B89969 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B063DA2E76610E356B666A416CE95D10 /* Foundation.framework in Frameworks */,
+				0807511CB3C9011579B9B1592C0AE478 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02E705A3D923D067F7D934D9179A60A0 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				792F6E22C96749203B5540F0397CF4BF /* MMDrawerController.h */,
-				64318F03C53588FBE84FCC8C72147685 /* MMDrawerController.m */,
-				0B19671D64C31E18EB8006C4912F0F54 /* MMDrawerController+Subclass.h */,
-				C10718045439967E5C5F107107EC3D13 /* UIViewController+MMDrawerController.h */,
-				AAC24407E9047D9278D369C6CE822165 /* UIViewController+MMDrawerController.m */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		12243E9040B17DD0AF8760CC5A08571C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				405E9ED56EA05062E4411F459F0A448C /* MMDrawerController.xcconfig */,
-				476CDDC270ED4066BA375E26EF3ECE77 /* MMDrawerController-dummy.m */,
-				2F9FDC084414632F6336F9333370EC64 /* MMDrawerController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController";
-			sourceTree = "<group>";
-		};
 		137B998169D02E499E6BC877E5874D6C /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,14 +144,6 @@
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
-		1D67BA82B71B275CEF95585EC493C790 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DDC7AE3C124389D46D9115579A9B491B /* Pods-gotrack */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		237F3BE144940D9B894AF624B2E3F879 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,30 +152,6 @@
 			);
 			name = GoogleMaps;
 			path = GoogleMaps;
-			sourceTree = "<group>";
-		};
-		3906061E2FF7F645320E5F39A23DCB79 /* RESideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				3D335D1A40D36943FCAE9A9AB6231056 /* RECommonFunctions.h */,
-				BD2D900C55569E990BDFEA35740B3A3B /* RECommonFunctions.m */,
-				A79CF609AEB05DF5E2DD69E50A59F507 /* RESideMenu.h */,
-				C2BE40FEA464B6C0E82C22138725190B /* RESideMenu.m */,
-				9F7545A47F309489190B6FA065325D03 /* UIViewController+RESideMenu.h */,
-				844217C8EA57FA7F9ABEE864E56F4B4E /* UIViewController+RESideMenu.m */,
-				D47DE76FFCB6ACA921CF4E1906347EA2 /* Support Files */,
-			);
-			name = RESideMenu;
-			path = RESideMenu;
-			sourceTree = "<group>";
-		};
-		3CE450573F792039EF3717E957585982 /* MMDrawerVisualStates */ = {
-			isa = PBXGroup;
-			children = (
-				8C5054173B2E4877C713C0DDFA5EA164 /* MMDrawerVisualState.h */,
-				783D41C4FF948B78851C99569C12493C /* MMDrawerVisualState.m */,
-			);
-			name = MMDrawerVisualStates;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -214,6 +171,37 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
+		4FF3D74A420A96EAD718BCF06314867B /* MMDrawerVisualStates */ = {
+			isa = PBXGroup;
+			children = (
+				5182E0C6BAC9647D5D306F60B3EAB6AB /* MMDrawerVisualState.h */,
+				8A686903CC8F5C8EF0317843A172DAB2 /* MMDrawerVisualState.m */,
+			);
+			name = MMDrawerVisualStates;
+			sourceTree = "<group>";
+		};
+		5AC5D31C32E00CB5CF0A7EE28F0D22CD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3FB878C632B66515D38CF97A845B2F3 /* Pods-gotrack */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5FD41E350DDF09D0B5A4EA2D39A8747E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D11B1C50118C640C5BEF690899F8AB9 /* Info.plist */,
+				92F09953D91FD9E877C94A7577A2412B /* MMDrawerController.modulemap */,
+				1740D38791A9652C1BCE715DA12C2FD6 /* MMDrawerController.xcconfig */,
+				0A8769634E1A5B1EA71923C55DAC0EBB /* MMDrawerController-dummy.m */,
+				AE7C7D6144E501DFD30E626743461988 /* MMDrawerController-prefix.pch */,
+				D1B1E582DC10A35BE81828A82AF4CCCA /* MMDrawerController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
+			sourceTree = "<group>";
+		};
 		644CE934D4D32C7E190785491737A1D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,15 +210,40 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		65111A07057B1F34F58D403773F40A36 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				782323CDCB88B6EF123D15155A98B096 /* Core */,
+				B4BAFF403BA6DE99D955B65389EB0C59 /* MMDrawerBarButtonItem */,
+				4FF3D74A420A96EAD718BCF06314867B /* MMDrawerVisualStates */,
+				C21F0C0D35724504FB913B4C17C5AF49 /* Subclass */,
+				5FD41E350DDF09D0B5A4EA2D39A8747E /* Support Files */,
+			);
+			name = MMDrawerController;
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
 		7218056A657502D533EA4E7770FD0A2A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				237F3BE144940D9B894AF624B2E3F879 /* GoogleMaps */,
 				137B998169D02E499E6BC877E5874D6C /* GooglePlaces */,
-				E4CE6892F7C90589E4D7116A970DC4AB /* MMDrawerController */,
-				3906061E2FF7F645320E5F39A23DCB79 /* RESideMenu */,
+				65111A07057B1F34F58D403773F40A36 /* MMDrawerController */,
+				DEC58647EF8D3FF2D841DED5B83D9D74 /* RESideMenu */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		782323CDCB88B6EF123D15155A98B096 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B7059A341A4C42AA0D99BA28604FBACE /* MMDrawerController.h */,
+				0865C87CA7E6F8B5DD350ECC6482F6C5 /* MMDrawerController.m */,
+				F5DA1E75B269C8BEDBFEA2B46C409803 /* MMDrawerController+Subclass.h */,
+				3E12E7267B9C7310DFC53C59E7B87403 /* UIViewController+MMDrawerController.h */,
+				249B4E85FA31BCBFC2A002A5345472F5 /* UIViewController+MMDrawerController.m */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -239,8 +252,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				7218056A657502D533EA4E7770FD0A2A /* Pods */,
-				885DF1F9BCFF7D6C972C022D8F8662BE /* Products */,
-				1D67BA82B71B275CEF95585EC493C790 /* Targets Support Files */,
+				F43BD706270C1C5B732C47C4F69770FE /* Products */,
+				5AC5D31C32E00CB5CF0A7EE28F0D22CD /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,21 +265,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		885DF1F9BCFF7D6C972C022D8F8662BE /* Products */ = {
+		B4BAFF403BA6DE99D955B65389EB0C59 /* MMDrawerBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				C8415D0235DDE59C4F297EF2008F8FA6 /* libMMDrawerController.a */,
-				B82B27A7F4B37D9E6329B929A508E613 /* libPods-gotrack.a */,
-				E0DA69A515BBBBE76BD893E10F65FF41 /* libRESideMenu.a */,
+				4265096E7B2DAFFA0FF0555B60C7A98D /* MMDrawerBarButtonItem.h */,
+				F372B237244600D34FBFCBD2BE260255 /* MMDrawerBarButtonItem.m */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A4674FD105912B763E6E560D598B85CF /* Subclass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Subclass;
+			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
 		BA7F936F96D36B4F393634AA9189892C /* Resources */ = {
@@ -275,6 +280,31 @@
 				FB063FC059F458E36A67C2AAAB0C9D8C /* GooglePlaces.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		C21F0C0D35724504FB913B4C17C5AF49 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subclass;
+			sourceTree = "<group>";
+		};
+		C3FB878C632B66515D38CF97A845B2F3 /* Pods-gotrack */ = {
+			isa = PBXGroup;
+			children = (
+				F853A19F25AA22F4CE19CC6BB2FA6A3B /* Info.plist */,
+				5AF2677D078C0C92CCA4015EC340A8B9 /* Pods-gotrack.modulemap */,
+				49D3518939CC3F670597A9291FAC4837 /* Pods-gotrack-acknowledgements.markdown */,
+				7A673FFD99E0D47C7E9CD24E70A8947E /* Pods-gotrack-acknowledgements.plist */,
+				4E35BCE743E64A79EA701C47457769F8 /* Pods-gotrack-dummy.m */,
+				D96CDECD4943C16C307EE8A5109CE425 /* Pods-gotrack-frameworks.sh */,
+				24D2741C8DE5D1909B94E2317E459683 /* Pods-gotrack-resources.sh */,
+				AA018FF07B72AFBD944C7C9DB321384E /* Pods-gotrack-umbrella.h */,
+				E869345E7C2FBCB6F2959A2E229BFAA4 /* Pods-gotrack.debug.xcconfig */,
+				6A6AA80E355C335AB3F42136D03F6098 /* Pods-gotrack.release.xcconfig */,
+			);
+			name = "Pods-gotrack";
+			path = "Target Support Files/Pods-gotrack";
 			sourceTree = "<group>";
 		};
 		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
@@ -286,6 +316,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CAC0EE2CF5634104C11CA7F0181965C6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FD14CDEB3D690B211131F48DFDBB89E /* Info.plist */,
+				104D9DE46563C953FC96C536AD97532F /* RESideMenu.modulemap */,
+				3843367142A219A62A938A5B05A82639 /* RESideMenu.xcconfig */,
+				FFB674CDF13A5340AF3CB3F1217CC1BA /* RESideMenu-dummy.m */,
+				0E07246B0E6FA779A8182AD1FCE893FE /* RESideMenu-prefix.pch */,
+				C1A551BF0E75D46EF7DA8CEB79CC1E95 /* RESideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RESideMenu";
+			sourceTree = "<group>";
+		};
 		CE7BC0BABE96B0F5CFC11722E59B7A29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,39 +338,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D47DE76FFCB6ACA921CF4E1906347EA2 /* Support Files */ = {
+		DEC58647EF8D3FF2D841DED5B83D9D74 /* RESideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				DCEDC821EA54674E43673A931B1A72C1 /* RESideMenu.xcconfig */,
-				129C88B2F6E51B01A13F692A593DACAA /* RESideMenu-dummy.m */,
-				71151F6E251383633C7E31890FCB4A90 /* RESideMenu-prefix.pch */,
+				9E3D2FF9EED09CF1E4A8A77E20B54BC9 /* RECommonFunctions.h */,
+				0DE588149BC11D25AC40EC492DFAAF84 /* RECommonFunctions.m */,
+				CBEC64CEB1C962E7ABEE2956D3F8D3E3 /* RESideMenu.h */,
+				AF302416384E6F38A4041A82066EEA0D /* RESideMenu.m */,
+				8112D16DFD377A4647CF0DAB5E35CC71 /* UIViewController+RESideMenu.h */,
+				0E688B33FACA7B8579186355F1274094 /* UIViewController+RESideMenu.m */,
+				CAC0EE2CF5634104C11CA7F0181965C6 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RESideMenu";
-			sourceTree = "<group>";
-		};
-		D6B22940B49C42DB8CC95431BC97B110 /* MMDrawerBarButtonItem */ = {
-			isa = PBXGroup;
-			children = (
-				0B5F7830D0BB3E1354A267BA95CAF55D /* MMDrawerBarButtonItem.h */,
-				6DA0202A46F6219C58C6A94E291095B7 /* MMDrawerBarButtonItem.m */,
-			);
-			name = MMDrawerBarButtonItem;
-			sourceTree = "<group>";
-		};
-		DDC7AE3C124389D46D9115579A9B491B /* Pods-gotrack */ = {
-			isa = PBXGroup;
-			children = (
-				BE806541A635BA24AA14F7DCFC108718 /* Pods-gotrack-acknowledgements.markdown */,
-				83FD79E65683066F2696FCFF711E256F /* Pods-gotrack-acknowledgements.plist */,
-				066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */,
-				89C943A520124FDE7835C3F900DD87BF /* Pods-gotrack-frameworks.sh */,
-				20EB22BCD8699008DD1457721B328B1D /* Pods-gotrack-resources.sh */,
-				3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */,
-				A17DDF779F3565F788477F3C104F8D4B /* Pods-gotrack.release.xcconfig */,
-			);
-			name = "Pods-gotrack";
-			path = "Target Support Files/Pods-gotrack";
+			name = RESideMenu;
+			path = RESideMenu;
 			sourceTree = "<group>";
 		};
 		E2E6642FD527516456F92DB2D13320C9 /* Base */ = {
@@ -337,17 +361,14 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
-		E4CE6892F7C90589E4D7116A970DC4AB /* MMDrawerController */ = {
+		F43BD706270C1C5B732C47C4F69770FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02E705A3D923D067F7D934D9179A60A0 /* Core */,
-				D6B22940B49C42DB8CC95431BC97B110 /* MMDrawerBarButtonItem */,
-				3CE450573F792039EF3717E957585982 /* MMDrawerVisualStates */,
-				A4674FD105912B763E6E560D598B85CF /* Subclass */,
-				12243E9040B17DD0AF8760CC5A08571C /* Support Files */,
+				66868B447A176C972F6F9437585FE1DE /* MMDrawerController.framework */,
+				CCEDE936144DC114AB93FADB027F11A6 /* Pods_gotrack.framework */,
+				A9FF31CD5B56F133323706A0D5C1F32E /* RESideMenu.framework */,
 			);
-			name = MMDrawerController;
-			path = MMDrawerController;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F6D831DC82D55ED12424FAA59A69774F /* Frameworks */ = {
@@ -362,38 +383,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CC69C2580B09E0F911A0E3FFE670F945 /* Headers */ = {
+		01C8E6196EBF48680D25733BD5A6A4D0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA32A0D05EE28DA9CA7E9E24BEF2135E /* MMDrawerBarButtonItem.h in Headers */,
-				7D18984473F6E10EF09232A3DA6745F4 /* MMDrawerController+Subclass.h in Headers */,
-				CC1FA78F9025640B26D5EE393F03CD5B /* MMDrawerController.h in Headers */,
-				F2625B5D43189FE34FFA111D68414F42 /* MMDrawerVisualState.h in Headers */,
-				39AB26F92933572EDC87136FB6A128AD /* UIViewController+MMDrawerController.h in Headers */,
+				D29D2579BC0C51E0E9ADFB279E21579C /* Pods-gotrack-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB07F097DAD4C699E0AA70FCCF672854 /* Headers */ = {
+		66EC2988D76984A53357D84BCB1281BC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6982A8C9FE225528F2CA66140567331 /* RECommonFunctions.h in Headers */,
-				EEABE4B972CF4163EC44D6DDEC8590CE /* RESideMenu.h in Headers */,
-				5478D00600E3D04347709CCCF780D759 /* UIViewController+RESideMenu.h in Headers */,
+				E596A22B4A708B9FF6EDD0B66E9BCA56 /* RECommonFunctions.h in Headers */,
+				77E93A18A810CBB64E5F962D45099695 /* RESideMenu-umbrella.h in Headers */,
+				786D2E330E6D2316ABBB12687A91E6C4 /* RESideMenu.h in Headers */,
+				F16CF1CB1FC1AD42A4703176D7663DAE /* UIViewController+RESideMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69BFC982C026B83EDAF3102937BF1ED9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				898A00A366623FEDB727E919A2D336E8 /* MMDrawerBarButtonItem.h in Headers */,
+				538DB07D45E461E58A0D0DBC32F39A9A /* MMDrawerController+Subclass.h in Headers */,
+				75631659677A9B2C3F358DB7943D7425 /* MMDrawerController-umbrella.h in Headers */,
+				03E6EFE7F604EC34AF593AA077338933 /* MMDrawerController.h in Headers */,
+				425C78BBD8D16CEBA09A4C40E639DEA8 /* MMDrawerVisualState.h in Headers */,
+				B83DBAF9155D882F8F28E042945F75C1 /* UIViewController+MMDrawerController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00E9BA659F07C221ECD1688B29DFB337 /* RESideMenu */ = {
+		982838A7FA040C9A08BB839E80ECE8B4 /* RESideMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B01C2D3E9EA5E68972F81191BDEAF59 /* Build configuration list for PBXNativeTarget "RESideMenu" */;
+			buildConfigurationList = 98C4C2247B5D598BC2BBE292D2E32F91 /* Build configuration list for PBXNativeTarget "RESideMenu" */;
 			buildPhases = (
-				45EA2070BFE6AA8C4D5FCD4B75F8A778 /* Sources */,
-				9E2B0F0AEB2C90D6A5FA3EA773E93D15 /* Frameworks */,
-				DB07F097DAD4C699E0AA70FCCF672854 /* Headers */,
+				2AF7513E7D1FDB62A6DDCDE3BB43C3EB /* Sources */,
+				6839EE16E9C40BEE0A48FAC84C59B89D /* Frameworks */,
+				66EC2988D76984A53357D84BCB1281BC /* Headers */,
 			);
 			buildRules = (
 			);
@@ -401,34 +432,35 @@
 			);
 			name = RESideMenu;
 			productName = RESideMenu;
-			productReference = E0DA69A515BBBBE76BD893E10F65FF41 /* libRESideMenu.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = A9FF31CD5B56F133323706A0D5C1F32E /* RESideMenu.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		74A6E176C823D5065EAEC5AA060DE637 /* Pods-gotrack */ = {
+		A4D6FC3D6CBE79C4064290B76B94DBDF /* Pods-gotrack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AB1BA150FC882AC742984C1F98254A9 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */;
+			buildConfigurationList = 463222C05E07EA6497A746822EC678A8 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */;
 			buildPhases = (
-				304E8D76E11538197E806AC7D033EB24 /* Sources */,
-				E9F11A174F6F88EDC6C422D677972015 /* Frameworks */,
+				1D8D34E0BE859CD723561062B47307E0 /* Sources */,
+				EDBD77C374EC2189BE40BC9231B89969 /* Frameworks */,
+				01C8E6196EBF48680D25733BD5A6A4D0 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D62F1628EABD1E76BA662532AC61A7D7 /* PBXTargetDependency */,
-				7FEF44D5182BA9CE6CC5114A2DD459B6 /* PBXTargetDependency */,
+				C34794FB9DD67595686144AC62276D38 /* PBXTargetDependency */,
+				E1DCC02514CA3787B41A8230BA970D3B /* PBXTargetDependency */,
 			);
 			name = "Pods-gotrack";
 			productName = "Pods-gotrack";
-			productReference = B82B27A7F4B37D9E6329B929A508E613 /* libPods-gotrack.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = CCEDE936144DC114AB93FADB027F11A6 /* Pods_gotrack.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */ = {
+		A8FAB4675B15F8258B6C19B71077B859 /* MMDrawerController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D879430EE2B868846ABCB49CD6E0652 /* Build configuration list for PBXNativeTarget "MMDrawerController" */;
+			buildConfigurationList = 4C1AD8E2252D946F71C8BD80C393726C /* Build configuration list for PBXNativeTarget "MMDrawerController" */;
 			buildPhases = (
-				CC334887182477966BA8839000DBF30F /* Sources */,
-				8C9663D19EEE92721C2C154C8AC75839 /* Frameworks */,
-				CC69C2580B09E0F911A0E3FFE670F945 /* Headers */,
+				8D2A96C0C4A2D0EEBBF5A638F4E71773 /* Sources */,
+				355009164ACD5152F09953B20155E2CA /* Frameworks */,
+				69BFC982C026B83EDAF3102937BF1ED9 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -436,8 +468,8 @@
 			);
 			name = MMDrawerController;
 			productName = MMDrawerController;
-			productReference = C8415D0235DDE59C4F297EF2008F8FA6 /* libMMDrawerController.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 66868B447A176C972F6F9437585FE1DE /* MMDrawerController.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -456,161 +488,197 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 885DF1F9BCFF7D6C972C022D8F8662BE /* Products */;
+			productRefGroup = F43BD706270C1C5B732C47C4F69770FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */,
-				74A6E176C823D5065EAEC5AA060DE637 /* Pods-gotrack */,
-				00E9BA659F07C221ECD1688B29DFB337 /* RESideMenu */,
+				A8FAB4675B15F8258B6C19B71077B859 /* MMDrawerController */,
+				A4D6FC3D6CBE79C4064290B76B94DBDF /* Pods-gotrack */,
+				982838A7FA040C9A08BB839E80ECE8B4 /* RESideMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		304E8D76E11538197E806AC7D033EB24 /* Sources */ = {
+		1D8D34E0BE859CD723561062B47307E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB9C877F9D372F7EAD9F0EF0728DF81 /* Pods-gotrack-dummy.m in Sources */,
+				0AF05F9F482094B2B8426233E3A43F9E /* Pods-gotrack-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45EA2070BFE6AA8C4D5FCD4B75F8A778 /* Sources */ = {
+		2AF7513E7D1FDB62A6DDCDE3BB43C3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3ADBE80DCE9CE595FFB827433CC49FA /* RECommonFunctions.m in Sources */,
-				ABA873564FE59CA9B000C945543B2D23 /* RESideMenu-dummy.m in Sources */,
-				4561291FB5CEFAAD68B53ECB684A8CBD /* RESideMenu.m in Sources */,
-				5890250F26A67FCAACA446614E39DD9B /* UIViewController+RESideMenu.m in Sources */,
+				DC6C3630B0D957BEEE6BFB2202BE07B8 /* RECommonFunctions.m in Sources */,
+				3E5A5FC9904FB8B051576B3DD83B6D30 /* RESideMenu-dummy.m in Sources */,
+				20D17BE674C32866C4B25FB678C6A8BD /* RESideMenu.m in Sources */,
+				B47D98C5D329CB8A549641DB3C187B6B /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CC334887182477966BA8839000DBF30F /* Sources */ = {
+		8D2A96C0C4A2D0EEBBF5A638F4E71773 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC4E343B048206692EF96B42F98CA6B /* MMDrawerBarButtonItem.m in Sources */,
-				F04FB7CC6732BF3F167D86DA7DD08B3A /* MMDrawerController-dummy.m in Sources */,
-				A1A217BEC95999B773C51C532D19BF9A /* MMDrawerController.m in Sources */,
-				5A48A08B3A3531230D54F398FADB18A1 /* MMDrawerVisualState.m in Sources */,
-				AA0251C21913E03E33FABE1F0A04F934 /* UIViewController+MMDrawerController.m in Sources */,
+				DC7DD6CB87486154CC026301E7353674 /* MMDrawerBarButtonItem.m in Sources */,
+				7EFA4DCE0323EDC2B4A0CCCF9FF0F605 /* MMDrawerController-dummy.m in Sources */,
+				F510828EE3319D22B806448721E3B65D /* MMDrawerController.m in Sources */,
+				E255CFB2515FFC5E1E902771E7D6A8A3 /* MMDrawerVisualState.m in Sources */,
+				1D3D20440B8D32593456A1559D5B1D39 /* UIViewController+MMDrawerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7FEF44D5182BA9CE6CC5114A2DD459B6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RESideMenu;
-			target = 00E9BA659F07C221ECD1688B29DFB337 /* RESideMenu */;
-			targetProxy = 01C524D95578F10BED9102F31FA6AE87 /* PBXContainerItemProxy */;
-		};
-		D62F1628EABD1E76BA662532AC61A7D7 /* PBXTargetDependency */ = {
+		C34794FB9DD67595686144AC62276D38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MMDrawerController;
-			target = 78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */;
-			targetProxy = 970997CB61BA0DAA827556DB24140B52 /* PBXContainerItemProxy */;
+			target = A8FAB4675B15F8258B6C19B71077B859 /* MMDrawerController */;
+			targetProxy = 25225B579EBBA3F9B33979A3F7CC29A7 /* PBXContainerItemProxy */;
+		};
+		E1DCC02514CA3787B41A8230BA970D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RESideMenu;
+			target = 982838A7FA040C9A08BB839E80ECE8B4 /* RESideMenu */;
+			targetProxy = F0CC08478541DD2FAA372D1D17983F41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1064935B67EAE5AE55D5E542A6763869 /* Debug */ = {
+		1313C5C07FC72390ACBE680FB622E3C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 405E9ED56EA05062E4411F459F0A448C /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = 1740D38791A9652C1BCE715DA12C2FD6 /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				INFOPLIST_FILE = "Target Support Files/MMDrawerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MMDrawerController/MMDrawerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MMDrawerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		44C5CB4E5D0953CC4165B76B9432A3A0 /* Release */ = {
+		13C7BDFD503AEF255BFA0EBCFA8FF4B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A17DDF779F3565F788477F3C104F8D4B /* Pods-gotrack.release.xcconfig */;
+			baseConfigurationReference = 3843367142A219A62A938A5B05A82639 /* RESideMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RESideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RESideMenu/RESideMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RESideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		261449A8CAD7F05C8BCE38AC3FCE322F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3843367142A219A62A938A5B05A82639 /* RESideMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RESideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RESideMenu/RESideMenu.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RESideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E4678A0CD6F5D3440A31302DCC35D29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A6AA80E355C335AB3F42136D03F6098 /* Pods-gotrack.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-gotrack/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gotrack/Pods-gotrack.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pods_gotrack;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		A8F7029D96685CC4EDE145E0FC44B91A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCEDC821EA54674E43673A931B1A72C1 /* RESideMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		BD72AB0FF9C3F7D6D7A2A411693F2C5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCEDC821EA54674E43673A931B1A72C1 /* RESideMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
 		};
 		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -656,53 +724,6 @@
 			};
 			name = Debug;
 		};
-		CF6DD96AADBEF090CE787F8767BE5190 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D9E36E63BECC13C92D8ADFB1EE87EC23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 405E9ED56EA05062E4411F459F0A448C /* MMDrawerController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -743,18 +764,76 @@
 			};
 			name = Release;
 		};
+		FC77CF01C370B327CF9144A8D440A550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E869345E7C2FBCB6F2959A2E229BFAA4 /* Pods-gotrack.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-gotrack/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gotrack/Pods-gotrack.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_gotrack;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE8D59377632025491A736975169FB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1740D38791A9652C1BCE715DA12C2FD6 /* MMDrawerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MMDrawerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MMDrawerController/MMDrawerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MMDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B01C2D3E9EA5E68972F81191BDEAF59 /* Build configuration list for PBXNativeTarget "RESideMenu" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD72AB0FF9C3F7D6D7A2A411693F2C5F /* Debug */,
-				A8F7029D96685CC4EDE145E0FC44B91A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -764,20 +843,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AB1BA150FC882AC742984C1F98254A9 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */ = {
+		463222C05E07EA6497A746822EC678A8 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF6DD96AADBEF090CE787F8767BE5190 /* Debug */,
-				44C5CB4E5D0953CC4165B76B9432A3A0 /* Release */,
+				FC77CF01C370B327CF9144A8D440A550 /* Debug */,
+				8E4678A0CD6F5D3440A31302DCC35D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D879430EE2B868846ABCB49CD6E0652 /* Build configuration list for PBXNativeTarget "MMDrawerController" */ = {
+		4C1AD8E2252D946F71C8BD80C393726C /* Build configuration list for PBXNativeTarget "MMDrawerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1064935B67EAE5AE55D5E542A6763869 /* Debug */,
-				D9E36E63BECC13C92D8ADFB1EE87EC23 /* Release */,
+				FE8D59377632025491A736975169FB75 /* Debug */,
+				1313C5C07FC72390ACBE680FB622E3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98C4C2247B5D598BC2BBE292D2E32F91 /* Build configuration list for PBXNativeTarget "RESideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C7BDFD503AEF255BFA0EBCFA8FF4B4 /* Debug */,
+				261449A8CAD7F05C8BCE38AC3FCE322F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
