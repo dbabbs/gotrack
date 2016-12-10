@@ -7,49 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2A92083C505B426C07DCB145016A2C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		FF86D3047ABAB7D7E810B9B68360CDF9 /* Pods-gotrack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */; };
+		39AB26F92933572EDC87136FB6A128AD /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F965F8E8A74BA62622EE99213898040 /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A48A08B3A3531230D54F398FADB18A1 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC42D61969B2862E211106E1627C78E /* MMDrawerVisualState.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7D18984473F6E10EF09232A3DA6745F4 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 089786DF4F4DE6AF0C48CF8EF6FFC2E8 /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B4BB5C2E9E7B7DEEC263441CAC369A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		8DC4E343B048206692EF96B42F98CA6B /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D766D70B6C0A0835E24D88351EFAA5C /* MMDrawerBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		999F543CD75AF90671F015D41D40A8E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		A1A217BEC95999B773C51C532D19BF9A /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D780222C1C2B9FFAD638AAB95586A9EC /* MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AA0251C21913E03E33FABE1F0A04F934 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7987B257BCBD058D9AFA1822F897FF79 /* UIViewController+MMDrawerController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CC1FA78F9025640B26D5EE393F03CD5B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = C97BBBF69C7400BE86B0E087F3AE7AB9 /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D77389120E74211C48A13FB25271B11C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		EA32A0D05EE28DA9CA7E9E24BEF2135E /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B77ADD92F0486415D2A81F43EFB9F08C /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED95B71278C17EFABBF55498B25CB5D1 /* Pods-gotrack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */; };
+		F04FB7CC6732BF3F167D86DA7DD08B3A /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B8A395618D42571EFDFCE1B6726D4 /* MMDrawerController-dummy.m */; };
+		F2625B5D43189FE34FFA111D68414F42 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FBBC7919CACE2028DE8834FF8E3E337 /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29347FF5D6FBE4E5DF84386B9938E30D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78D29FDDA61F65D7244C402E10584DB5;
+			remoteInfo = MMDrawerController;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		066CDD6BED4634EF42A0E6E9F4C946DC /* Pods-gotrack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gotrack-dummy.m"; sourceTree = "<group>"; };
-		08F1229163C7F5E61C7C4B361510F11C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		089786DF4F4DE6AF0C48CF8EF6FFC2E8 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
 		20EB22BCD8699008DD1457721B328B1D /* Pods-gotrack-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-resources.sh"; sourceTree = "<group>"; };
-		37BA1C26ACD048FDA2FEB53053DBE6A0 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-gotrack.a"; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC42D61969B2862E211106E1627C78E /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		33BA3FA6FCA07909D31C9BF5BA5E0E32 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3E5E59F2D5BD647E94F6BB9C80403B1E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.debug.xcconfig"; sourceTree = "<group>"; };
-		70324FDF1FBB41BEA92DE76E00BD3E96 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		422E6937450876AD54F37284BD17F537 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		467C521F22414E2CE95F91DD3F06E880 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		4D766D70B6C0A0835E24D88351EFAA5C /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		72A4AA1B13D96BA386E49283880F9E79 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		7987B257BCBD058D9AFA1822F897FF79 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		7F965F8E8A74BA62622EE99213898040 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		83FD79E65683066F2696FCFF711E256F /* Pods-gotrack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gotrack-acknowledgements.plist"; sourceTree = "<group>"; };
 		89C943A520124FDE7835C3F900DD87BF /* Pods-gotrack-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gotrack-frameworks.sh"; sourceTree = "<group>"; };
+		8B5E95881F6D2B9992533FCE96BDC73A /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		8FBBC7919CACE2028DE8834FF8E3E337 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		908432B8A7B169385E188793943DEABB /* libMMDrawerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMMDrawerController.a; path = libMMDrawerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9710C0573721C73878FE42AC4BA980B7 /* libPods-gotrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-gotrack.a"; path = "libPods-gotrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE24ADC28780A7E746D8B12F188CC55 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
 		A17DDF779F3565F788477F3C104F8D4B /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
-		A92DFDA40F47C0FD221B2872C31099A1 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		AFD4D1E144CCB4285706E577C2602A44 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		B22C69ADCE7C9D529F11B17B4EF5E065 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		B77ADD92F0486415D2A81F43EFB9F08C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		B8415A644A37A2B302A004B63C531B89 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		BE806541A635BA24AA14F7DCFC108718 /* Pods-gotrack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gotrack-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F88E2A6AB865C2A1EB845B27A14348FA /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		C61B8A395618D42571EFDFCE1B6726D4 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		C97BBBF69C7400BE86B0E087F3AE7AB9 /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		D780222C1C2B9FFAD638AAB95586A9EC /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D339FDE7E6CBAC8F15802898D0056D23 /* Frameworks */ = {
+		8C9663D19EEE92721C2C154C8AC75839 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2A92083C505B426C07DCB145016A2C8 /* Foundation.framework in Frameworks */,
+				999F543CD75AF90671F015D41D40A8E6 /* Foundation.framework in Frameworks */,
+				D77389120E74211C48A13FB25271B11C /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9F8A61384C7E6EDC6695AA7E6574BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4BB5C2E9E7B7DEEC263441CAC369A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00B63D9B3EBC8ECAFD5DA8C24F1A42DF /* GooglePlaces */ = {
+		1CAAC3857B998D8DE5ACCB1E8A34E538 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				475420FA59EFC8377CF994A338979247 /* Frameworks */,
-				4F6C8AC648A5703DF2BEC96A882D19E9 /* Resources */,
+				33BA3FA6FCA07909D31C9BF5BA5E0E32 /* GooglePlaces.bundle */,
 			);
-			name = GooglePlaces;
-			path = GooglePlaces;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		1D67BA82B71B275CEF95585EC493C790 /* Targets Support Files */ = {
@@ -60,106 +103,143 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		26C94CF6FBD559155351548F2127E7DB /* GoogleMaps */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2F22323EA3B1ADB4F96376E3F709A68 /* Base */,
-				488E301C4ACDDA928635C4886F5F6158 /* Maps */,
-			);
-			name = GoogleMaps;
-			path = GoogleMaps;
-			sourceTree = "<group>";
-		};
-		34CD0D534108C48E88ED37BA2A12C446 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				37BA1C26ACD048FDA2FEB53053DBE6A0 /* libPods-gotrack.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		385FA015FFB9210F372AB1078B856AAB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				26C94CF6FBD559155351548F2127E7DB /* GoogleMaps */,
-				00B63D9B3EBC8ECAFD5DA8C24F1A42DF /* GooglePlaces */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		475420FA59EFC8377CF994A338979247 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				70324FDF1FBB41BEA92DE76E00BD3E96 /* GooglePlaces.framework */,
+				C7AB6F27FF3606F9360547F8F1977A63 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		488E301C4ACDDA928635C4886F5F6158 /* Maps */ = {
+		50885A0B82D18A1AC2FECE1867647F42 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				82CE66B3B7EC3F6274BF43A52FEEAE6E /* Frameworks */,
-				FAC5D957D919553947FEE0A96B739CC4 /* Resources */,
+				9DE24ADC28780A7E746D8B12F188CC55 /* MMDrawerController.xcconfig */,
+				C61B8A395618D42571EFDFCE1B6726D4 /* MMDrawerController-dummy.m */,
+				467C521F22414E2CE95F91DD3F06E880 /* MMDrawerController-prefix.pch */,
 			);
-			name = Maps;
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
 			sourceTree = "<group>";
 		};
-		4CFA8C2E94378AFFDBA3DF92FBE7E3DC /* Frameworks */ = {
+		55A429C0CA4F84A21E4008C5173BAC6F /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B22C69ADCE7C9D529F11B17B4EF5E065 /* GoogleMapsBase.framework */,
+				E1790F7D4E3901B80C7F042FC2FC2C53 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		57FA83ACD147B5EB7AA6CBF1E0B6826B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E5E59F2D5BD647E94F6BB9C80403B1E /* GoogleMaps.framework */,
+				B8415A644A37A2B302A004B63C531B89 /* GoogleMapsCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4F6C8AC648A5703DF2BEC96A882D19E9 /* Resources */ = {
+		70C42F515E93C90344A8387493AEE952 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				F88E2A6AB865C2A1EB845B27A14348FA /* GooglePlaces.bundle */,
+				DA91C7022BF411264E32B35241FF4F00 /* Frameworks */,
+				1CAAC3857B998D8DE5ACCB1E8A34E538 /* Resources */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				385FA015FFB9210F372AB1078B856AAB /* Pods */,
-				34CD0D534108C48E88ED37BA2A12C446 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				88C6777414CE7364037DAED58D0C3E5F /* Pods */,
+				D93AD38120031DF9BB7F020805C81BA7 /* Products */,
 				1D67BA82B71B275CEF95585EC493C790 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		82CE66B3B7EC3F6274BF43A52FEEAE6E /* Frameworks */ = {
+		88C6777414CE7364037DAED58D0C3E5F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				08F1229163C7F5E61C7C4B361510F11C /* GoogleMaps.framework */,
-				A92DFDA40F47C0FD221B2872C31099A1 /* GoogleMapsCore.framework */,
+				D7F1D3DA5DFF74D59D4E512BCB3C2AC7 /* GoogleMaps */,
+				70C42F515E93C90344A8387493AEE952 /* GooglePlaces */,
+				E7E7AEBCC209CE8D9FC068A409439FF8 /* MMDrawerController */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		B2F22323EA3B1ADB4F96376E3F709A68 /* Base */ = {
+		8DBDA8D55A548A72BB8D3127CB09AD70 /* MMDrawerBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				4CFA8C2E94378AFFDBA3DF92FBE7E3DC /* Frameworks */,
+				B77ADD92F0486415D2A81F43EFB9F08C /* MMDrawerBarButtonItem.h */,
+				4D766D70B6C0A0835E24D88351EFAA5C /* MMDrawerBarButtonItem.m */,
 			);
-			name = Base;
+			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		941C9C80246552B1F1D0EEED041FDA92 /* MMDrawerVisualStates */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				8FBBC7919CACE2028DE8834FF8E3E337 /* MMDrawerVisualState.h */,
+				2CC42D61969B2862E211106E1627C78E /* MMDrawerVisualState.m */,
+			);
+			name = MMDrawerVisualStates;
+			sourceTree = "<group>";
+		};
+		AD8EAE57D42AD65887D0E2B220656BCA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B5E95881F6D2B9992533FCE96BDC73A /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C0E90B4A9AD6913E448CC43B557BD378 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C97BBBF69C7400BE86B0E087F3AE7AB9 /* MMDrawerController.h */,
+				D780222C1C2B9FFAD638AAB95586A9EC /* MMDrawerController.m */,
+				089786DF4F4DE6AF0C48CF8EF6FFC2E8 /* MMDrawerController+Subclass.h */,
+				7F965F8E8A74BA62622EE99213898040 /* UIViewController+MMDrawerController.h */,
+				7987B257BCBD058D9AFA1822F897FF79 /* UIViewController+MMDrawerController.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */,
+				BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D7F1D3DA5DFF74D59D4E512BCB3C2AC7 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				55A429C0CA4F84A21E4008C5173BAC6F /* Base */,
+				EE112CAD454A1294C18647FC4AA2F218 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		D93AD38120031DF9BB7F020805C81BA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				908432B8A7B169385E188793943DEABB /* libMMDrawerController.a */,
+				9710C0573721C73878FE42AC4BA980B7 /* libPods-gotrack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA91C7022BF411264E32B35241FF4F00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				422E6937450876AD54F37284BD17F537 /* GooglePlaces.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,31 +259,93 @@
 			path = "Target Support Files/Pods-gotrack";
 			sourceTree = "<group>";
 		};
-		FAC5D957D919553947FEE0A96B739CC4 /* Resources */ = {
+		E1790F7D4E3901B80C7F042FC2FC2C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFD4D1E144CCB4285706E577C2602A44 /* GoogleMaps.bundle */,
+				72A4AA1B13D96BA386E49283880F9E79 /* GoogleMapsBase.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7E7AEBCC209CE8D9FC068A409439FF8 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				C0E90B4A9AD6913E448CC43B557BD378 /* Core */,
+				8DBDA8D55A548A72BB8D3127CB09AD70 /* MMDrawerBarButtonItem */,
+				941C9C80246552B1F1D0EEED041FDA92 /* MMDrawerVisualStates */,
+				FB3E06CC0FA268CF1F9537BD631DBFA3 /* Subclass */,
+				50885A0B82D18A1AC2FECE1867647F42 /* Support Files */,
+			);
+			name = MMDrawerController;
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		EE112CAD454A1294C18647FC4AA2F218 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				57FA83ACD147B5EB7AA6CBF1E0B6826B /* Frameworks */,
+				AD8EAE57D42AD65887D0E2B220656BCA /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		FB3E06CC0FA268CF1F9537BD631DBFA3 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subclass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CC69C2580B09E0F911A0E3FFE670F945 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA32A0D05EE28DA9CA7E9E24BEF2135E /* MMDrawerBarButtonItem.h in Headers */,
+				7D18984473F6E10EF09232A3DA6745F4 /* MMDrawerController+Subclass.h in Headers */,
+				CC1FA78F9025640B26D5EE393F03CD5B /* MMDrawerController.h in Headers */,
+				F2625B5D43189FE34FFA111D68414F42 /* MMDrawerVisualState.h in Headers */,
+				39AB26F92933572EDC87136FB6A128AD /* UIViewController+MMDrawerController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		10AF419FFD109D7635B17ECE52485363 /* Pods-gotrack */ = {
+		78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B6670523128C4A97C45D51F010C3DB4 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */;
+			buildConfigurationList = 6D879430EE2B868846ABCB49CD6E0652 /* Build configuration list for PBXNativeTarget "MMDrawerController" */;
 			buildPhases = (
-				539A166A4BDB086639276761F3F3E859 /* Sources */,
-				D339FDE7E6CBAC8F15802898D0056D23 /* Frameworks */,
+				CC334887182477966BA8839000DBF30F /* Sources */,
+				8C9663D19EEE92721C2C154C8AC75839 /* Frameworks */,
+				CC69C2580B09E0F911A0E3FFE670F945 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = MMDrawerController;
+			productName = MMDrawerController;
+			productReference = 908432B8A7B169385E188793943DEABB /* libMMDrawerController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8015EE66C430ABBEBA3650C74E4668FD /* Pods-gotrack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8046C5F83759A3488E726679DC3707D2 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */;
+			buildPhases = (
+				DE4F46CA852B6CE8E12F686A07F742AC /* Sources */,
+				DF9F8A61384C7E6EDC6695AA7E6574BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60860B78143359708378948D29BC0CA2 /* PBXTargetDependency */,
+			);
 			name = "Pods-gotrack";
 			productName = "Pods-gotrack";
-			productReference = 37BA1C26ACD048FDA2FEB53053DBE6A0 /* libPods-gotrack.a */;
+			productReference = 9710C0573721C73878FE42AC4BA980B7 /* libPods-gotrack.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -223,28 +365,74 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 34CD0D534108C48E88ED37BA2A12C446 /* Products */;
+			productRefGroup = D93AD38120031DF9BB7F020805C81BA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				10AF419FFD109D7635B17ECE52485363 /* Pods-gotrack */,
+				78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */,
+				8015EE66C430ABBEBA3650C74E4668FD /* Pods-gotrack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		539A166A4BDB086639276761F3F3E859 /* Sources */ = {
+		CC334887182477966BA8839000DBF30F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF86D3047ABAB7D7E810B9B68360CDF9 /* Pods-gotrack-dummy.m in Sources */,
+				8DC4E343B048206692EF96B42F98CA6B /* MMDrawerBarButtonItem.m in Sources */,
+				F04FB7CC6732BF3F167D86DA7DD08B3A /* MMDrawerController-dummy.m in Sources */,
+				A1A217BEC95999B773C51C532D19BF9A /* MMDrawerController.m in Sources */,
+				5A48A08B3A3531230D54F398FADB18A1 /* MMDrawerVisualState.m in Sources */,
+				AA0251C21913E03E33FABE1F0A04F934 /* UIViewController+MMDrawerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4F46CA852B6CE8E12F686A07F742AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED95B71278C17EFABBF55498B25CB5D1 /* Pods-gotrack-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		60860B78143359708378948D29BC0CA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MMDrawerController;
+			target = 78D29FDDA61F65D7244C402E10584DB5 /* MMDrawerController */;
+			targetProxy = 29347FF5D6FBE4E5DF84386B9938E30D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		B3EB13D16291B38C9C6AFB8363D1AE78 /* Release */ = {
+		1064935B67EAE5AE55D5E542A6763869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE24ADC28780A7E746D8B12F188CC55 /* MMDrawerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2AEAEBAB3F6075D58B0F7B263DFDFAAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A17DDF779F3565F788477F3C104F8D4B /* Pods-gotrack.release.xcconfig */;
 			buildSettings = {
@@ -266,29 +454,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		C502FD6EA3602407D738C66B85260B3E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -334,6 +499,53 @@
 			};
 			name = Debug;
 		};
+		D289E9DEE05D927250CBB456B95C5AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FFDF491F51801874EE763401FE42CC9 /* Pods-gotrack.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D9E36E63BECC13C92D8ADFB1EE87EC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE24ADC28780A7E746D8B12F188CC55 /* MMDrawerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -377,20 +589,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B6670523128C4A97C45D51F010C3DB4 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C502FD6EA3602407D738C66B85260B3E /* Debug */,
-				B3EB13D16291B38C9C6AFB8363D1AE78 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */,
 				ED4FC68AB2A4E06C718CFF338F6F156B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D879430EE2B868846ABCB49CD6E0652 /* Build configuration list for PBXNativeTarget "MMDrawerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1064935B67EAE5AE55D5E542A6763869 /* Debug */,
+				D9E36E63BECC13C92D8ADFB1EE87EC23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8046C5F83759A3488E726679DC3707D2 /* Build configuration list for PBXNativeTarget "Pods-gotrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D289E9DEE05D927250CBB456B95C5AA9 /* Debug */,
+				2AEAEBAB3F6075D58B0F7B263DFDFAAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

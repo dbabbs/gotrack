@@ -6,15 +6,29 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - MMDrawerController (~> 0.5.7)
 
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
 
-PODFILE CHECKSUM: 3475c43be3eb70718c54c38b9413424e1d28b981
+PODFILE CHECKSUM: ab94e3be95dee2c4cd43b8f2d49e8aa5957d3c18
 
 COCOAPODS: 1.1.1
