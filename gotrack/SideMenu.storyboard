@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Side Menu View Controller-->
         <scene sceneID="qyq-3S-Ajx">
             <objects>
-                <viewController id="W2w-3o-P8S" customClass="HomeViewController" customModule="gotrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="W2w-3o-P8S" customClass="SideMenuViewController" customModule="gotrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="boA-zC-5EO"/>
                         <viewControllerLayoutGuide type="bottom" id="i83-Kq-61M"/>
@@ -22,6 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuStoryboardName" value="HamburgerMenu"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="mainContentStoryboardName" value="Main"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8f-gn-ghX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

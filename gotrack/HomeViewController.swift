@@ -17,9 +17,23 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = mainStoryboard.instantiateInitialViewController()!
+
+        let leftMenuStoryboard = UIStoryboard(name: "HamburgerMenu", bundle: nil)
+        let leftMenuVC = leftMenuStoryboard.instantiateInitialViewController()!
+
+        let masterVC = RESideMenu(contentViewController: mainVC,
+                                  leftMenuViewController: leftMenuVC,
+                                  rightMenuViewController: nil)!
+
+
+        self.present(masterVC, animated: false, completion: {
+            masterVC.presentLeftMenuViewController()
+        })
     }
     
 
