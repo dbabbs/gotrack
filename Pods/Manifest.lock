@@ -18,17 +18,20 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
+  - RESideMenu (4.0.7)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MMDrawerController (~> 0.5.7)
+  - RESideMenu (~> 4.0.7)
 
 SPEC CHECKSUMS:
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
 
-PODFILE CHECKSUM: ab94e3be95dee2c4cd43b8f2d49e8aa5957d3c18
+PODFILE CHECKSUM: 9d158b0b4512d7280321ef53e8ec534d85d5165f
 
 COCOAPODS: 1.1.1
