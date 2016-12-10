@@ -14,6 +14,7 @@
 		94D29A2D1DF7B330002955BB /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2C1DF7B330002955BB /* MockDB.swift */; };
 		94D29A321DF7B9BE002955BB /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A311DF7B9BE002955BB /* TripsModule.swift */; };
 		94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A331DF7BAEB002955BB /* Utilities.swift */; };
+		94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A351DF7D5A0002955BB /* MainViewController.swift */; };
 		A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */; };
 		A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */; };
 		A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		94D29A2C1DF7B330002955BB /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
 		94D29A311DF7B9BE002955BB /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
 		94D29A331DF7BAEB002955BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		94D29A351DF7D5A0002955BB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A49C6C451DEEAFAF00622ACC /* gotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				94D29A2C1DF7B330002955BB /* MockDB.swift */,
 				94D29A311DF7B9BE002955BB /* TripsModule.swift */,
 				94D29A331DF7BAEB002955BB /* Utilities.swift */,
+				94D29A351DF7D5A0002955BB /* MainViewController.swift */,
 			);
 			name = "Keegans Code";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */,
