@@ -13,10 +13,11 @@
 		948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F367F1DFCC7EC00E3525A /* TripsModule.swift */; };
 		948F36821DFCC80D00E3525A /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36811DFCC80D00E3525A /* MockDB.swift */; };
 		948F36841DFCD51D00E3525A /* WelcomeRedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */; };
+		948F36881DFCF35600E3525A /* HamburgerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36871DFCF35600E3525A /* HamburgerMenuViewController.swift */; };
 		94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */; };
 		94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A331DF7BAEB002955BB /* Utilities.swift */; };
 		94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A351DF7D5A0002955BB /* MainViewController.swift */; };
-		94EDD0E31DFCB69E0007D5A8 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0E21DFCB69E0007D5A8 /* SideMenu.storyboard */; };
+		94EDD0E31DFCB69E0007D5A8 /* SideMenuRedirect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0E21DFCB69E0007D5A8 /* SideMenuRedirect.storyboard */; };
 		94EDD0E51DFCB77C0007D5A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDD0E41DFCB77C0007D5A8 /* HomeViewController.swift */; };
 		94EDD0E81DFCBF820007D5A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0E71DFCBF820007D5A8 /* Home.storyboard */; };
 		94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */; };
@@ -55,11 +56,12 @@
 		948F367F1DFCC7EC00E3525A /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
 		948F36811DFCC80D00E3525A /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
 		948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRedirectViewController.swift; sourceTree = "<group>"; };
+		948F36871DFCF35600E3525A /* HamburgerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewController.swift; sourceTree = "<group>"; };
 		94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HamburgerMenu.storyboard; sourceTree = "<group>"; };
 		94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		94D29A331DF7BAEB002955BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		94D29A351DF7D5A0002955BB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		94EDD0E21DFCB69E0007D5A8 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		94EDD0E21DFCB69E0007D5A8 /* SideMenuRedirect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenuRedirect.storyboard; sourceTree = "<group>"; };
 		94EDD0E41DFCB77C0007D5A8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94EDD0E71DFCBF820007D5A8 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 		94D29A291DF7B2B3002955BB /* Keegans Code */ = {
 			isa = PBXGroup;
 			children = (
-				94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */,
 				94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */,
 				948F36811DFCC80D00E3525A /* MockDB.swift */,
 				94D29A351DF7D5A0002955BB /* MainViewController.swift */,
@@ -133,7 +134,8 @@
 		94EDD0E91DFCBFC20007D5A8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				94EDD0E21DFCB69E0007D5A8 /* SideMenu.storyboard */,
+				94D29A271DF7B126002955BB /* HamburgerMenu.storyboard */,
+				94EDD0E21DFCB69E0007D5A8 /* SideMenuRedirect.storyboard */,
 				94EDD0E71DFCBF820007D5A8 /* Home.storyboard */,
 				94EDD0EC1DFCC4640007D5A8 /* Welcome.storyboard */,
 			);
@@ -147,6 +149,7 @@
 				94EDD0E41DFCB77C0007D5A8 /* HomeViewController.swift */,
 				94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */,
 				948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */,
+				948F36871DFCF35600E3525A /* HamburgerMenuViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -331,7 +334,7 @@
 				A49C6C501DEEAFAF00622ACC /* Assets.xcassets in Resources */,
 				A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */,
 				94EDD0ED1DFCC4640007D5A8 /* Welcome.storyboard in Resources */,
-				94EDD0E31DFCB69E0007D5A8 /* SideMenu.storyboard in Resources */,
+				94EDD0E31DFCB69E0007D5A8 /* SideMenuRedirect.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +409,7 @@
 			files = (
 				94EDD0F01DFCC4A90007D5A8 /* WelcomeViewController.swift in Sources */,
 				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
+				948F36881DFCF35600E3525A /* HamburgerMenuViewController.swift in Sources */,
 				948F36841DFCD51D00E3525A /* WelcomeRedirectViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
