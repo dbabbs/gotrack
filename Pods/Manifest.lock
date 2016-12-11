@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
@@ -21,17 +24,29 @@ PODS:
   - RESideMenu (4.0.7)
 
 DEPENDENCIES:
+  - Charts (from `https://github.com/danielgindi/Charts.git`, branch `master`)
   - GoogleMaps
   - GooglePlaces
   - MMDrawerController (~> 0.5.7)
   - RESideMenu (~> 4.0.7)
 
+EXTERNAL SOURCES:
+  Charts:
+    :branch: master
+    :git: https://github.com/danielgindi/Charts.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: 5d9c81ab7f440e231c6d283c517eaabc2ba4bb4e
+    :git: https://github.com/danielgindi/Charts.git
+
 SPEC CHECKSUMS:
+  Charts: e1c22ca0f52867fadf8ee16ff723dfb0b464eb91
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
 
-PODFILE CHECKSUM: c724af742514db090670fbc5ff3e52a3f4965dae
+PODFILE CHECKSUM: 21fcd1c321a38cf063ab36d7ff8a187e3c8ff393
 
 COCOAPODS: 1.1.1
