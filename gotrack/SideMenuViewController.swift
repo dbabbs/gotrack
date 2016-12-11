@@ -11,12 +11,17 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
 
-    @IBInspectable let mainContentStoryboardName: String = "Main"
-    @IBInspectable let leftMenuStoryboardName: String? = nil
-    @IBInspectable let rightMenuStoryboardName: String? = nil
+    @IBInspectable var mainContentStoryboardName: String? = nil
+    @IBInspectable var leftMenuStoryboardName: String? = nil
+    @IBInspectable var rightMenuStoryboardName: String? = nil
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        guard let mainContentStoryboardName = mainContentStoryboardName else {
+            Log.error(in: self, because: "side menu requires a storyboard name for its main content")
+            return
+        }
 
         let mainStoryboard = UIStoryboard(name: mainContentStoryboardName, bundle: nil)
         let mainVC = mainStoryboard.instantiateInitialViewController()!
@@ -38,9 +43,6 @@ class SideMenuViewController: UIViewController {
                                   rightMenuViewController: rightMenuVC)!
 
 
-        self.present(masterVC, animated: false, completion: {
-            masterVC.presentLeftMenuViewController()
-        })
+        self.present(masterVC, animated: false, completion: nil)
     }
-
 }

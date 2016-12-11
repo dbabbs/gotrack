@@ -24,7 +24,7 @@
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftMenuStoryboardName" value="HamburgerMenu"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="mainContentStoryboardName" value="Main"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="mainContentStoryboardName" value="Home"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8f-gn-ghX" userLabel="First Responder" sceneMemberID="firstResponder"/>
