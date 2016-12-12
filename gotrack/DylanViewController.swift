@@ -13,7 +13,6 @@ import RealmSwift
 
 class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
-    //ians code
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
@@ -32,9 +31,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         //change stat indicator values
-        self.distanceDisplay.text = "45"
-        self.timeDisplay.text = "38"
-        self.velocityDisplay.text = "62"
+        
         
         //current date
         let dateFormatter = DateFormatter()
@@ -44,26 +41,18 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.dateDisplay.text = convertedDate
         
         //adds Google Maps tile
-        //NOTE: delete and replace with Ian's google maps
         let camera = GMSCameraPosition.camera(withLatitude: 47.6537227, longitude: -122.31218, zoom: 12.0)
         viewMap.camera = camera
-        
-        //begin import of Ian's code
         viewMap.settings.myLocationButton = true
-        
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
         
-        startTracking()
+        startTracking() //begin tracking
+        updateChartWithData() //update chart
         
-        //this code below #breaksbuild
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
         })
-        
 
-        //add chart
-        updateChartWithData()
-        
         //add hamburger button
         let image = UIImage(named: "HamburgerMenu") as UIImage?
         let button   = UIButton(type: UIButtonType.custom) as UIButton
@@ -82,19 +71,29 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
         // Track location and move map with center
         self.tracking = true
-        
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
         viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
         //NSLog("Latitude: \(location.coordinate.latitude), Longitude \(location.coordinate.longitude)")
-        
         if tracking {
             // Record each location for a new run
             locations.append(location)
             addPath(location : location)
+            updateChartWithData()
+            updateCounters()
         }
+    }
+    
+    var mileCount = 0.0
+    var timeCount = 0.0
+    func updateCounters() {
+        mileCount += 0.5
+        timeCount += 1.12
+        self.distanceDisplay.text = "\(mileCount)"
+        self.timeDisplay.text = "\(timeCount)"
+        self.velocityDisplay.text = "\(mileCount / timeCount)"
+
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
@@ -168,13 +167,42 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    var fakeDataOne : [Int] = []
+    var fakeDataTwo : [Int] = []
     
     
     func updateChartWithData() {
         var barEntries: [BarChartDataEntry] = []
         var lineEntries: [ChartDataEntry] = []
-        var fakeDataOne = [5, 3, 6, 3, 8, 2, 3, 6, 4, 3, 6, 3]
-        var fakeDataTwo = [2, 1, 3, 8, 4, 8, 4, 3, 2, 1, 7, 2]
+        //var fakeDataOne = [5, 3, 6, 3, 8, 2, 3, 6, 4, 3, 6, 3]
+        //var fakeDataTwo = [2, 1, 3, 8, 4, 8, 4, 3, 2, 1, 7, 2]
+
+       /* do {
+            let realm = try Realm()
+            let run = realm.objects(Run.self)
+            
+            print("at least we got here")
+            for (index, element) in run.enumerated(){
+                //print("did we get here, tho?")
+                let trip = run[index]
+                //print("print this trip \(trip)")
+                let firstTime = trip.timestamp
+                //print("first time is: \(firstTime)")
+                
+                let locations = trip.locations
+                print("printing locations: \(locations)")
+                //let specificLat = locations[3].latitude
+                //print("printing specificLat: \(specificLat)")
+                //let lastTime = locations[locations.endIndex].timestamp
+            }
+            
+        } catch let error as NSError {
+            print("FUCK IT BROKE AGAIN")
+            fatalError(error.localizedDescription)
+        }*/
+        
+        fakeDataOne.append(Int(arc4random_uniform(6) + 1))
+        fakeDataTwo.append(Int(arc4random_uniform(4) + 1))
         
         for i in 0..<fakeDataOne.count {
             let barEntry = BarChartDataEntry(x: Double(i), y: Double(fakeDataOne[i]))
