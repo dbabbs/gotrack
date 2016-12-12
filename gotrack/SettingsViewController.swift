@@ -8,30 +8,28 @@
 
 import UIKit
 import FacebookLogin
+import FacebookCore
+
+
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var connectToFBButton: UIButton!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        
+        
+        
     }
     
-    /*@IBAction func connectFB(_ sender: UIButton) {
-        let loginManager = LoginManager()
-        loginManager.logIn([ .PublicProfile ], viewController: self) { loginResult in
-            switch loginResult {
-            case .Failed(let error): 
-                print(error)
-            case .Cancelled:
-                print("User cancelled login.")
-            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Logged in!")
-            }
-        }
-    }*/
+
 
 
     override func didReceiveMemoryWarning() {

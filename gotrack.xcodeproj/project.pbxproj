@@ -33,6 +33,10 @@
 		A49C6C531DEEAFAF00622ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C511DEEAFAF00622ACC /* LaunchScreen.storyboard */; };
 		A49C6C5E1DEEAFAF00622ACC /* gotrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C5D1DEEAFAF00622ACC /* gotrackTests.swift */; };
 		A49C6C691DEEAFAF00622ACC /* gotrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C681DEEAFAF00622ACC /* gotrackUITests.swift */; };
+		A4BE3B1D1DFF3C0F00280263 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE3B191DFF3C0F00280263 /* Bolts.framework */; };
+		A4BE3B1E1DFF3C0F00280263 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE3B1A1DFF3C0F00280263 /* FBSDKCoreKit.framework */; };
+		A4BE3B1F1DFF3C0F00280263 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE3B1B1DFF3C0F00280263 /* FBSDKLoginKit.framework */; };
+		A4BE3B201DFF3C0F00280263 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE3B1C1DFF3C0F00280263 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,10 @@
 		A49C6C641DEEAFAF00622ACC /* gotrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gotrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C681DEEAFAF00622ACC /* gotrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gotrackUITests.swift; sourceTree = "<group>"; };
 		A49C6C6A1DEEAFAF00622ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4BE3B191DFF3C0F00280263 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A4BE3B1A1DFF3C0F00280263 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A4BE3B1B1DFF3C0F00280263 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A4BE3B1C1DFF3C0F00280263 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +103,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69C95C77DEE5BEAEDF29E6BC /* Pods_gotrack.framework in Frameworks */,
+				A4BE3B1E1DFF3C0F00280263 /* FBSDKCoreKit.framework in Frameworks */,
+				A4BE3B201DFF3C0F00280263 /* FBSDKShareKit.framework in Frameworks */,
+				A4BE3B1F1DFF3C0F00280263 /* FBSDKLoginKit.framework in Frameworks */,
+				A4BE3B1D1DFF3C0F00280263 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +130,10 @@
 		481734ACA67880FED5B2AF36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4BE3B191DFF3C0F00280263 /* Bolts.framework */,
+				A4BE3B1A1DFF3C0F00280263 /* FBSDKCoreKit.framework */,
+				A4BE3B1B1DFF3C0F00280263 /* FBSDKLoginKit.framework */,
+				A4BE3B1C1DFF3C0F00280263 /* FBSDKShareKit.framework */,
 				6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */,
 			);
 			name = Frameworks;
@@ -306,6 +322,7 @@
 				TargetAttributes = {
 					A49C6C441DEEAFAF00622ACC = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 4Q874DC73G;
 						ProvisioningStyle = Automatic;
 					};
 					A49C6C581DEEAFAF00622ACC = {
@@ -590,13 +607,14 @@
 			baseConfigurationReference = BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4Q874DC73G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gotrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.babbs.gotrack;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.babbs.gotrack-iphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -608,13 +626,14 @@
 			baseConfigurationReference = 603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4Q874DC73G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gotrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.babbs.gotrack;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.babbs.gotrack-iphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;

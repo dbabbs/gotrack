@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
 class MenuViewController: UIViewController {
 
@@ -17,16 +20,36 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Profile name
-        userName.text = "Dylan Babbs"
+        getFacebookUserInfo()
         
-        //Profile image
-        userImage.image = UIImage(named:"babbs")
-        userImage.layer.masksToBounds = false
-        userImage.layer.cornerRadius = userImage.frame.height/2
-        userImage.clipsToBounds = true
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func getFacebookUserInfo() {
+        if(FBSDKAccessToken.current() != nil) {
+            //print permissions, such as public_profile
+            print(FBSDKAccessToken.current().permissions)
+            let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
+            let connection = FBSDKGraphRequestConnection()
+            
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                //self.label.text = data["name"] as? String
+                
+                let FBid = data["id"] as? String
+                let FBname = data["name"] as? String
+                print("my fb name is \(FBname)")
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                self.userImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                self.userImage.layer.masksToBounds = false
+                self.userImage.layer.cornerRadius = self.userImage.frame.height/2
+                self.userImage.clipsToBounds = true
+                self.userName.text = FBname
+            })
+            connection.start()
+        }
     }
 
     override func didReceiveMemoryWarning() {
