@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010798261DFF5147003F0878 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010798251DFF5147003F0878 /* History.storyboard */; };
 		3CE529371DFCF337005465D6 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE529361DFCF337005465D6 /* DataObjects.swift */; };
 		69C95C77DEE5BEAEDF29E6BC /* Pods_gotrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */; };
 		948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010798251DFF5147003F0878 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		3CE529361DFCF337005465D6 /* DataObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
 		6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gotrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 				A49C6C4F1DEEAFAF00622ACC /* Assets.xcassets */,
 				A49C6C511DEEAFAF00622ACC /* LaunchScreen.storyboard */,
 				A49C6C541DEEAFAF00622ACC /* Info.plist */,
+				010798251DFF5147003F0878 /* History.storyboard */,
 			);
 			path = gotrack;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */,
 				94EDD0ED1DFCC4640007D5A8 /* SignIn.storyboard in Resources */,
 				94EDD0E31DFCB69E0007D5A8 /* SideMenu.storyboard in Resources */,
+				010798261DFF5147003F0878 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
