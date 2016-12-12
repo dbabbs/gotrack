@@ -24,6 +24,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         let camera = GMSCameraPosition.camera(withLatitude: -33.868, longitude: 151.2086, zoom: 16)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        
+        
+        
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
         // Listen to the myLocation property of GMSMapView.

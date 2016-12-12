@@ -9,8 +9,16 @@
 import UIKit
 import Charts
 import GoogleMaps
+import RealmSwift
 
-class DylanViewController: UIViewController {
+class DylanViewController: UIViewController, CLLocationManagerDelegate {
+    
+    //ians code
+    var locationManager = CLLocationManager()
+    var locations = [CLLocation]()
+    var trackStartTimeStamp : Date? = nil
+    var path = GMSMutablePath()
+    var tracking = false
 
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var combinedChartView: CombinedChartView!
@@ -39,16 +47,19 @@ class DylanViewController: UIViewController {
         //NOTE: delete and replace with Ian's google maps
         let camera = GMSCameraPosition.camera(withLatitude: 47.6537227, longitude: -122.31218, zoom: 12.0)
         viewMap.camera = camera
-        let longitude = [-122.3121886, -122.3122403, -122.3345819]
-        let latitude = [47.653000429, 47.653029682, 47.644558009]
-        let path = GMSMutablePath()
-        for i in 1...latitude.count - 1 {
-            path.add(CLLocationCoordinate2D(latitude: latitude[i], longitude: longitude[i]))
-        }
-        let polyline = GMSPolyline(path: path)
-        polyline.map = viewMap
-        polyline.strokeWidth = 3
-        polyline.geodesic = true
+        
+        //begin import of Ian's code
+        viewMap.settings.myLocationButton = true
+        
+        viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
+        
+        startTracking()
+        
+        //this code below #breaksbuild
+        DispatchQueue.main.async(execute: {() -> Void in
+            self.viewMap.isMyLocationEnabled = true
+        })
+        
 
         //add chart
         updateChartWithData()
@@ -59,8 +70,105 @@ class DylanViewController: UIViewController {
         button.frame = CGRect(x: 15, y: 20, width: 45, height: 45)
         button.setImage(image, for: .normal)
         self.view.addSubview(button)
-        //button.addTarget(self, action: #selector(self.hamburger), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+        
+        //add stop button
+        let stopButton = UIButton(frame: CGRect(x: 325, y: 20, width: 44, height: 30))
+        stopButton.backgroundColor = UIColor.red
+        stopButton.setTitle("Stop", for: .normal)
+        stopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+        stopButton.layer.cornerRadius = 8.0;
+        self.view.addSubview(stopButton)
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        // Track location and move map with center
+        self.tracking = true
+        
+        let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
+        viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
+        //NSLog("Latitude: \(location.coordinate.latitude), Longitude \(location.coordinate.longitude)")
+        
+        if tracking {
+            // Record each location for a new run
+            locations.append(location)
+            addPath(location : location)
+        }
+    }
+    
+    @IBAction func stopButtonPressed(_ sender: UIButton) {
+        stopTracking()
+        saveTracking()
+    }
+    
+    deinit {
+        viewMap.removeObserver(self, forKeyPath: "myLocation", context: nil)
+    }
+    
+    
+    func addPath(location : CLLocation) -> Void {
+        self.path.add(location.coordinate)
+        let polyline = GMSPolyline(path: path)
+        polyline.map = viewMap
+        polyline.strokeWidth = 3
+        polyline.geodesic = true
+    }
+    
+    func startTracking() {
+        // Begins getting location data until stopped
+        //self.locationManager.startUpdatingLocation()
+        self.locations.removeAll(keepingCapacity: false)
+        self.tracking = true
+        self.trackStartTimeStamp = NSDate() as Date
+    }
+    
+    func stopTracking() {
+        self.tracking = false
+        
+    }
+    
+    func saveTracking() -> Void {
+        print("1")
+        
+        let newRun = Run()
+        newRun.timestamp = Date()
+        
+        
+        for location in locations {
+            print("2")
+            
+            let newLocation = Location()
+            newLocation.latitude = Float(location.coordinate.latitude)
+            newLocation.longitude = Float(location.coordinate.longitude)
+            newLocation.save()
+            newRun.locations.append(newLocation)
+        }
+        
+        newRun.save()
+        
+        // Fetch data
+        do{
+            let realm = try Realm()
+            let allRuns = realm.objects(Run.self)
+            print(allRuns)
+            
+            for run in allRuns {
+                NSLog("Run at: \(run.timestamp)")
+                for location in run.locations {
+                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
+                    
+                }
+            }
+            
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+        
+    }
+    
+    
     
     func updateChartWithData() {
         var barEntries: [BarChartDataEntry] = []
