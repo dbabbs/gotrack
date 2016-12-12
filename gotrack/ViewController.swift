@@ -35,7 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
         
-        // Start the run
+        // Start the Run
         // TODO: Place button here to start run
         startTracking()
         
@@ -120,10 +120,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             for run in allRuns {
                 NSLog("Run at: \(run.timestamp)")
                 for location in run.locations {
+                    NSLog("Current timestamp: \(location.timestamp)")
                     NSLog("Coordinates: \(location.latitude), \(location.longitude)")
                     
                 }
             }
+            
             
             
         } catch let error as NSError {

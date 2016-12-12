@@ -138,6 +138,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             print("2")
             
             let newLocation = Location()
+            newLocation.timestamp = Date()
             newLocation.latitude = Float(location.coordinate.latitude)
             newLocation.longitude = Float(location.coordinate.longitude)
             newLocation.save()
@@ -152,14 +153,51 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             let allRuns = realm.objects(Run.self)
             print(allRuns)
             
+            var index = 0
             for run in allRuns {
-                NSLog("Run at: \(run.timestamp)")
+                let timeOne = run.timestamp
+
+                NSLog("Run at:  \(index) at: \(run.timestamp)")
+                var locationIndex = 1
+                
+                
+                let coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
+                var distanceInMeters : Double = 0.0
+                
                 for location in run.locations {
+
+                    
+                    let endIndex = run.locations.endIndex
+                    print(endIndex)
+                    
+                    
+                    let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+
+                    NSLog("test of coordinate two \(coordinateTwo)")
+               
+                    distanceInMeters += coordinateOne.distance(from: coordinateTwo)
+                    NSLog("Test of distance calc \(distanceInMeters)")
+                    
+                    NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
                     NSLog("Coordinates: \(location.latitude), \(location.longitude)")
                     
+                    if (locationIndex == endIndex){
+                        NSLog("Final timestamp:  \(location.timestamp)")
+                        let timeTwo = location.timestamp
+                        
+                        let seconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
+                        NSLog("difference in seconds \(seconds)")
+                    }
+                    
+                    locationIndex+=1
+                    
                 }
+                
+                index+=1
+                
             }
-            
+
+    
             
         } catch let error as NSError {
             fatalError(error.localizedDescription)
@@ -167,6 +205,12 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        return components.second!
+    }
+
     var fakeDataOne : [Int] = []
     var fakeDataTwo : [Int] = []
     
