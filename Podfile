@@ -1,5 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target 'gotrack' do
+   use_frameworks!
+   pod 'FacebookCore'
+   pod 'FacebookLogin'
+   pod 'FacebookShare'
   use_frameworks!
   pod 'GoogleMaps'
   pod 'GooglePlaces'

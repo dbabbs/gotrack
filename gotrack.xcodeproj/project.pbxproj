@@ -21,6 +21,8 @@
 		94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */; };
 		94EDD0ED1DFCC4640007D5A8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0EC1DFCC4640007D5A8 /* SignIn.storyboard */; };
 		94EDD0F01DFCC4A90007D5A8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDD0EF1DFCC4A90007D5A8 /* SignInViewController.swift */; };
+		A40B33721DFE82540066EADA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B33711DFE82540066EADA /* MenuViewController.swift */; };
+		A40B33741DFE89E20066EADA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B33731DFE89E20066EADA /* SettingsViewController.swift */; };
 		A4341A6E1DFCCB51007E91FA /* Dylan-storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4341A6D1DFCCB51007E91FA /* Dylan-storyboard.storyboard */; };
 		A4341A701DFCCCF6007E91FA /* DylanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */; };
 		A4341A721DFCD898007E91FA /* onboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4341A711DFCD898007E91FA /* onboardViewController.swift */; };
@@ -66,6 +68,8 @@
 		94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		94EDD0EC1DFCC4640007D5A8 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		94EDD0EF1DFCC4A90007D5A8 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A40B33711DFE82540066EADA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A40B33731DFE89E20066EADA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A4341A6D1DFCCB51007E91FA /* Dylan-storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Dylan-storyboard.storyboard"; sourceTree = "<group>"; };
 		A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DylanViewController.swift; sourceTree = "<group>"; };
 		A4341A711DFCD898007E91FA /* onboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboardViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				A4341A6D1DFCCB51007E91FA /* Dylan-storyboard.storyboard */,
+				A40B33711DFE82540066EADA /* MenuViewController.swift */,
+				A40B33731DFE89E20066EADA /* SettingsViewController.swift */,
 				A4341A711DFCD898007E91FA /* onboardViewController.swift */,
 				A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */,
 			);
@@ -422,10 +428,12 @@
 				94EDD0F01DFCC4A90007D5A8 /* SignInViewController.swift in Sources */,
 				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
+				A40B33721DFE82540066EADA /* MenuViewController.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */,
 				A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */,
 				948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */,
+				A40B33741DFE89E20066EADA /* SettingsViewController.swift in Sources */,
 				94EDD0E51DFCB77C0007D5A8 /* HomeViewController.swift in Sources */,
 				94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */,
 				A4341A721DFCD898007E91FA /* onboardViewController.swift in Sources */,
@@ -582,6 +590,10 @@
 			baseConfigurationReference = BE586CE3DD9CEC2FD04C46EF /* Pods-gotrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = gotrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbs.gotrack;
@@ -596,6 +608,10 @@
 			baseConfigurationReference = 603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = gotrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.babbs.gotrack;
