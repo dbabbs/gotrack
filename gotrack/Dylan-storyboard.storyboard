@@ -371,7 +371,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <segue destination="BiE-dh-8US" kind="show" id="UBp-p9-guA"/>
+                                                    <segue destination="BiE-dh-8US" kind="show" identifier="settingsViewSegue" id="UBp-p9-guA"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>

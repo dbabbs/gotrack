@@ -16,6 +16,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var userImage: UIImageView!
     
+    let settingsSegueIdentifier = "settingsViewSegue"
+    
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var cityStateLabel: UILabel!
@@ -71,9 +73,11 @@ class MenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         print("sender: \(segue.identifier)")
-        let destinationVC = segue.destination as! SettingsViewController
+        if segue.identifier == settingsSegueIdentifier {
+            let destinationVC = segue.destination as! SettingsViewController
         
-        destinationVC.cityStateLabelString = cityStateLabelString
+            destinationVC.cityStateLabelString = cityStateLabelString
+        }
 
     }
     
