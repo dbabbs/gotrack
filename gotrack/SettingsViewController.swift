@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var connectToFBButton: UIButton!
     
-
+    var cityStateLabelString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
-        
+        print(cityStateLabelString)
         
     }
     
@@ -38,14 +38,17 @@ class SettingsViewController: UIViewController {
     }
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! MenuViewController
+        
+        destinationVC.cityStateLabelString = cityStateLabelString
     }
-    */
+    
 
 }

@@ -11,17 +11,27 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 
+
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var userImage: UIImageView!
     
     @IBOutlet weak var userName: UILabel!
     
+    @IBOutlet weak var cityStateLabel: UILabel!
+    
+    var cityStateLabelString = "Unknown Location"
+    
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        cityStateLabel.text = cityStateLabelString
         getFacebookUserInfo()
-        
+        var city = LocationStruct(city:cityStateLabelString)
+        print(city)
     }
     
     
@@ -57,20 +67,21 @@ class MenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     
-    
-    
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        print("sender: \(segue.identifier)")
+        let destinationVC = segue.destination as! SettingsViewController
+        
+        destinationVC.cityStateLabelString = cityStateLabelString
+
     }
-    */
+    
 
 }
