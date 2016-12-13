@@ -2,49 +2,44 @@
 //  HomeViewController.swift
 //  gotrack
 //
-//  Created by Keegs on 12/10/16.
+//  Created by Keegs on 12/13/16.
 //  Copyright © 2016 Babbs, Dylan. All rights reserved.
 //
 
-import RESideMenu
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: DylanViewController {
+
+    //------------------------------------------------------------
+    // UIViewController overrides
+    //------------------------------------------------------------
 
     override func viewDidLoad() {
+        Log.info(in: self, "viewDidLoad")
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        Log.info(in: self, "viewWillAppear")
+        super.viewWillAppear(animated)
 
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = mainStoryboard.instantiateInitialViewController()!
-
-        let leftMenuStoryboard = UIStoryboard(name: "HamburgerMenu", bundle: nil)
-        let leftMenuVC = leftMenuStoryboard.instantiateInitialViewController()!
-
-        let masterVC = RESideMenu(contentViewController: mainVC,
-                                  leftMenuViewController: leftMenuVC,
-                                  rightMenuViewController: nil)!
-
-
-        self.present(masterVC, animated: false, completion: {
-            masterVC.presentLeftMenuViewController()
-        })
+        // hide navigation bar on this page
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func viewWillDisappear(_ animated: Bool) {
+        Log.info(in: self, "viewWillDisappear")
+        super.viewWillDisappear(animated)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // show navigation bar on other pages
+        self.navigationController?.navigationBar.isHidden = false
     }
-    */
 
+    //------------------------------------------------------------
+    // IBAction methods
+    //------------------------------------------------------------
+
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        self.sideMenuViewController?.presentLeftMenuViewController()
+    }
 }

@@ -1,15 +1,16 @@
 //
-//  SignInViewController.swift
-//  gotrack
+//  NewViewController.swift
+//  HistoryViewController
 //
-//  Created by Keegs on 12/10/16.
-//  Copyright © 2016 Babbs, Dylan. All rights reserved.
+//  Created by Zhanna Voloshina on 12/12/16.
+//  Copyright © 2016 Zhanna Voloshina. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class NewViewController: ViewController {
 
+    @IBOutlet weak var sampleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

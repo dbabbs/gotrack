@@ -12,11 +12,14 @@ import GoogleMaps
 import RealmSwift
 
 class DylanViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var backgroundRect: UILabel!
+
+    @IBOutlet weak var backgroundRect: UIView!
     
     @IBOutlet weak var velocityText: UILabel!
     @IBOutlet weak var timetext: UILabel!
     @IBOutlet weak var yardText: UILabel!
+
+    let createNewBurgerMenu = false
     
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
@@ -76,14 +79,16 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
         })
-
+        
         //add hamburger button
-        var image = (UIImage(named: "burger") as UIImage?)!
-        let button   = UIButton(type: UIButtonType.custom) as UIButton
-        button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
-        button.setImage(image, for: .normal)
-        self.view.addSubview(button)
-        button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+        if createNewBurgerMenu {
+            var image = (UIImage(named: "burger") as UIImage?)!
+            let button   = UIButton(type: UIButtonType.custom) as UIButton
+            button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
+            button.setImage(image, for: .normal)
+            self.view.addSubview(button)
+            button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+        }
         
         //add start/stop button
         let startStopButton = UIButton(frame: CGRect(x: 310, y: 28, width: 55, height: 34))
@@ -105,7 +110,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     func toMenu() {
         performSegue(withIdentifier: "toMenu", sender: self)
-    
     }
     
     func night() {
@@ -154,7 +158,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Track location and move map with center
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
-        
+ 
         //code below moves the camera where GPS is
         //possible remove to allow pan/zoom for the user?
         
@@ -265,14 +269,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         return components.minute!
     }
     
-    func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
-        var distance : Double = 0.0
-        distance = coordinateOne.distance(from: coordinateTwo)
-        return distance
-        
-    }
-    
-
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
         if tracking {
@@ -298,7 +294,8 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     deinit {
-        viewMap.removeObserver(self, forKeyPath: "myLocation", context: nil)
+        Log.info(in: self, "viewMap: \(viewMap)")
+        viewMap?.removeObserver(self, forKeyPath: "myLocation", context: nil)
     }
     
     func addPath(location : CLLocation) -> Void {
@@ -315,6 +312,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         //self.locationManager.startUpdatingLocation()
         self.locations.removeAll(keepingCapacity: false)
         self.tracking = true
+        self.firstLoc = true
         self.collectData = true
         self.trackStartTimeStamp = NSDate() as Date
         self.path = GMSMutablePath()
@@ -331,20 +329,52 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func saveTracking() -> Void {
-        
+
         let newRun = Run()
         newRun.timestamp = Date()
-        
+
+        var index = 1
+        var firstLocationLat : Double = 0.0
+        var firstLocationLong : Double = 0.0
+        var distanceInMeters : Double = 0.0
+
         for location in locations {
+            NSLog("THIS IS THE CURRENT INDEX \(index)")
+            if (index == 6){
+                index = 1
+                distanceGraph.append(Float(distanceInMeters))
+                NSLog("THIS IS TESTING DISTANCES WITH APPENDING: \(distanceGraph)")
+                distanceInMeters = 0.0
+            }
+            if (index == 1){
+                firstLocationLat = location.coordinate.latitude
+                firstLocationLong = location.coordinate.longitude
+                distanceInMeters = 0.0
+            }
+
+            let secondLocationLat = location.coordinate.latitude
+            let secondLocationLong = location.coordinate.longitude
+
+            let coordinateOne = CLLocation(latitude: firstLocationLat, longitude: firstLocationLong)
+            let coordinateTwo = CLLocation(latitude: secondLocationLat, longitude: secondLocationLong)
+
+            distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+
+            firstLocationLat = secondLocationLat
+            firstLocationLong = secondLocationLong
+
             let newLocation = Location()
             newLocation.latitude = Float(location.coordinate.latitude)
             newLocation.longitude = Float(location.coordinate.longitude)
             newLocation.timestamp = location.timestamp
             newLocation.save()
             newRun.locations.append(newLocation)
+
+            index += 1
         }
+        NSLog("THIS IS TESTING DISTANCES: \(distanceGraph)")
         newRun.save()
-        
+
         do{
             let realm = try Realm()
             let allRuns = realm.objects(Run.self)
@@ -390,46 +420,40 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 index+=1
-                
-                
-                
-                
             }
+
             for run in allRuns{
                 var distanceInMeters : Double = 0.0
                 var locationIndex = 1
                 var coordinateOne = CLLocation()
-                
-                
+
                 for location in run.locations {
                     if (locationIndex == 1){
                         coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     }
-                    
+
                     let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
-                    
-                    
+
                     distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-                    
-                    
+
                     coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     locationIndex += 1
                 }
-                
-                
+
                 finalDistance.append(String(distanceInMeters))
                 distanceInMeters = 0.0
             }
-            
-            
+
+            NSLog("total Time array \(totalTime)")
+            NSLog("start dates array \(startDates)")
+            NSLog("total distance array \(finalDistance)")
+
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
-
     }
-    
-    
-    
+
+
     func getLast(amount: Int, array: [Int]) -> [Int] {
         var temp : [Int] = []
         var index = array.count - amount - 1
@@ -438,7 +462,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         }
         return temp
     }
-    
     
     //var barData : [Int] = [70, 80, 50, 30, 20, 40]
     //var lineData : [Int] = [1, 2, 3, 4, 5, 6]

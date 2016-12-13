@@ -1,14 +1,14 @@
 //
-//  MainController.swift
+//  HeatMapViewController.swift
 //  gotrack
 //
-//  Created by Keegs on 12/6/16.
+//  Created by Keegs on 12/13/16.
 //  Copyright © 2016 Babbs, Dylan. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class HeatMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,9 +16,11 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func hamburgerButtonPressed(_ sender: UIBarButtonItem) {
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

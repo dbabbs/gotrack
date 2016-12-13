@@ -9,38 +9,45 @@
 import RESideMenu
 import UIKit
 
-class SideMenuViewController: UIViewController {
+class SideMenuViewController: RESideMenu {
 
-    @IBInspectable let mainContentStoryboardName: String = "Main"
-    @IBInspectable let leftMenuStoryboardName: String? = nil
-    @IBInspectable let rightMenuStoryboardName: String? = nil
+    // Required
+    @IBInspectable var mainContentStoryboardName: String? = nil
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    // Optional
+    @IBInspectable var leftMenuStoryboardName: String? = nil
+    @IBInspectable var rightMenuStoryboardName: String? = nil
 
-        let mainStoryboard = UIStoryboard(name: mainContentStoryboardName, bundle: nil)
-        let mainVC = mainStoryboard.instantiateInitialViewController()!
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
+        // Ensure mainContentStoryboardName is specified
+        guard let mainContentStoryboardName = mainContentStoryboardName else {
+            Log.error(in: self, because: "side menu requires a storyboard name for its main content")
+            return
+        }
+
+        // Main content
+        let contentStoryboard = UIStoryboard(name: mainContentStoryboardName, bundle: nil)
+        var contentVC = contentStoryboard.instantiateInitialViewController()!
+
+        // Left menu
         var leftMenuVC: UIViewController?
         if let leftMenuStoryboardName = leftMenuStoryboardName {
             let leftMenuStoryboard = UIStoryboard(name: leftMenuStoryboardName, bundle: nil)
             leftMenuVC = leftMenuStoryboard.instantiateInitialViewController()!
         }
 
+        // Right menu
         var rightMenuVC: UIViewController?
         if let rightMenuStoryboardName = rightMenuStoryboardName {
             let rightMenuStoryboard = UIStoryboard(name: rightMenuStoryboardName, bundle: nil)
             rightMenuVC = rightMenuStoryboard.instantiateInitialViewController()!
         }
 
-        let masterVC = RESideMenu(contentViewController: mainVC,
-                                  leftMenuViewController: leftMenuVC,
-                                  rightMenuViewController: rightMenuVC)!
-
-
-        self.present(masterVC, animated: false, completion: {
-            masterVC.presentLeftMenuViewController()
-        })
+        // Put it all together
+        self.contentViewController = contentVC
+        self.leftMenuViewController = leftMenuVC
+        self.rightMenuViewController = rightMenuVC
     }
-
 }
