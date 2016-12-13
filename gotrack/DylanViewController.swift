@@ -160,23 +160,13 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 NSLog("Run at:  \(index) at: \(run.timestamp)")
                 var locationIndex = 1
                 
-                
-                let coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
-                var distanceInMeters : Double = 0.0
-                
+             
                 for location in run.locations {
 
                     
                     let endIndex = run.locations.endIndex
                     print(endIndex)
                     
-                    
-                    let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-
-                    NSLog("test of coordinate two \(coordinateTwo)")
-               
-                    distanceInMeters += coordinateOne.distance(from: coordinateTwo)
-                    NSLog("Test of distance calc \(distanceInMeters)")
                     
                     NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
                     NSLog("Coordinates: \(location.latitude), \(location.longitude)")
@@ -195,6 +185,28 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 
                 index+=1
                 
+            }
+            
+            
+            // gets the distance correctly in meters
+            
+            
+            for run in allRuns {
+                var distanceInMeters : Double = 0.0
+                var coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
+                   NSLog("original coordinate one test \(coordinateOne)")
+                
+                for location in run.locations{
+                    let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+                    NSLog("coordinate two test \(coordinateTwo)")
+                    
+                    distanceInMeters += coordinateOne.distance(from: coordinateTwo)
+                    NSLog("Test of distance calc \(distanceInMeters) in meters")
+                    coordinateOne = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+                    NSLog("coordinate one test \(coordinateOne)")
+                    
+                }
+                NSLog("final distance calculation for run \(distanceInMeters)")
             }
 
     
