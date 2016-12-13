@@ -55,4 +55,30 @@ class HelperFunctions {
 
         return mapView
     }
+
+    
+}
+
+func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
+    var distance : Double = 0.0
+    distance = coordinateOne.distance(from: coordinateTwo)
+    return distance
+
+}
+
+func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
+    return components.minute!
+}
+
+func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+    var seconds : Int = components.second!
+    if (components.second! >= 60){
+        seconds = seconds / 60
+    }
+
+    return seconds
 }

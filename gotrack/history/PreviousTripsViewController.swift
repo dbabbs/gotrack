@@ -6,57 +6,114 @@
 //  Copyright © 2016 Zhanna Voloshina. All rights reserved.
 //
 
+import CoreLocation
+import RealmSwift
 import UIKit
 
 class PreviousTripsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var objects = [String]()
-    var distances = [String]()
-    var times = [String]()
-    
+
+    var startDates = [String]()
+    var finalDistance = [String]()
+    var totalTime = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // dates from array
-        self.objects.append("November 28th 2016")
-        self.objects.append("November 28th 2016")
-        self.objects.append("November 29th 2016")
-        self.objects.append("November 29th 2016")
-        self.objects.append("December 12th 2016")
-        self.objects.append("December 12th 2016")
-        self.objects.append("December 12th 2016")
-        self.objects.append("December 14th 2016")
-        self.objects.append("December 13th 2016")
-        self.objects.append("December 15th 2016")
-        self.objects.append("December 17th 2016")
-        
-        // distances from array
-        self.distances.append("20 meters")
-        self.distances.append("30 meters")
-        self.distances.append("40 meters")
-        self.distances.append("50 meters")
-        self.distances.append("60 meters")
-        self.distances.append("70 meters")
-        self.distances.append("80 meters")
-        self.distances.append("90 meters")
-        self.distances.append("200 meters")
-        self.distances.append("600 meters")
-        self.distances.append("8000 meters")
-        
-        
-        // times from array
-        self.times.append("2 minutes")
-        self.times.append("6 minutes")
-        self.times.append("11 minutes")
-        self.times.append("20 minutes")
-        self.times.append("30 minutes")
-        self.times.append("40 minutes")
-        self.times.append("50 minutes")
-        self.times.append("60 minutes")
-        self.times.append("70 minutes")
-        self.times.append("80 minutes")
-        self.times.append("90 minutes")
+
+        grabRuns()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        Log.info("startDates.count: \(startDates.count)")
+        Log.info("finalDistance.count: \(finalDistance.count)")
+        Log.info("totalTime.count: \(totalTime.count)")
+    }
+
+    func grabRuns() {
+        do {
+            let realm = try Realm()
+            let allRuns = realm.objects(Run.self)
+            print(allRuns)
+
+            var index = 0
+            for run in allRuns {
+                let startTime = run.timestamp
+
+                let formatter = DateFormatter()
+                formatter.dateStyle = .medium
+                formatter.timeStyle = .medium
+
+                var dateStr = formatter.string(from: startTime)
+                startDates.append("\(dateStr)")
+
+                NSLog("Run at:  \(index) at: \(run.timestamp)")
+                var locationIndex = 1
+                var timeOne = Date()
+
+                for location in run.locations {
+                    if (locationIndex == 1){
+                        timeOne = location.timestamp
+                    }
+
+                    let endIndex = run.locations.endIndex
+                    print(endIndex)
+
+
+                    NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
+                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
+
+                    if (locationIndex == endIndex){
+                        NSLog("Final timestamp:  \(location.timestamp)")
+                        let timeTwo = location.timestamp
+
+                        let runMinutes = minsBetweenDates(startDate: timeOne, endDate: timeTwo)
+                        let runSeconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
+                        totalTime.append("\(runMinutes):\(runSeconds)")
+                        NSLog("difference in minutes \(runMinutes)")
+                    }
+
+                    locationIndex+=1
+                }
+
+                index+=1
+            }
+            for run in allRuns{
+                var distanceInMeters : Double = 0.0
+                var locationIndex = 1
+                var coordinateOne = CLLocation()
+
+
+                for location in run.locations {
+                    if (locationIndex == 1){
+                        coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+                    }
+
+                    let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+
+
+                    distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+
+
+                    coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+                    locationIndex += 1
+                }
+                
+                
+                finalDistance.append(String(distanceInMeters))
+                distanceInMeters = 0.0
+            }
+            
+            
+            NSLog("total Time array \(totalTime)")
+            NSLog("start dates array \(startDates)")
+            NSLog("total distance array \(finalDistance)")
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
     }
     
     func numberOfSectionsInTableView(_ tableView: UITableView) -> Int
@@ -66,15 +123,15 @@ class PreviousTripsViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return self.objects.count
+        return self.startDates.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
         let aCell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        aCell.titleLabel.text = self.objects[indexPath.row]
-        aCell.distanceLabel.text = self.distances[indexPath.row]
-        aCell.timeLabel.text = self.times[indexPath.row]
+        aCell.titleLabel.text = self.startDates[indexPath.row]
+        aCell.distanceLabel.text = "distance: " + self.finalDistance[indexPath.row] + " meters"
+        aCell.timeLabel.text = "duration: " + self.totalTime[indexPath.row]
         
         return aCell
     }

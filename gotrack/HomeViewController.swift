@@ -8,13 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: DylanViewController {
 
     //------------------------------------------------------------
     // UIViewController overrides
     //------------------------------------------------------------
 
+    override func viewDidLoad() {
+        Log.info(in: self, "viewDidLoad")
+        super.viewDidLoad()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
+        Log.info(in: self, "viewWillAppear")
         super.viewWillAppear(animated)
 
         // hide navigation bar on this page
@@ -22,6 +28,7 @@ class HomeViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        Log.info(in: self, "viewWillDisappear")
         super.viewWillDisappear(animated)
 
         // show navigation bar on other pages

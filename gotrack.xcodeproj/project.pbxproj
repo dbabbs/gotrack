@@ -17,6 +17,7 @@
 		94205C761DFFBBB0006BC368 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94205C751DFFBBAF006BC368 /* Settings.storyboard */; };
 		94205C7B1DFFDEBD006BC368 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94205C7A1DFFDEBD006BC368 /* About.storyboard */; };
 		94205C7D1DFFE348006BC368 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C7C1DFFE348006BC368 /* HomeViewController.swift */; };
+		94205C7F1E0000D3006BC368 /* HeatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */; };
 		948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
 		948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F367F1DFCC7EC00E3525A /* TripsModule.swift */; };
 		948F36821DFCC80D00E3525A /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36811DFCC80D00E3525A /* MockDB.swift */; };
@@ -73,6 +74,7 @@
 		94205C751DFFBBAF006BC368 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		94205C7A1DFFDEBD006BC368 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		94205C7C1DFFE348006BC368 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapViewController.swift; sourceTree = "<group>"; };
 		948F367F1DFCC7EC00E3525A /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
 		948F36811DFCC80D00E3525A /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
 		948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRedirectViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */,
 				94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */,
 				94205C7C1DFFE348006BC368 /* HomeViewController.swift */,
+				94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				A4341A721DFCD898007E91FA /* onboardViewController.swift in Sources */,
 				3CE529371DFCF337005465D6 /* DataObjects.swift in Sources */,
 				948F36821DFCC80D00E3525A /* MockDB.swift in Sources */,
+				94205C7F1E0000D3006BC368 /* HeatMapViewController.swift in Sources */,
 				010798971DFFA006003F0878 /* PreviousTripsViewController.swift in Sources */,
 				A4341A701DFCCCF6007E91FA /* DylanViewController.swift in Sources */,
 			);

@@ -12,7 +12,7 @@ import GoogleMaps
 import RealmSwift
 
 class DylanViewController: UIViewController, CLLocationManagerDelegate {
-    
+
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
@@ -74,14 +74,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
         })
-
+        
         //add hamburger button
-        let image = UIImage(named: "burger") as UIImage?
-        let button   = UIButton(type: UIButtonType.custom) as UIButton
-        button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
-        button.setImage(image, for: .normal)
-        self.view.addSubview(button)
-        button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+            let image = UIImage(named: "burger") as UIImage?
+            let button   = UIButton(type: UIButtonType.custom) as UIButton
+            button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
+            button.setImage(image, for: .normal)
+            self.view.addSubview(button)
+            button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
         
         //add start/stop button
         let startStopButton = UIButton(frame: CGRect(x: 310, y: 28, width: 55, height: 34))
@@ -103,7 +103,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     func toMenu() {
         performSegue(withIdentifier: "toMenu", sender: self)
-    
     }
     
     
@@ -219,12 +218,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         return components.minute!
     }
     
-    func realTimeSeconds(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
-        return components.second!
-    }
-    
     func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
@@ -261,7 +254,8 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     deinit {
-        viewMap.removeObserver(self, forKeyPath: "myLocation", context: nil)
+        Log.info(in: self, "viewMap: \(viewMap)")
+        viewMap?.removeObserver(self, forKeyPath: "myLocation", context: nil)
     }
     
     func addPath(location : CLLocation) -> Void {
@@ -293,14 +287,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func saveTracking() -> Void {
-        
+
         let newRun = Run()
         newRun.timestamp = Date()
         var index = 1
         var firstLocationLat : Double = 0.0
         var firstLocationLong : Double = 0.0
         var distanceInMeters : Double = 0.0
-        
+
         for location in locations {
             NSLog("THIS IS THE CURRENT INDEX \(index)")
             if (index == 6){
@@ -314,33 +308,32 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 firstLocationLong = location.coordinate.longitude
                 distanceInMeters = 0.0
             }
-            
+
             let secondLocationLat = location.coordinate.latitude
             let secondLocationLong = location.coordinate.longitude
-            
+
             let coordinateOne = CLLocation(latitude: firstLocationLat, longitude: firstLocationLong)
             let coordinateTwo = CLLocation(latitude: secondLocationLat, longitude: secondLocationLong)
-            
+
             distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-            
+
             firstLocationLat = secondLocationLat
             firstLocationLong = secondLocationLong
 
             let newLocation = Location()
-            newLocation.timestamp = Date()
             newLocation.latitude = Float(location.coordinate.latitude)
             newLocation.longitude = Float(location.coordinate.longitude)
             newLocation.timestamp = location.timestamp
             newLocation.save()
             newRun.locations.append(newLocation)
-            
+
             index += 1
         }
         NSLog("THIS IS TESTING DISTANCES: \(distanceGraph)")
         newRun.save()
-        
-        
-        
+
+
+
         do{
             let realm = try Realm()
             let allRuns = realm.objects(Run.self)
@@ -348,93 +341,94 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             var startDates = [String]()
             var finalDistance = [String]()
             var totalTime = [String]()
-            
+
             var index = 0
             for run in allRuns {
                 let startTime = run.timestamp
-                let calendar = Calendar.current
-                
-                let hour = calendar.component(.hour, from: startTime)
-                let minutes = calendar.component(.minute, from: startTime)
-                let seconds = calendar.component(.second, from: startTime)
-                startDates.append("hours = \(hour):\(minutes):\(seconds)")
-                
+
+                let formatter = DateFormatter()
+                formatter.dateStyle = .medium
+                formatter.timeStyle = .medium
+
+                var dateStr = formatter.string(from: startTime)
+                startDates.append("\(dateStr)")
+
                 NSLog("Run at:  \(index) at: \(run.timestamp)")
                 var locationIndex = 1
                 var timeOne = Date()
-                
+
                 for location in run.locations {
                     if (locationIndex == 1){
                         timeOne = location.timestamp
                     }
-                    
+
                     let endIndex = run.locations.endIndex
                     print(endIndex)
-                    
-                    
+
+
                     NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
                     NSLog("Coordinates: \(location.latitude), \(location.longitude)")
-                    
+
                     if (locationIndex == endIndex){
                         NSLog("Final timestamp:  \(location.timestamp)")
                         let timeTwo = location.timestamp
-                        
+
                         let runMinutes = minsBetweenDates(startDate: timeOne, endDate: timeTwo)
                         let runSeconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
                         totalTime.append("\(runMinutes):\(runSeconds)")
                         NSLog("difference in minutes \(runMinutes)")
                     }
-                    
+
                     locationIndex+=1
-                    
+
                 }
-                
+
                 index+=1
-                
-                
-            
-                
-                
+
+
+
+
+
             }
             for run in allRuns{
                 var distanceInMeters : Double = 0.0
                 var locationIndex = 1
                 var coordinateOne = CLLocation()
-                
-                
+
+
                 for location in run.locations {
                     if (locationIndex == 1){
                         coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     }
-                    
+
                     let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
-                    
-                    
+
+
                     distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-                    
-                    
+
+
                     coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     locationIndex += 1
                 }
-                
-                
+
+
                 finalDistance.append(String(distanceInMeters))
                 distanceInMeters = 0.0
             }
-            
-            
+
+
             NSLog("total Time array \(totalTime)")
             NSLog("start dates array \(startDates)")
             NSLog("total distance array \(finalDistance)")
-            
+
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
-        
+
     }
-    
-    
-    
+
+
+
     func getLast(amount: Int, array: [Int]) -> [Int] {
         var temp : [Int] = []
         var index = array.count - amount - 1
