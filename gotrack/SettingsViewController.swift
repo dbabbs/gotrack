@@ -14,11 +14,21 @@ import FacebookCore
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var sliderValueIndicator: UILabel!
     @IBOutlet weak var connectToFBButton: UIButton!
+    var sliderValue = Int()
     
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        sliderValue = Int(sender.value)
+        
+        sliderValueIndicator.text = "\(sliderValue) seconds"
+        
+    }
     var cityStateLabelString = ""
     
     override func viewDidLoad() {
+        sliderValueIndicator.text = "5 seconds"
         super.viewDidLoad()
         
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])

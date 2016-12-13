@@ -21,6 +21,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
 
     let createNewBurgerMenu = false
     
+        
+    var userIndicatedSeconds = Int()
+    
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
@@ -59,6 +62,8 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         updateChartWithData(barData: [10], lineData: [10])//, lineData: [0])
         
@@ -148,20 +153,11 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         timetext.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
         velocityText.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
         dateDisplay.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
-        
     }
-    
-    
 
-    
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Track location and move map with center
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
- 
-        //code below moves the camera where GPS is
-        //possible remove to allow pan/zoom for the user?
-        
         if firstRun {
             viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
             firstRun = false
@@ -169,9 +165,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             let camera = GMSCameraUpdate.setTarget(location.coordinate)
             self.viewMap.animate(with: camera)
         }
-        
+        let settingsViewController = SettingsViewController()
+
+        userIndicatedSeconds = settingsViewController.sliderValue
         if tracking {
+            
             if (totalSeconds > 5) {
+                
+                /*print("NEW USER INDICATED SECONDS: \(userIndicatedSeconds)")*/
                 totalSeconds = 0
                 distanceGraph2.append(Double(totalDistance))
                 //NSLog("testing GRAPH ARRAY \(distanceGraph2)")
@@ -202,8 +203,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 let meters = distanceCalc(coordinateOne: realTimeDistance, coordinateTwo: currentLoc)
                 totalDistance += meters
                 totalTotalDistance += meters
-                //NSLog("testing this function \(meters)")
-                
+
             }
             
             locations.append(location)
@@ -240,10 +240,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
-        
-        
-        
-        
     }
     
     func realTimeSeconds(startDate: Date, endDate: Date) -> Int {
