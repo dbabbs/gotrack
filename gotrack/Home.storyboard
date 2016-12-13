@@ -43,6 +43,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipj-ph-sbi">
+                                <rect key="frame" x="0.0" y="397" width="375" height="270"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-pm-Ga8" customClass="CombinedChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="519" width="375" height="148"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +81,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Rf6-q5-ZcA" secondAttribute="trailing" constant="24" id="1Nx-TL-p6u"/>
                                             <constraint firstItem="ZVc-iH-SQU" firstAttribute="centerY" secondItem="QhN-xe-NX1" secondAttribute="centerY" id="G07-cw-68f"/>
@@ -102,7 +104,7 @@
                                                         <color key="textColor" red="0.0" green="0.46274509800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-kl-93Q">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-kl-93Q">
                                                         <rect key="frame" x="0.0" y="62.5" width="120" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,7 +130,7 @@
                                                         <color key="textColor" red="0.0" green="0.46274509800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="secs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-9T-r7B">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-9T-r7B">
                                                         <rect key="frame" x="0.0" y="63.5" width="97" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,7 +176,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="QhN-xe-NX1" firstAttribute="leading" secondItem="zON-lq-fvM" secondAttribute="leading" id="132-7X-Ye9"/>
                                     <constraint firstAttribute="bottom" secondItem="QE4-x5-5Om" secondAttribute="bottom" id="4da-Nx-SVr"/>
@@ -185,7 +186,7 @@
                                     <constraint firstItem="QE4-x5-5Om" firstAttribute="leading" secondItem="zON-lq-fvM" secondAttribute="leading" constant="8" id="Im9-Jz-ZhD"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-A4-03i" userLabel="Menu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-A4-03i" userLabel="Menu">
                                 <rect key="frame" x="16" y="20" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pyv-A4-03i" secondAttribute="height" multiplier="1:1" id="TwR-Ay-LjL"/>
@@ -207,6 +208,10 @@
                             <constraint firstItem="HCh-pm-Ga8" firstAttribute="leading" secondItem="eld-0r-BCC" secondAttribute="leading" id="X0d-OI-poj"/>
                             <constraint firstItem="pyv-A4-03i" firstAttribute="top" secondItem="0Td-N8-NWY" secondAttribute="bottom" id="XHs-uz-7Tw"/>
                             <constraint firstAttribute="trailing" secondItem="eiM-Qq-9nK" secondAttribute="trailing" id="blR-bj-SVP"/>
+                            <constraint firstItem="ipj-ph-sbi" firstAttribute="leading" secondItem="eld-0r-BCC" secondAttribute="leading" id="gvz-Ec-4iu"/>
+                            <constraint firstItem="ipj-ph-sbi" firstAttribute="top" secondItem="zON-lq-fvM" secondAttribute="top" id="jqD-a9-Gyg"/>
+                            <constraint firstItem="ipj-ph-sbi" firstAttribute="bottom" secondItem="HCh-pm-Ga8" secondAttribute="bottom" id="lJQ-Ev-2rY"/>
+                            <constraint firstAttribute="trailing" secondItem="ipj-ph-sbi" secondAttribute="trailing" id="rBu-9A-Amd"/>
                             <constraint firstItem="pyv-A4-03i" firstAttribute="leading" secondItem="eld-0r-BCC" secondAttribute="leadingMargin" id="rXq-3d-Ffq"/>
                             <constraint firstItem="eiM-Qq-9nK" firstAttribute="leading" secondItem="eld-0r-BCC" secondAttribute="leading" id="sOM-LA-pBy"/>
                             <constraint firstAttribute="trailing" secondItem="zON-lq-fvM" secondAttribute="trailing" id="uPa-Wt-dkw"/>
@@ -216,12 +221,16 @@
                     <navigationItem key="navigationItem" id="5Us-vb-NsQ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundRect" destination="ipj-ph-sbi" id="aIg-2p-5di"/>
                         <outlet property="combinedChartView" destination="HCh-pm-Ga8" id="USS-Mu-dPr"/>
                         <outlet property="dateDisplay" destination="ZVc-iH-SQU" id="f0r-m7-2ok"/>
                         <outlet property="distanceDisplay" destination="2sx-Pj-8UZ" id="abg-CM-1yW"/>
                         <outlet property="timeDisplay" destination="Wr6-uc-LM7" id="PIW-lL-k4m"/>
+                        <outlet property="timetext" destination="YoD-9T-r7B" id="eKH-Sd-chv"/>
                         <outlet property="velocityDisplay" destination="QbV-Lr-i7P" id="E5P-oj-WO1"/>
+                        <outlet property="velocityText" destination="Ysy-bw-Iyl" id="Z1Y-SD-2eW"/>
                         <outlet property="viewMap" destination="eiM-Qq-9nK" id="hOM-Xw-zcz"/>
+                        <outlet property="yardText" destination="Qm1-kl-93Q" id="QMW-GY-F5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVi-Vm-QZe" userLabel="First Responder" sceneMemberID="firstResponder"/>

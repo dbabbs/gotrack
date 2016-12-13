@@ -55,15 +55,12 @@ class HelperFunctions {
 
         return mapView
     }
-
-    
 }
 
 func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
     var distance : Double = 0.0
     distance = coordinateOne.distance(from: coordinateTwo)
     return distance
-
 }
 
 func minsBetweenDates(startDate: Date, endDate: Date) -> Int {

@@ -13,11 +13,13 @@ import RealmSwift
 
 class DylanViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var backgroundRect: UILabel!
+    @IBOutlet weak var backgroundRect: UIView!
     
     @IBOutlet weak var velocityText: UILabel!
     @IBOutlet weak var timetext: UILabel!
     @IBOutlet weak var yardText: UILabel!
+
+    let createNewBurgerMenu = false
     
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
@@ -79,12 +81,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         })
         
         //add hamburger button
-        var image = (UIImage(named: "burger") as UIImage?)!
-        let button   = UIButton(type: UIButtonType.custom) as UIButton
-        button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
-        button.setImage(image, for: .normal)
-        self.view.addSubview(button)
-        button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+        if createNewBurgerMenu {
+            var image = (UIImage(named: "burger") as UIImage?)!
+            let button   = UIButton(type: UIButtonType.custom) as UIButton
+            button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
+            button.setImage(image, for: .normal)
+            self.view.addSubview(button)
+            button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+        }
         
         //add start/stop button
         let startStopButton = UIButton(frame: CGRect(x: 310, y: 28, width: 55, height: 34))
@@ -263,30 +267,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
         return components.minute!
-    }
-    
-    func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
-        var distance : Double = 0.0
-        distance = coordinateOne.distance(from: coordinateTwo)
-        return distance
-
-    }
-    
-    func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
-        return components.minute!
-    }
-    
-    func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
-        var seconds : Int = components.second!
-        if (components.second! >= 60){
-            seconds = seconds / 60
-        }
-        
-        return seconds
     }
     
     

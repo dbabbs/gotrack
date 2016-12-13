@@ -6,12 +6,15 @@
 //  Copyright © 2016 Babbs, Dylan. All rights reserved.
 //
 
+import RESideMenu
 import UIKit
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, RESideMenuDelegate {
+
+    static var shouldFetchFBData: Bool = true
 
     let settingsSegueIdentifier = "settingsViewSegue"
     var cityStateLabelString = "Unknown Location"
@@ -33,14 +36,25 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         Log.info(in: self, "viewDidLoad")
         super.viewDidLoad()
+
+        // Load the user's fb info
+        getFacebookUserInfo()
+
+        self.sideMenuViewController?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         Log.info(in: self, "viewWillAppear")
         super.viewWillAppear(animated)
+    }
 
-        // Load the user's fb info
-        getFacebookUserInfo()
+    func sideMenu(_ sideMenu: RESideMenu!, willShowMenuViewController menuViewController: UIViewController!) {
+
+        Log.info("sideMenu willShowMenuViewController")
+
+        if MenuViewController.shouldFetchFBData {
+            getFacebookUserInfo()
+        }
 
         // Set state label
         cityStateLabel.text = cityStateLabelString
@@ -88,6 +102,8 @@ class MenuViewController: UIViewController {
     
     private func getFacebookUserInfo() {
         Log.info("getFacebookUserInfo()")
+
+        MenuViewController.shouldFetchFBData = false
 
         guard FBSDKAccessToken.current() != nil else {
             Log.error(in: self, because: "FBSDKAccessToken is nil!")
