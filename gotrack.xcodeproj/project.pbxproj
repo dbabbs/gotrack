@@ -26,6 +26,8 @@
 		A4341A6E1DFCCB51007E91FA /* Dylan-storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4341A6D1DFCCB51007E91FA /* Dylan-storyboard.storyboard */; };
 		A4341A701DFCCCF6007E91FA /* DylanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */; };
 		A4341A721DFCD898007E91FA /* onboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4341A711DFCD898007E91FA /* onboardViewController.swift */; };
+		A457C52B1DFFF75500BCD5E4 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = A457C52A1DFFF75500BCD5E4 /* style.json */; };
+		A457C52D1E0002C200BCD5E4 /* style2.json in Resources */ = {isa = PBXBuildFile; fileRef = A457C52C1E0002C200BCD5E4 /* style2.json */; };
 		A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */; };
 		A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */; };
 		A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		A4341A6D1DFCCB51007E91FA /* Dylan-storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Dylan-storyboard.storyboard"; sourceTree = "<group>"; };
 		A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DylanViewController.swift; sourceTree = "<group>"; };
 		A4341A711DFCD898007E91FA /* onboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboardViewController.swift; sourceTree = "<group>"; };
+		A457C52A1DFFF75500BCD5E4 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		A457C52C1E0002C200BCD5E4 /* style2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style2.json; sourceTree = "<group>"; };
 		A49C6C451DEEAFAF00622ACC /* gotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				A40B33731DFE89E20066EADA /* SettingsViewController.swift */,
 				A4341A711DFCD898007E91FA /* onboardViewController.swift */,
 				A4341A6F1DFCCCF6007E91FA /* DylanViewController.swift */,
+				A457C52A1DFFF75500BCD5E4 /* style.json */,
+				A457C52C1E0002C200BCD5E4 /* style2.json */,
 			);
 			name = "Dylan's code";
 			sourceTree = "<group>";
@@ -365,8 +371,10 @@
 				A4341A6E1DFCCB51007E91FA /* Dylan-storyboard.storyboard in Resources */,
 				94EDD0E81DFCBF820007D5A8 /* Home.storyboard in Resources */,
 				A49C6C531DEEAFAF00622ACC /* LaunchScreen.storyboard in Resources */,
+				A457C52B1DFFF75500BCD5E4 /* style.json in Resources */,
 				94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */,
 				A49C6C501DEEAFAF00622ACC /* Assets.xcassets in Resources */,
+				A457C52D1E0002C200BCD5E4 /* style2.json in Resources */,
 				A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */,
 				94EDD0ED1DFCC4640007D5A8 /* SignIn.storyboard in Resources */,
 				94EDD0E31DFCB69E0007D5A8 /* SideMenu.storyboard in Resources */,
@@ -613,6 +621,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gotrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.babbs.gotrack-iphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,6 +641,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gotrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.babbs.gotrack-iphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
