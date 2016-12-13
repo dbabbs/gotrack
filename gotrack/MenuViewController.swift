@@ -23,6 +23,7 @@ class MenuViewController: UIViewController {
     enum Page: String {
         case Settings = "Settings"
         case PreviousTrips = "PreviousTrips"
+        case About = "About"
     }
 
     //------------------------------------------------------------
@@ -49,6 +50,10 @@ class MenuViewController: UIViewController {
 
     @IBAction func previousTripsButtonPressed(_ sender: UIButton) {
         goTo(page: .PreviousTrips)
+    }
+
+    @IBAction func aboutButtonPressed(_ sender: UIButton) {
+        goTo(page: .About)
     }
 
     //------------------------------------------------------------

@@ -23,7 +23,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuStoryboardName" value="HamburgerMenu"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuStoryboardName" value="Menu"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="mainContentStoryboardName" value="Home"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
