@@ -24,10 +24,16 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var firstLoc = false
     
     var distanceGraph = [Float]()
+    var distanceGraph2 = [Float]()
     var distanceInMeters : Double = 0.0
     var realTimeDistance = CLLocation()
     var currentLoc = CLLocation()
     var totalDistance : Double = 0.0
+    var startTime = Date()
+    var currentTime = Date()
+    var timeIsLess = true
+    var totalSeconds : Int = 0
+    
 
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var combinedChartView: CombinedChartView!
@@ -113,26 +119,42 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if tracking {
+            if (totalSeconds > 15) {
+                totalSeconds = 0
+                distanceGraph2.append(Float(totalDistance))
+                NSLog("testing GRAPH ARRAY \(distanceGraph2)")
+                totalDistance = 0.0
+                firstLoc = true
+            }
             
             NSLog("testing if firstLoc is true \(firstLoc)")
             if firstLoc {
                 realTimeDistance = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                startTime = location.timestamp
+                NSLog("testing what start time is \(startTime)")
+                currentTime = location.timestamp
+                NSLog("testing what current time is \(currentTime)")
                 NSLog("testing what first location is \(realTimeDistance)")
                 firstLoc = false
                 NSLog("testing if firstLoc is false \(firstLoc)")
             }
             else {
-   
-            // Record each location for a new run
+            
                 currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                currentTime = location.timestamp
+                totalSeconds = realTimeSeconds(startDate: startTime, endDate: currentTime)
+                NSLog("testing what seconds difference is \(totalSeconds)")
                 NSLog("testing what original location is \(realTimeDistance)")
                 NSLog("testing what current location is \(currentLoc)")
                 let meters = distanceCalc(coordinateOne: realTimeDistance, coordinateTwo: currentLoc)
                 totalDistance += meters
             
             NSLog("testing this function \(meters)")
+
             }
+            
+           
             locations.append(location)
             
             realTimeDistance = currentLoc
@@ -168,6 +190,12 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
         return components.minute!
+    }
+    
+    func realTimeSeconds(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        return components.second!
     }
     
     func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
