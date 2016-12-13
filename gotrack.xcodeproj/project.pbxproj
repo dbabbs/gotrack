@@ -16,6 +16,7 @@
 		94205C741DFFA7A3006BC368 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */; };
 		94205C761DFFBBB0006BC368 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94205C751DFFBBAF006BC368 /* Settings.storyboard */; };
 		94205C7B1DFFDEBD006BC368 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94205C7A1DFFDEBD006BC368 /* About.storyboard */; };
+		94205C7D1DFFE348006BC368 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C7C1DFFE348006BC368 /* HomeViewController.swift */; };
 		948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
 		948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F367F1DFCC7EC00E3525A /* TripsModule.swift */; };
 		948F36821DFCC80D00E3525A /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36811DFCC80D00E3525A /* MockDB.swift */; };
@@ -72,6 +73,7 @@
 		94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		94205C751DFFBBAF006BC368 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		94205C7A1DFFDEBD006BC368 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		94205C7C1DFFE348006BC368 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		948F367F1DFCC7EC00E3525A /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
 		948F36811DFCC80D00E3525A /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
 		948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRedirectViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				010798911DFFA006003F0878 /* TableViewCell.swift */,
 				948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */,
 				94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */,
+				94205C7C1DFFE348006BC368 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
 				A40B33721DFE82540066EADA /* MenuViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
+				94205C7D1DFFE348006BC368 /* HomeViewController.swift in Sources */,
 				94205C741DFFA7A3006BC368 /* WelcomeViewController.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */,
