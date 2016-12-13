@@ -22,16 +22,10 @@ class MenuViewController: UIViewController {
     
     var cityStateLabelString = "Unknown Location"
     
-    override var prefersStatusBarHidden : Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         cityStateLabel.text = cityStateLabelString
         getFacebookUserInfo()
-        var city = LocationStruct(city:cityStateLabelString)
-        print(city)
     }
     
     
