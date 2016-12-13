@@ -21,6 +21,13 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var currentCityState = ""
     var tracking = false
     var collectData = false
+    var firstLoc = false
+    
+    var distanceGraph = [Float]()
+    var distanceInMeters : Double = 0.0
+    var realTimeDistance = CLLocation()
+    var currentLoc = CLLocation()
+    var totalDistance : Double = 0.0
 
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var combinedChartView: CombinedChartView!
@@ -93,7 +100,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Track location and move map with center
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
-        
+ 
         //code below moves the camera where GPS is
         //possible remove to allow pan/zoom for the user?
         
@@ -106,9 +113,32 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if tracking {
+            
+            NSLog("testing if firstLoc is true \(firstLoc)")
+            if firstLoc {
+                realTimeDistance = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                NSLog("testing what first location is \(realTimeDistance)")
+                firstLoc = false
+                NSLog("testing if firstLoc is false \(firstLoc)")
+            }
+            else {
+   
             // Record each location for a new run
+                currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                NSLog("testing what original location is \(realTimeDistance)")
+                NSLog("testing what current location is \(currentLoc)")
+                let meters = distanceCalc(coordinateOne: realTimeDistance, coordinateTwo: currentLoc)
+                totalDistance += meters
+            
+            NSLog("testing this function \(meters)")
+            }
             locations.append(location)
+            
+            realTimeDistance = currentLoc
+            NSLog("testing total distance \(totalDistance)")
             addPath(location : location)
+            
             updateChartWithData()
             updateCounters()
         }
@@ -127,12 +157,30 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var mileCount = 0
     var timeCount = 0
     
-    func distance(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
+    func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
         var distance : Double = 0.0
         distance = coordinateOne.distance(from: coordinateTwo)
         return distance
-        
+
     }
+    
+    func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
+        return components.minute!
+    }
+    
+    func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        var seconds : Int = components.second!
+        if (components.second! >= 60){
+            seconds = seconds / 60
+        }
+        
+        return seconds
+    }
+    
     
     func updateCounters() {
         if collectData {
@@ -184,6 +232,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         //self.locationManager.startUpdatingLocation()
         self.locations.removeAll(keepingCapacity: false)
         self.tracking = true
+        self.firstLoc = true
         self.collectData = true
         self.trackStartTimeStamp = NSDate() as Date
         self.path = GMSMutablePath()
@@ -199,7 +248,36 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         
         let newRun = Run()
         newRun.timestamp = Date()
+        var index = 1
+        var firstLocationLat : Double = 0.0
+        var firstLocationLong : Double = 0.0
+        var distanceInMeters : Double = 0.0
+        
         for location in locations {
+            NSLog("THIS IS THE CURRENT INDEX \(index)")
+            if (index == 6){
+                index = 1
+                distanceGraph.append(Float(distanceInMeters))
+                NSLog("THIS IS TESTING DISTANCES WITH APPENDING: \(distanceGraph)")
+                distanceInMeters = 0.0
+            }
+            if (index == 1){
+                firstLocationLat = location.coordinate.latitude
+                firstLocationLong = location.coordinate.longitude
+                distanceInMeters = 0.0
+            }
+            
+            let secondLocationLat = location.coordinate.latitude
+            let secondLocationLong = location.coordinate.longitude
+            
+            let coordinateOne = CLLocation(latitude: firstLocationLat, longitude: firstLocationLong)
+            let coordinateTwo = CLLocation(latitude: secondLocationLat, longitude: secondLocationLong)
+            
+            distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+            
+            firstLocationLat = secondLocationLat
+            firstLocationLong = secondLocationLong
+
             let newLocation = Location()
             newLocation.timestamp = Date()
             newLocation.latitude = Float(location.coordinate.latitude)
@@ -207,8 +285,104 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             newLocation.timestamp = location.timestamp
             newLocation.save()
             newRun.locations.append(newLocation)
+            
+            index += 1
         }
+        NSLog("THIS IS TESTING DISTANCES: \(distanceGraph)")
         newRun.save()
+        
+        
+        
+        do{
+            let realm = try Realm()
+            let allRuns = realm.objects(Run.self)
+            print(allRuns)
+            var startDates = [String]()
+            var finalDistance = [String]()
+            var totalTime = [String]()
+            
+            var index = 0
+            for run in allRuns {
+                let startTime = run.timestamp
+                let calendar = Calendar.current
+                
+                let hour = calendar.component(.hour, from: startTime)
+                let minutes = calendar.component(.minute, from: startTime)
+                let seconds = calendar.component(.second, from: startTime)
+                startDates.append("hours = \(hour):\(minutes):\(seconds)")
+                
+                NSLog("Run at:  \(index) at: \(run.timestamp)")
+                var locationIndex = 1
+                var timeOne = Date()
+                
+                for location in run.locations {
+                    if (locationIndex == 1){
+                        timeOne = location.timestamp
+                    }
+                    
+                    let endIndex = run.locations.endIndex
+                    print(endIndex)
+                    
+                    
+                    NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
+                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
+                    
+                    if (locationIndex == endIndex){
+                        NSLog("Final timestamp:  \(location.timestamp)")
+                        let timeTwo = location.timestamp
+                        
+                        let runMinutes = minsBetweenDates(startDate: timeOne, endDate: timeTwo)
+                        let runSeconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
+                        totalTime.append("\(runMinutes):\(runSeconds)")
+                        NSLog("difference in minutes \(runMinutes)")
+                    }
+                    
+                    locationIndex+=1
+                    
+                }
+                
+                index+=1
+                
+                
+            
+                
+                
+            }
+            for run in allRuns{
+                var distanceInMeters : Double = 0.0
+                var locationIndex = 1
+                var coordinateOne = CLLocation()
+                
+                
+                for location in run.locations {
+                    if (locationIndex == 1){
+                        coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+                    }
+                    
+                    let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+                    
+                    
+                    distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+                    
+                    
+                    coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
+                    locationIndex += 1
+                }
+                
+                
+                finalDistance.append(String(distanceInMeters))
+                distanceInMeters = 0.0
+            }
+            
+            
+            NSLog("total Time array \(totalTime)")
+            NSLog("start dates array \(startDates)")
+            NSLog("total distance array \(finalDistance)")
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+        
     }
     
     
@@ -259,7 +433,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                     let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     
                     
-                    distanceInMeters += distance(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+                    distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
                     
                     coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     locationIndex += 1
