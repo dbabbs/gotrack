@@ -24,6 +24,7 @@ class MenuViewController: UIViewController {
         
     }
     
+    
     func getFacebookUserInfo() {
         if(FBSDKAccessToken.current() != nil) {
             //print permissions, such as public_profile

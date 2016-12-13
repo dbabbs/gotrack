@@ -17,9 +17,10 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
     var path = GMSMutablePath()
-    var tracking = false
     
-    var collectData = true
+    
+    var tracking = false
+    var collectData = false
 
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var combinedChartView: CombinedChartView!
@@ -31,9 +32,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //change stat indicator values
-        
         
         //current date
         let dateFormatter = DateFormatter()
@@ -49,8 +47,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         viewMap.settings.myLocationButton = true
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
         
-        startTracking() //begin tracking
-        updateChartWithData() //update chart
+        //if tracking {
+            updateChartWithData() //update chart
+        //}
         
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
@@ -64,13 +63,20 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
         
-        //add stop button
-        let stopButton = UIButton(frame: CGRect(x: 325, y: 20, width: 44, height: 30))
-        stopButton.backgroundColor = UIColor.red
-        stopButton.setTitle("Stop", for: .normal)
-        stopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
-        stopButton.layer.cornerRadius = 8.0;
-        self.view.addSubview(stopButton)
+        //add start/stop button
+        let startStopButton = UIButton(frame: CGRect(x: 325, y: 20, width: 44, height: 30))
+        startStopButton.layer.cornerRadius = 8.0;
+        
+        if tracking {
+            startStopButton.backgroundColor = UIColor.red
+            startStopButton.setTitle("Stop", for: .normal)
+            startStopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+        } else {
+            startStopButton.backgroundColor = UIColor.blue
+            startStopButton.setTitle("Start", for: .normal)
+            startStopButton.addTarget(self, action: #selector(self.startButtonPressed), for: .touchUpInside)
+        }
+        self.view.addSubview(startStopButton)
     }
     
     func toMenu() {
@@ -85,7 +91,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         //code below moves the camera where GPS is
         //possible remove to allow pan/zoom for the user?
         viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
-        //NSLog("Latitude: \(location.coordinate.latitude), Longitude \(location.coordinate.longitude)")
         if tracking {
             // Record each location for a new run
             locations.append(location)
@@ -97,6 +102,13 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     var mileCount = 0
     var timeCount = 0
+    
+    func distance(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
+        var distance : Double = 0.0
+        distance = coordinateOne.distance(from: coordinateTwo)
+        return distance
+        
+    }
     
     func updateCounters() {
         if collectData {
@@ -112,6 +124,13 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         stopTracking()
         saveTracking()
         collectData = false
+        tracking = false
+    }
+    
+    @IBAction func startButtonPressed(_ sender: UIButton) {
+        startTracking()
+        collectData = true
+        tracking = true
     }
     
     deinit {
@@ -146,36 +165,24 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             let newLocation = Location()
             newLocation.latitude = Float(location.coordinate.latitude)
             newLocation.longitude = Float(location.coordinate.longitude)
+            newLocation.timestamp = location.timestamp
             newLocation.save()
             newRun.locations.append(newLocation)
         }
-        
         newRun.save()
-        
-        // Fetch data
-        /*do{
-            let realm = try Realm()
-            let allRuns = realm.objects(Run.self)
-            print(allRuns)
-            
-            for run in allRuns {
-                //NSLog("Run at: \(run.timestamp)")
-                for location in run.locations {
-                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
-                    
-                }
-            }
-            
-            
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
-        }*/
-        
     }
     
-    var latData : [Int] = []
-    var longData : [Int] = []
+    var latData : [Int] = [5, 4, 3, 2, 5, 6, 7, 3, 2, 5, 2]
+    var longData : [Int] = [8, 4, 2, 1, 4, 3, 2, 4, 5, 6, 8]
     
+    func getLast(amount: Int, array: [Int]) -> [Int] {
+        var temp : [Int] = []
+        var index = array.count - amount - 1
+        for i in index..<array.count{
+            temp.append(array[i])
+        }
+        return temp
+    }
     
     func updateChartWithData() {
         var barEntries: [BarChartDataEntry] = []
@@ -186,31 +193,55 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             let allRuns = realm.objects(Run.self)
             //print(allRuns)
             
-            var index = 0
-            for run in allRuns {
-                for location in run.locations {
-                    //latData.append(location.latitude)
-                    //longData.append(location.longitude)
-                    
-                    //perform action here
-                }
-                index += 1
-            }
+//            var index = 0
+//            for run in allRuns {
+//                for location in run.locations {
+//                    //latData.append(location.latitude)
+//                    //longData.append(location.longitude)
+//                    
+//                    //perform action here
+//                }
+//                index += 1
+//            }
             
+            //Zhanna's code
+            /*for run in allRuns {
+                var distanceInMeters : Double = 0.0
+                var coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
+                //         let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+                
+                NSLog("original coordinate one test \(coordinateOne)")
+                for location in run.locations{
+                    //              let coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude) , longitude: Double(run.locations[1].longitude))
+                    let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+                    
+                    var distanceLog = distance(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
+                    distanceInMeters += distanceLog
+                     NSLog("distance is \(distanceInMeters)")
+                 //   NSLog("coordinate two test \(coordinateTwo)")
+                    
+                    //distanceInMeters += coordinateOne.distance(from: coordinateTwo)
+                    //NSLog("Test of distance calc \(distanceInMeters) in meters")
+                    coordinateOne = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
+                } 
+            }*/
             
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
         
+                
         if collectData {
             latData.append(Int(arc4random_uniform(6) + 1))
             longData.append(Int(arc4random_uniform(6) + 1))
         }
+        var lastLat = getLast(amount: 8, array: latData)
+        var lastLong = getLast(amount: 8, array: longData)
             
-        for i in 0..<latData.count {
-            let barEntry = BarChartDataEntry(x: Double(i), y: Double(latData[i]))
+        for i in 0..<lastLat.count {
+            let barEntry = BarChartDataEntry(x: Double(i), y: Double(lastLat[i]))
             barEntries.append(barEntry)
-            let lineEntry = ChartDataEntry(x: Double(i), y: Double(longData[i]))
+            let lineEntry = ChartDataEntry(x: Double(i), y: Double(lastLong[i]))
             lineEntries.append(lineEntry)
         }
         let chartDataSet = BarChartDataSet(values: barEntries, label: "")
