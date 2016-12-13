@@ -174,6 +174,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         newRun.timestamp = Date()
         for location in locations {
             let newLocation = Location()
+            newLocation.timestamp = Date()
             newLocation.latitude = Float(location.coordinate.latitude)
             newLocation.longitude = Float(location.coordinate.longitude)
             newLocation.timestamp = location.timestamp
