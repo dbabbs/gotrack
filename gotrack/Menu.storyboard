@@ -24,30 +24,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTs-w7-wbT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="run" translatesAutoresizingMaskIntoConstraints="NO" id="ZFo-FO-aza">
-                                        <rect key="frame" x="16" y="25" width="70" height="70"/>
+                                        <rect key="frame" x="16" y="15" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="D8J-v6-Bet"/>
                                             <constraint firstAttribute="width" secondItem="ZFo-FO-aza" secondAttribute="height" multiplier="1:1" id="c7o-zz-drP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awa-ER-9v3">
-                                        <rect key="frame" x="102" y="33" width="6" height="27"/>
+                                        <rect key="frame" x="102" y="23" width="6" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-Be-Vyu">
-                                        <rect key="frame" x="102" y="68" width="12" height="12"/>
+                                        <rect key="frame" x="102" y="58" width="12" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="3lw-3O-ylD"/>
                                             <constraint firstAttribute="width" secondItem="wJ6-Be-Vyu" secondAttribute="height" multiplier="1:1" id="Pcu-jJ-63x"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RrS-3m-yq6" userLabel="City State">
-                                        <rect key="frame" x="122" y="63" width="5" height="21"/>
+                                        <rect key="frame" x="122" y="53" width="5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" red="0.53333333329999999" green="0.56862745100000001" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -61,13 +61,13 @@
                                     <constraint firstItem="awa-ER-9v3" firstAttribute="top" secondItem="ZFo-FO-aza" secondAttribute="top" constant="8" id="bw1-QH-Yok"/>
                                     <constraint firstItem="ZFo-FO-aza" firstAttribute="leading" secondItem="TTs-w7-wbT" secondAttribute="leading" constant="16" id="kCt-Zi-rFm"/>
                                     <constraint firstItem="ZFo-FO-aza" firstAttribute="centerY" secondItem="TTs-w7-wbT" secondAttribute="centerY" id="kSP-n0-fFI"/>
-                                    <constraint firstAttribute="height" constant="120" id="qNt-dC-fzo"/>
+                                    <constraint firstAttribute="height" constant="100" id="qNt-dC-fzo"/>
                                     <constraint firstItem="awa-ER-9v3" firstAttribute="leading" secondItem="ZFo-FO-aza" secondAttribute="trailing" constant="16" id="r16-GD-uSI"/>
                                     <constraint firstItem="RrS-3m-yq6" firstAttribute="leading" secondItem="wJ6-Be-Vyu" secondAttribute="trailing" constant="8" id="wDx-Y6-DTq"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-RX-Xxf">
-                                <rect key="frame" x="16" y="200" width="81" height="39"/>
+                                <rect key="frame" x="16" y="180" width="81" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" red="0.1058823529" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxt-tE-FFf">
-                                <rect key="frame" x="16" y="239" width="138" height="39"/>
+                                <rect key="frame" x="16" y="219" width="138" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Previous Trips">
                                     <color key="titleColor" red="0.1058823529" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>

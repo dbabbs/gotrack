@@ -13,7 +13,7 @@
         <!--About-->
         <scene sceneID="g5D-Xp-sU9">
             <objects>
-                <viewController title="About" id="UyP-0z-ggl" sceneMemberID="viewController">
+                <viewController title="About" id="UyP-0z-ggl" customClass="AboutViewController" customModule="gotrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BI0-he-2T0"/>
                         <viewControllerLayoutGuide type="bottom" id="DdL-Af-5JX"/>
@@ -22,29 +22,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Dylan Babbs, Keegan Farley, Ian Gonzales, and Zhanna Voloshina." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G17-tZ-y8Q">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Dylan Babbs, Keegan Farley, Ian Gonzales, and Zhanna Voloshina." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G17-tZ-y8Q">
                                 <rect key="frame" x="16" y="142" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFO 498 iOS Development Final Project  Fall2016" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-qv-TO5">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFO 498 iOS Development Final Project  Fall2016" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwV-qv-TO5">
                                 <rect key="frame" x="16" y="213" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPc-SJ-NpT">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iwV-qv-TO5" firstAttribute="top" secondItem="G17-tZ-y8Q" secondAttribute="bottom" constant="30" id="8ih-cv-0SK"/>
                             <constraint firstItem="iwV-qv-TO5" firstAttribute="centerY" secondItem="1pq-TY-PrP" secondAttribute="centerY" constant="-100" id="Ev8-qJ-8gj"/>
+                            <constraint firstItem="DdL-Af-5JX" firstAttribute="top" secondItem="fPc-SJ-NpT" secondAttribute="bottom" id="Kkk-Gs-YwI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iwV-qv-TO5" secondAttribute="trailing" id="OfU-zF-Vqt"/>
+                            <constraint firstItem="fPc-SJ-NpT" firstAttribute="top" secondItem="BI0-he-2T0" secondAttribute="bottom" id="R6E-eK-imD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="iwV-qv-TO5" secondAttribute="leading" id="S2g-zR-xjt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="G17-tZ-y8Q" secondAttribute="leading" id="d0p-OF-Tuc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G17-tZ-y8Q" secondAttribute="trailing" id="kkh-VW-yN9"/>
+                            <constraint firstItem="fPc-SJ-NpT" firstAttribute="leading" secondItem="1pq-TY-PrP" secondAttribute="leadingMargin" id="lnp-Xz-8K8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fPc-SJ-NpT" secondAttribute="trailing" id="srw-9Q-MPO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="fPc-SJ-NpT" id="C4g-vV-xXR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uit-6T-dEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

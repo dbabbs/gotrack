@@ -18,6 +18,7 @@
 		94205C7B1DFFDEBD006BC368 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94205C7A1DFFDEBD006BC368 /* About.storyboard */; };
 		94205C7D1DFFE348006BC368 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C7C1DFFE348006BC368 /* HomeViewController.swift */; };
 		94205C7F1E0000D3006BC368 /* HeatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */; };
+		94205C811E0025B8006BC368 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94205C801E0025B8006BC368 /* AboutViewController.swift */; };
 		948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
 		948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F367F1DFCC7EC00E3525A /* TripsModule.swift */; };
 		948F36821DFCC80D00E3525A /* MockDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36811DFCC80D00E3525A /* MockDB.swift */; };
@@ -69,17 +70,18 @@
 		010798911DFFA006003F0878 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = history/TableViewCell.swift; sourceTree = "<group>"; };
 		010798921DFFA006003F0878 /* PreviousTripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviousTripsViewController.swift; path = history/PreviousTripsViewController.swift; sourceTree = "<group>"; };
 		3CE529361DFCF337005465D6 /* DataObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
+		6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gotrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94205C711DFFA79A006BC368 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		94205C751DFFBBAF006BC368 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		94205C7A1DFFDEBD006BC368 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		94205C7C1DFFE348006BC368 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapViewController.swift; sourceTree = "<group>"; };
-		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
-		6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gotrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRedirectViewController.swift; sourceTree = "<group>"; };
+		94205C801E0025B8006BC368 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		948F367F1DFCC7EC00E3525A /* TripsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModule.swift; sourceTree = "<group>"; };
 		948F36811DFCC80D00E3525A /* MockDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDB.swift; sourceTree = "<group>"; };
+		948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRedirectViewController.swift; sourceTree = "<group>"; };
 		94D29A271DF7B126002955BB /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		94D29A331DF7BAEB002955BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -143,6 +145,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481734ACA67880FED5B2AF36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE3B191DFF3C0F00280263 /* Bolts.framework */,
+				A4BE3B1A1DFF3C0F00280263 /* FBSDKCoreKit.framework */,
+				A4BE3B1B1DFF3C0F00280263 /* FBSDKLoginKit.framework */,
+				A4BE3B1C1DFF3C0F00280263 /* FBSDKShareKit.framework */,
+				6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		94205C781DFFD54E006BC368 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,18 +173,6 @@
 				94D29A331DF7BAEB002955BB /* Utilities.swift */,
 			);
 			name = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		481734ACA67880FED5B2AF36 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A4BE3B191DFF3C0F00280263 /* Bolts.framework */,
-				A4BE3B1A1DFF3C0F00280263 /* FBSDKCoreKit.framework */,
-				A4BE3B1B1DFF3C0F00280263 /* FBSDKLoginKit.framework */,
-				A4BE3B1C1DFF3C0F00280263 /* FBSDKShareKit.framework */,
-				6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		94EDD0E91DFCBFC20007D5A8 /* Storyboards */ = {
@@ -197,6 +199,7 @@
 				94205C731DFFA7A3006BC368 /* WelcomeViewController.swift */,
 				94205C7C1DFFE348006BC368 /* HomeViewController.swift */,
 				94205C7E1E0000D3006BC368 /* HeatMapViewController.swift */,
+				94205C801E0025B8006BC368 /* AboutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */,
 				A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */,
+				94205C811E0025B8006BC368 /* AboutViewController.swift in Sources */,
 				948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */,
 				A40B33741DFE89E20066EADA /* SettingsViewController.swift in Sources */,
 				94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */,

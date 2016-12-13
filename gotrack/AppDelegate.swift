@@ -23,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        do {
-            let realm = try? Realm()
-            realm?.beginWrite()
-            realm?.deleteAll()
-            try? realm?.commitWrite()
-        }
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyBv-aXIRRv6z3QzEFk8RXNYEtN2xGP3MgA")
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

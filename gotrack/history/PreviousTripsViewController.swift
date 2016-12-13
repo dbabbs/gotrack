@@ -22,6 +22,8 @@ class PreviousTripsViewController: UIViewController {
         super.viewDidLoad()
 
         grabRuns()
+
+        tableView.allowsSelection = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +73,7 @@ class PreviousTripsViewController: UIViewController {
 
                         let runMinutes = minsBetweenDates(startDate: timeOne, endDate: timeTwo)
                         let runSeconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
-                        totalTime.append("\(runMinutes):\(runSeconds)")
+                        totalTime.append("\(runMinutes) minutes \(runSeconds) seconds")
                         NSLog("difference in minutes \(runMinutes)")
                     }
 
@@ -80,6 +82,7 @@ class PreviousTripsViewController: UIViewController {
 
                 index+=1
             }
+
             for run in allRuns{
                 var distanceInMeters : Double = 0.0
                 var locationIndex = 1
@@ -101,8 +104,8 @@ class PreviousTripsViewController: UIViewController {
                     locationIndex += 1
                 }
                 
-                
-                finalDistance.append(String(distanceInMeters))
+
+                finalDistance.append(String(Int(distanceInMeters)))
                 distanceInMeters = 0.0
             }
             
@@ -130,8 +133,8 @@ class PreviousTripsViewController: UIViewController {
     {
         let aCell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         aCell.titleLabel.text = self.startDates[indexPath.row]
-        aCell.distanceLabel.text = "distance: " + self.finalDistance[indexPath.row] + " meters"
-        aCell.timeLabel.text = "duration: " + self.totalTime[indexPath.row]
+        aCell.distanceLabel.text = "Distance: " + self.finalDistance[indexPath.row] + " meters"
+        aCell.timeLabel.text = "Duration: " + self.totalTime[indexPath.row]
         
         return aCell
     }
