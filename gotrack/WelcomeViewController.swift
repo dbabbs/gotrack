@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
 
         // TODO check if we have location permissions
 
-        return false
+        return true
     }
 
     // 

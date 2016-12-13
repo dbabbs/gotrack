@@ -24,7 +24,7 @@ class WelcomeRedirectViewController: UIViewController {
 
         // TODO check if we have location permissions
 
-        return true
+        return false
     }
 
     private func goToWelcomePage() {

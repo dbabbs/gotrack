@@ -14,21 +14,49 @@ import FBSDKLoginKit
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var userImage: UIImageView!
-    
     @IBOutlet weak var userName: UILabel!
-    
+
+    //------------------------------------------------------------
+    // UIViewController overrides
+    //------------------------------------------------------------
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Load the user's fb info
         getFacebookUserInfo()
-        
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar
+        self.navigationController?.navigationBar.alpha = 0.1
+    }
+
+    //------------------------------------------------------------
+    // IBAction methods
+    //------------------------------------------------------------
+
+    @IBAction func previousTripsButtonPressed(_ sender: UIButton) {
+
+        // TODO instantiate the actual previous trip VC here
+        let previousTripsVC = UIViewController()
+
+        self.sideMenuViewController?.contentViewController.navigationController?.pushViewController(previousTripsVC, animated: true)
+        self.sideMenuViewController?.hideViewController()
+    }
+
+    //------------------------------------------------------------
+    // Private methods
+    //------------------------------------------------------------
     
-    
-    func getFacebookUserInfo() {
+    private func getFacebookUserInfo() {
         if(FBSDKAccessToken.current() != nil) {
+
             //print permissions, such as public_profile
-            print(FBSDKAccessToken.current().permissions)
+            Log.info("FB Access Token permissions: \(FBSDKAccessToken.current().permissions)")
+
             let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
             let connection = FBSDKGraphRequestConnection()
             
@@ -40,7 +68,7 @@ class MenuViewController: UIViewController {
                 
                 let FBid = data["id"] as? String
                 let FBname = data["name"] as? String
-                print("my fb name is \(FBname)")
+                Log.info("my fb name is \(FBname)")
                 
                 let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
                 self.userImage.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
@@ -52,25 +80,4 @@ class MenuViewController: UIViewController {
             connection.start()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

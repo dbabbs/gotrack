@@ -10,6 +10,12 @@ import UIKit
 
 class HamburgerMenuViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.navigationBar.alpha = 0.0
+    }
+
 
     @IBAction func previousTripsButtonPressed(_ sender: UIButton) {
 

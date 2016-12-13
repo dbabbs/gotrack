@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,10 +26,9 @@
                         <viewControllerLayoutGuide type="top" id="dK7-rP-EAp"/>
                         <viewControllerLayoutGuide type="bottom" id="OWS-aV-MVc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g1Z-ee-wbq">
+                    <view key="view" contentMode="scaleToFill" id="ENn-Ml-V2k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <segue destination="Bh8-XN-hLd" kind="show" identifier="Welcome" id="Bbg-PE-qnF"/>
@@ -51,26 +51,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-iP-PEC">
-                                <rect key="frame" x="130" y="323" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to GoTrack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2F-tg-8Q6">
+                                <rect key="frame" x="16" y="217" width="266.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCG-i6-Y5f">
-                                <rect key="frame" x="171" y="408" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mah-kL-9HI">
+                                <rect key="frame" x="16" y="597" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.46274509800000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xfR-mh-20k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="Bh8-XN-hLd" eventType="touchUpInside" id="Onh-A9-vfc"/>
+                                    <action selector="nextButtonPressed:" destination="Bh8-XN-hLd" eventType="touchUpInside" id="7KZ-aO-QOG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application requires access to Location Services set to Always." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-f4-2ko">
+                                <rect key="frame" x="16" y="330.5" width="343" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OCG-i6-Y5f" firstAttribute="top" secondItem="Igw-iP-PEC" secondAttribute="bottom" constant="64" id="CNs-a3-aLn"/>
-                            <constraint firstItem="Igw-iP-PEC" firstAttribute="centerY" secondItem="WTK-wS-Rff" secondAttribute="centerY" id="VWn-uz-qhh"/>
-                            <constraint firstItem="OCG-i6-Y5f" firstAttribute="centerX" secondItem="WTK-wS-Rff" secondAttribute="centerX" id="WOp-Hy-wAQ"/>
-                            <constraint firstItem="Igw-iP-PEC" firstAttribute="centerX" secondItem="WTK-wS-Rff" secondAttribute="centerX" id="dxU-7V-Y7l"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mah-kL-9HI" secondAttribute="leading" id="412-Gw-MHw"/>
+                            <constraint firstItem="N2F-tg-8Q6" firstAttribute="leading" secondItem="WTK-wS-Rff" secondAttribute="leadingMargin" id="EDg-Ml-gVX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QcA-f4-2ko" secondAttribute="trailing" id="Gqb-Qg-Qzc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QcA-f4-2ko" secondAttribute="leading" id="Hhr-ek-372"/>
+                            <constraint firstItem="N2F-tg-8Q6" firstAttribute="centerY" secondItem="WTK-wS-Rff" secondAttribute="centerY" constant="-100" id="VaK-Sy-DXb"/>
+                            <constraint firstItem="QcA-f4-2ko" firstAttribute="top" secondItem="N2F-tg-8Q6" secondAttribute="bottom" constant="80" id="jaQ-Bk-SSc"/>
+                            <constraint firstItem="xau-g6-cPI" firstAttribute="top" secondItem="mah-kL-9HI" secondAttribute="bottom" constant="20" id="kAJ-3u-Jci"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mah-kL-9HI" secondAttribute="trailing" id="mad-Mz-HCH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -90,21 +112,39 @@
                         <viewControllerLayoutGuide type="top" id="2tg-Tb-Gex"/>
                         <viewControllerLayoutGuide type="bottom" id="9OS-kq-gKU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Ie-iV-lE2">
+                    <view key="view" contentMode="scaleToFill" id="VBx-AV-LBU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Needs Permissions Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBe-2T-7JB">
-                                <rect key="frame" x="92.5" y="323" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoTrack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf1-lu-f9H">
+                                <rect key="frame" x="16" y="216.5" width="106.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enable location services in:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeI-ex-Ym4">
+                                <rect key="frame" x="16" y="310.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings &gt; Location &gt; Always Allow" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZv-dL-BUd">
+                                <rect key="frame" x="16" y="392" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PBe-2T-7JB" firstAttribute="centerY" secondItem="1Ie-iV-lE2" secondAttribute="centerY" id="t9L-8d-3xF"/>
-                            <constraint firstItem="PBe-2T-7JB" firstAttribute="centerX" secondItem="1Ie-iV-lE2" secondAttribute="centerX" id="yk4-M4-oHL"/>
+                            <constraint firstItem="BZv-dL-BUd" firstAttribute="leading" secondItem="VBx-AV-LBU" secondAttribute="leadingMargin" id="5Hm-vX-gw3"/>
+                            <constraint firstItem="wf1-lu-f9H" firstAttribute="centerY" secondItem="VBx-AV-LBU" secondAttribute="centerY" constant="-100" id="6Kf-Kd-HPp"/>
+                            <constraint firstItem="IeI-ex-Ym4" firstAttribute="top" secondItem="wf1-lu-f9H" secondAttribute="bottom" constant="60" id="9BY-IP-IaC"/>
+                            <constraint firstItem="BZv-dL-BUd" firstAttribute="top" secondItem="IeI-ex-Ym4" secondAttribute="bottom" constant="60" id="Gup-wu-IBs"/>
+                            <constraint firstItem="IeI-ex-Ym4" firstAttribute="leading" secondItem="VBx-AV-LBU" secondAttribute="leadingMargin" id="KDy-YK-5UN"/>
+                            <constraint firstItem="wf1-lu-f9H" firstAttribute="leading" secondItem="VBx-AV-LBU" secondAttribute="leadingMargin" id="Nqa-Og-gl0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BZv-dL-BUd" secondAttribute="trailing" id="fEX-rZ-aF3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IeI-ex-Ym4" secondAttribute="trailing" id="xZh-5a-RGQ"/>
                         </constraints>
                     </view>
                 </viewController>
