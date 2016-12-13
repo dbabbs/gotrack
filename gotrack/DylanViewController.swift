@@ -13,6 +13,12 @@ import RealmSwift
 
 class DylanViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var backgroundRect: UILabel!
+    
+    @IBOutlet weak var velocityText: UILabel!
+    @IBOutlet weak var timetext: UILabel!
+    @IBOutlet weak var yardText: UILabel!
+    
     var locationManager = CLLocationManager()
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
@@ -26,7 +32,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     var globalVelocity : [Double] = []
     
-    
     var distanceGraph = [Float]()
     var distanceGraph2 = [Double]()
     var distanceInMeters : Double = 0.0
@@ -37,7 +42,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var currentTime = Date()
     var timeIsLess = true
     var totalSeconds : Int = 0
-    
+        
     var totalTotalDistance : Double = 0
     
     var startTimeDylan : Date? = nil
@@ -53,7 +58,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateChartWithData(barData: [0], lineData: [0])//, lineData: [0])
+        updateChartWithData(barData: [10], lineData: [10])//, lineData: [0])
         
         //current date
         let dateFormatter = DateFormatter()
@@ -66,22 +71,20 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         
 //        let camera = GMSCameraPosition.camera(withLatitude: 47.6537227, longitude: -122.31218, zoom: 12.0)
 //        viewMap.camera = camera
-        viewMap.settings.myLocationButton = true
+        //viewMap.settings.myLocationButton = true
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
-        //updateChartWithData() //update chart
-
         
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
         })
         
         //add hamburger button
-            let image = UIImage(named: "burger") as UIImage?
-            let button   = UIButton(type: UIButtonType.custom) as UIButton
-            button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
-            button.setImage(image, for: .normal)
-            self.view.addSubview(button)
-            button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
+        var image = (UIImage(named: "burger") as UIImage?)!
+        let button   = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(x: 15, y: 20, width: 52, height: 52)
+        button.setImage(image, for: .normal)
+        self.view.addSubview(button)
+        button.addTarget(self, action: #selector(self.toMenu), for: .touchUpInside)
         
         //add start/stop button
         let startStopButton = UIButton(frame: CGRect(x: 310, y: 28, width: 55, height: 34))
@@ -105,7 +108,47 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "toMenu", sender: self)
     }
     
+    func night() {
+        self.view.backgroundColor = UIColor(red: 40/255, green: 47/255, blue: 54/255, alpha: 1)
+        
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
+                viewMap.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                NSLog("Unable to find style.json")
+            }
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
+        yardText.textColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+        timetext.textColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+        velocityText.textColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+        dateDisplay.textColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+    }
     
+    func day() {
+        self.view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "style2", withExtension: "json") {
+                viewMap.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                NSLog("Unable to find style.json")
+            }
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
+        
+        yardText.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
+        timetext.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
+        velocityText.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
+        dateDisplay.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
+        
+    }
+    
+    
+
     
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -205,6 +248,23 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         return components.second!
     }
     
+    func secsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        var seconds : Int = components.second!
+        if (components.second! >= 60){
+            seconds = seconds / 60
+        }
+        
+        return seconds
+    }
+    
+    func minsBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.minute], from: startDate, to: endDate)
+        return components.minute!
+    }
+    
     func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
         var distance : Double = 0.0
         distance = coordinateOne.distance(from: coordinateTwo)
@@ -277,6 +337,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.trackStartTimeStamp = NSDate() as Date
         self.path = GMSMutablePath()
         self.firstLoc = true
+        night()
     }
     
     func stopTracking() {
@@ -284,12 +345,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.collectData = false
         totalTotalDistance = 0.0
         distanceGraph2.removeAll()
+        day()
     }
     
     func saveTracking() -> Void {
 
         let newRun = Run()
         newRun.timestamp = Date()
+
         var index = 1
         var firstLocationLat : Double = 0.0
         var firstLocationLong : Double = 0.0
@@ -332,8 +395,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         NSLog("THIS IS TESTING DISTANCES: \(distanceGraph)")
         newRun.save()
 
-
-
         do{
             let realm = try Realm()
             let allRuns = realm.objects(Run.self)
@@ -341,60 +402,50 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             var startDates = [String]()
             var finalDistance = [String]()
             var totalTime = [String]()
-
+            
             var index = 0
             for run in allRuns {
                 let startTime = run.timestamp
+                let calendar = Calendar.current
+                
+                
+                let hour = calendar.component(.hour, from: startTime)
+                let minutes = calendar.component(.minute, from: startTime)
+                let seconds = calendar.component(.second, from: startTime)
+                startDates.append("hours = \(hour):\(minutes):\(seconds)")
+                
 
-                let formatter = DateFormatter()
-                formatter.dateStyle = .medium
-                formatter.timeStyle = .medium
-
-                var dateStr = formatter.string(from: startTime)
-                startDates.append("\(dateStr)")
-
-                NSLog("Run at:  \(index) at: \(run.timestamp)")
                 var locationIndex = 1
                 var timeOne = Date()
-
+                
                 for location in run.locations {
                     if (locationIndex == 1){
                         timeOne = location.timestamp
                     }
-
+                    
                     let endIndex = run.locations.endIndex
                     print(endIndex)
-
-
-                    NSLog("Index of: \(locationIndex) at Timestamp: \(location.timestamp)")
-                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
-
+                    
+                    
                     if (locationIndex == endIndex){
-                        NSLog("Final timestamp:  \(location.timestamp)")
                         let timeTwo = location.timestamp
-
+                        
                         let runMinutes = minsBetweenDates(startDate: timeOne, endDate: timeTwo)
                         let runSeconds = secsBetweenDates(startDate: timeOne, endDate: timeTwo)
                         totalTime.append("\(runMinutes):\(runSeconds)")
-                        NSLog("difference in minutes \(runMinutes)")
                     }
-
+                    
                     locationIndex+=1
-
+                    
                 }
-
+                
                 index+=1
-
-
-
-
-
             }
+
             for run in allRuns{
                 var distanceInMeters : Double = 0.0
                 var locationIndex = 1
                 var coordinateOne = CLLocation()
-
 
                 for location in run.locations {
                     if (locationIndex == 1){
@@ -403,19 +454,15 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
 
                     let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
 
-
                     distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-
 
                     coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
                     locationIndex += 1
                 }
 
-
                 finalDistance.append(String(distanceInMeters))
                 distanceInMeters = 0.0
             }
-
 
             NSLog("total Time array \(totalTime)")
             NSLog("start dates array \(startDates)")
@@ -424,9 +471,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
-
     }
-
 
 
     func getLast(amount: Int, array: [Int]) -> [Int] {
@@ -466,6 +511,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         combinedChartView.data = data
         
         //set colors
+        chartDataSet.colors = [UIColor(red: 255/255, green: 150/255, blue: 0/255, alpha: 1)]
         chartDataSet.colors = [UIColor(red: 	254/255, green: 56/255, blue: 36/255, alpha: 1)]
         lineChartDataSet.colors = [UIColor(red: 80/255, green: 227/255, blue: 194/255, alpha: 1)]
         lineChartDataSet.setCircleColor(UIColor(red: 80/255, green: 227/255, blue: 194/255, alpha: 1))
@@ -495,10 +541,13 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func triggerShare(_ sender: UIButton) {
-        let random = Int(arc4random_uniform(6) + 1)
-        let text = "Today I ran \(random) miles! Track your own run with GoTrack! http://github.com/dbabbs/gotrack"
+        var image = captureScreen()
+                let random = Int(arc4random_uniform(6) + 1)
+        let text = "Today I've traveled \(Int(round(totalTotalDistance * 1.09361))) yards! Track your own run with GoTrack! http://github.com/dbabbs/gotrack"
+        var shareItems : Array = [image, text] as [Any]
+
         let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
 
@@ -523,12 +572,20 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                 maxLineValue = value
             }
         }
-        let coefficient = Double(maxLineValue) / Double (maxBarValue)
+        let coefficient =  Double(maxLineValue) / Double (maxBarValue)
         var updatedLineValues : [Double] = []
         for value in lineData {
             updatedLineValues.append(Double(value) / coefficient)
         }
         return updatedLineValues
+    }
+    
+    func captureScreen() -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, UIScreen.main.scale)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 
 
