@@ -13,8 +13,12 @@ import FBSDKLoginKit
 
 class MenuViewController: UIViewController {
 
+    let settingsSegueIdentifier = "settingsViewSegue"
+    var cityStateLabelString = "Unknown Location"
+
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var cityStateLabel: UILabel!
 
     enum Page: String {
         case Settings = "Settings"
@@ -27,6 +31,9 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Set state label
+        cityStateLabel.text = cityStateLabelString
 
         // Load the user's fb info
         getFacebookUserInfo()
@@ -97,4 +104,28 @@ class MenuViewController: UIViewController {
             connection.start()
         }
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        print("sender: \(segue.identifier)")
+        if segue.identifier == settingsSegueIdentifier {
+            let destinationVC = segue.destination as! SettingsViewController
+        
+            destinationVC.cityStateLabelString = cityStateLabelString
+        }
+
+    }
+    
+
 }
