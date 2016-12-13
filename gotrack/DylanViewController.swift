@@ -167,7 +167,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         }
         let settingsViewController = SettingsViewController()
 
-        userIndicatedSeconds = settingsViewController.sliderValue
         if tracking {
             
             if (totalSeconds > 5) {
