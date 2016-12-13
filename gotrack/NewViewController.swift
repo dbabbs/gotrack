@@ -1,15 +1,16 @@
 //
 //  NewViewController.swift
-//  gotrack
+//  HistoryViewController
 //
 //  Created by Zhanna Voloshina on 12/12/16.
-//  Copyright © 2016 Babbs, Dylan. All rights reserved.
+//  Copyright © 2016 Zhanna Voloshina. All rights reserved.
 //
 
 import UIKit
 
-class NewViewController: UIViewController {
+class NewViewController: ViewController {
 
+    @IBOutlet weak var sampleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

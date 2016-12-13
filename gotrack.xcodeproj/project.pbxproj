@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0107982A1DFF5501003F0878 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010798291DFF5501003F0878 /* HistoryViewController.swift */; };
-		0107982C1DFF5C5F003F0878 /* ViewControllerHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107982B1DFF5C5F003F0878 /* ViewControllerHistory.swift */; };
-		0107982E1DFF6148003F0878 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107982D1DFF6148003F0878 /* TableViewCell.swift */; };
-		010798301DFF617D003F0878 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107982F1DFF617D003F0878 /* NewViewController.swift */; };
-		010798341DFF62D5003F0878 /* history.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010798331DFF62D5003F0878 /* history.storyboard */; };
+		010798931DFFA006003F0878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0107988E1DFFA006003F0878 /* LaunchScreen.storyboard */; };
+		010798941DFFA006003F0878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0107988F1DFFA006003F0878 /* Main.storyboard */; };
+		010798961DFFA006003F0878 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010798911DFFA006003F0878 /* TableViewCell.swift */; };
+		010798971DFFA006003F0878 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010798921DFFA006003F0878 /* ViewController2.swift */; };
 		3CE529371DFCF337005465D6 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE529361DFCF337005465D6 /* DataObjects.swift */; };
 		69C95C77DEE5BEAEDF29E6BC /* Pods_gotrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */; };
 		948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */; };
@@ -56,11 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		010798291DFF5501003F0878 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		0107982B1DFF5C5F003F0878 /* ViewControllerHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerHistory.swift; sourceTree = "<group>"; };
-		0107982D1DFF6148003F0878 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		0107982F1DFF617D003F0878 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
-		010798331DFF62D5003F0878 /* history.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = history.storyboard; sourceTree = "<group>"; };
+		0107988E1DFFA006003F0878 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0107988F1DFFA006003F0878 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		010798911DFFA006003F0878 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		010798921DFFA006003F0878 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		3CE529361DFCF337005465D6 /* DataObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 		603DD2B99E7416592444A7C8 /* Pods-gotrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotrack/Pods-gotrack.release.xcconfig"; sourceTree = "<group>"; };
 		6B9648FEF1A17F195A0FD6F7 /* Pods_gotrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gotrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0107988D1DFFA006003F0878 /* history */ = {
+			isa = PBXGroup;
+			children = (
+				0107988E1DFFA006003F0878 /* LaunchScreen.storyboard */,
+				0107988F1DFFA006003F0878 /* Main.storyboard */,
+				010798911DFFA006003F0878 /* TableViewCell.swift */,
+				010798921DFFA006003F0878 /* ViewController2.swift */,
+			);
+			path = history;
+			sourceTree = "<group>";
+		};
 		481734ACA67880FED5B2AF36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +166,7 @@
 		94EDD0EE1DFCC49C0007D5A8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0107988D1DFFA006003F0878 /* history */,
 				94EDD0EF1DFCC4A90007D5A8 /* SignInViewController.swift */,
 			);
 			name = ViewControllers;
@@ -205,14 +215,9 @@
 				3CE529361DFCF337005465D6 /* DataObjects.swift */,
 				A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */,
 				A49C6C4C1DEEAFAF00622ACC /* Main.storyboard */,
-				010798331DFF62D5003F0878 /* history.storyboard */,
 				A49C6C4F1DEEAFAF00622ACC /* Assets.xcassets */,
 				A49C6C511DEEAFAF00622ACC /* LaunchScreen.storyboard */,
 				A49C6C541DEEAFAF00622ACC /* Info.plist */,
-				0107982B1DFF5C5F003F0878 /* ViewControllerHistory.swift */,
-				0107982F1DFF617D003F0878 /* NewViewController.swift */,
-				0107982D1DFF6148003F0878 /* TableViewCell.swift */,
-				010798291DFF5501003F0878 /* HistoryViewController.swift */,
 			);
 			path = gotrack;
 			sourceTree = "<group>";
@@ -354,12 +359,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010798931DFFA006003F0878 /* LaunchScreen.storyboard in Resources */,
+				010798941DFFA006003F0878 /* Main.storyboard in Resources */,
 				A4341A6E1DFCCB51007E91FA /* Dylan-storyboard.storyboard in Resources */,
 				94EDD0E81DFCBF820007D5A8 /* Home.storyboard in Resources */,
 				A49C6C531DEEAFAF00622ACC /* LaunchScreen.storyboard in Resources */,
 				94D29A281DF7B126002955BB /* HamburgerMenu.storyboard in Resources */,
 				A49C6C501DEEAFAF00622ACC /* Assets.xcassets in Resources */,
-				010798341DFF62D5003F0878 /* history.storyboard in Resources */,
 				A49C6C4E1DEEAFAF00622ACC /* Main.storyboard in Resources */,
 				94EDD0ED1DFCC4640007D5A8 /* SignIn.storyboard in Resources */,
 				94EDD0E31DFCB69E0007D5A8 /* SideMenu.storyboard in Resources */,
@@ -435,22 +441,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010798961DFFA006003F0878 /* TableViewCell.swift in Sources */,
 				94EDD0F01DFCC4A90007D5A8 /* SignInViewController.swift in Sources */,
-				0107982E1DFF6148003F0878 /* TableViewCell.swift in Sources */,
-				010798301DFF617D003F0878 /* NewViewController.swift in Sources */,
 				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
-				0107982A1DFF5501003F0878 /* HistoryViewController.swift in Sources */,
 				A49C6C4B1DEEAFAF00622ACC /* ViewController.swift in Sources */,
 				948F36801DFCC7EC00E3525A /* TripsModule.swift in Sources */,
 				A49C6C491DEEAFAF00622ACC /* AppDelegate.swift in Sources */,
-				0107982C1DFF5C5F003F0878 /* ViewControllerHistory.swift in Sources */,
 				948F367E1DFCC75400E3525A /* HelperFunctions.swift in Sources */,
 				94EDD0E51DFCB77C0007D5A8 /* HomeViewController.swift in Sources */,
 				94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */,
 				A4341A721DFCD898007E91FA /* onboardViewController.swift in Sources */,
 				3CE529371DFCF337005465D6 /* DataObjects.swift in Sources */,
 				948F36821DFCC80D00E3525A /* MockDB.swift in Sources */,
+				010798971DFFA006003F0878 /* ViewController2.swift in Sources */,
 				A4341A701DFCCCF6007E91FA /* DylanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

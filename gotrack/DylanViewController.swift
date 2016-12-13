@@ -189,7 +189,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             
             
             // gets the distance correctly in meters
-            
+            var totalDistances = [String]()
             
             for run in allRuns {
                 var distanceInMeters : Double = 0.0
@@ -207,7 +207,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
                     
                 }
                 NSLog("final distance calculation for run \(distanceInMeters)")
+                totalDistances.append(String(distanceInMeters))
             }
+        //    NSLog(totalDistances)
 
     
             
