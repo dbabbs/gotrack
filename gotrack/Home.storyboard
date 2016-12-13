@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="33" y="125"/>
         </scene>
-        <!--Dylan View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="EbL-aQ-eHa">
             <objects>
-                <viewController id="9uV-H5-XNQ" customClass="DylanViewController" customModule="gotrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9uV-H5-XNQ" customClass="HomeViewController" customModule="gotrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Td-N8-NWY"/>
                         <viewControllerLayoutGuide type="bottom" id="aDa-5H-xRS"/>
