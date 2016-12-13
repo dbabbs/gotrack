@@ -24,7 +24,15 @@ class SideMenuViewController: RESideMenu {
         }
 
         let contentStoryboard = UIStoryboard(name: mainContentStoryboardName, bundle: nil)
-        let contentVC = contentStoryboard.instantiateInitialViewController()!
+        var contentVC = contentStoryboard.instantiateInitialViewController()!
+
+        // switch to root view controller if necessary
+//        if let navVC = contentVC as? UINavigationController {
+//            Log.debug(self, "navVC: \(navVC)")
+//            Log.debug(self, "navVC.viewControllers \(navVC.viewControllers)")
+//            Log.debug(self, "navVC.viewControllers[0] \(navVC.viewControllers[0])")
+//            contentVC = navVC.viewControllers[0]
+//        }
 
         var leftMenuVC: UIViewController?
         if let leftMenuStoryboardName = leftMenuStoryboardName {
@@ -41,5 +49,7 @@ class SideMenuViewController: RESideMenu {
         self.contentViewController = contentVC
         self.leftMenuViewController = leftMenuVC
         self.rightMenuViewController = rightMenuVC
+
+        Log.debug(self, "setting contentViewController to \(contentVC)")
     }
 }

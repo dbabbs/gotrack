@@ -55,6 +55,9 @@
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" red="0.1058823529" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="settingsButtonPressed:" destination="bj4-B1-QCH" eventType="touchUpInside" id="gHo-G6-gbq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxt-tE-FFf">
                                 <rect key="frame" x="16" y="239" width="138" height="39"/>
@@ -97,22 +100,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciA-SD-X6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="356.67166416791605"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tMy-NY-G5E">
-            <objects>
-                <navigationController id="1EH-jP-0y0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c8A-xb-mT6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="bj4-B1-QCH" kind="relationship" relationship="rootViewController" id="QqS-41-Hu4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AOF-mU-wh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-774" y="357"/>
         </scene>
     </scenes>
 </document>

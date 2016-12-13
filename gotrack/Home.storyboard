@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0iz-vq-coc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CuI-Hr-tPW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="uQM-Xc-BVS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NmF-Fn-9Cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="CuI-Hr-tPW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" misplaced="YES" id="hQQ-iv-AoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Mtj-8x-wwB">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="0iz-vq-coc" kind="relationship" relationship="rootViewController" id="YVs-eG-cEl"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-614" y="125"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="L5F-cm-8Kk">
             <objects>
@@ -23,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt3-QA-wFf">
-                                <rect key="frame" x="32" y="36" width="39" height="30"/>
+                                <rect key="frame" x="32" y="16" width="39" height="30"/>
                                 <state key="normal" title="Menu"/>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="0iz-vq-coc" eventType="touchUpInside" id="I5C-Tl-0mq"/>
@@ -33,13 +53,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bt3-QA-wFf" firstAttribute="leading" secondItem="c1V-Yb-eXf" secondAttribute="leadingMargin" constant="16" id="AzM-KW-kF1"/>
-                            <constraint firstItem="Bt3-QA-wFf" firstAttribute="top" secondItem="nYG-sP-N9H" secondAttribute="bottom" constant="16" id="VFQ-12-yMh"/>
+                            <constraint firstItem="Bt3-QA-wFf" firstAttribute="top" secondItem="c1V-Yb-eXf" secondAttribute="topMargin" constant="16" id="cc7-Kj-uvM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xKT-9H-ZY8"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOb-Z4-7ra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="138"/>
+            <point key="canvasLocation" x="142" y="125"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,11 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
 
+    enum Page: String {
+        case Settings = "Settings"
+        case PreviousTrips = "PreviousTrips"
+    }
+
     //------------------------------------------------------------
     // UIViewController overrides
     //------------------------------------------------------------
@@ -27,29 +32,41 @@ class MenuViewController: UIViewController {
         getFacebookUserInfo()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // Hide the navigation bar
-        self.navigationController?.navigationBar.alpha = 0.1
-    }
-
     //------------------------------------------------------------
     // IBAction methods
     //------------------------------------------------------------
 
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        goTo(page: .Settings)
+    }
+
     @IBAction func previousTripsButtonPressed(_ sender: UIButton) {
-
-        // TODO instantiate the actual previous trip VC here
-        let previousTripsVC = UIViewController()
-
-        self.sideMenuViewController?.contentViewController.navigationController?.pushViewController(previousTripsVC, animated: true)
-        self.sideMenuViewController?.hideViewController()
+        goTo(page: .PreviousTrips)
     }
 
     //------------------------------------------------------------
     // Private methods
     //------------------------------------------------------------
+
+    private func goTo(page: Page) {
+        let storyboardName = page.rawValue
+        let settingsStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let settingsVC = settingsStoryboard.instantiateInitialViewController()!
+        let contentVC = self.sideMenuViewController?.contentViewController
+
+        Log.info(in: self, "going to \(page) page...")
+
+        // transition content view controller to next page
+        if let navVC: UINavigationController = (contentVC as? UINavigationController) ?? contentVC?.navigationController {
+            navVC.pushViewController(settingsVC, animated: true)
+        } else {
+            Log.error(in: self, because: "the side menu's content view controller does not have a navigation controller")
+            contentVC?.present(settingsVC, animated: true, completion: nil)
+        }
+
+        // hide side menu
+        self.sideMenuViewController?.hideViewController()
+    }
     
     private func getFacebookUserInfo() {
         if(FBSDKAccessToken.current() != nil) {
