@@ -89,6 +89,9 @@ class WelcomeViewController: UIViewController, CLLocationManagerDelegate {
         case CLAuthorizationStatus.authorizedAlways:
             goToNextPage()
 
+        case CLAuthorizationStatus.authorizedWhenInUse:
+            goToNextPage()
+
         case CLAuthorizationStatus.notDetermined:
             break
 
