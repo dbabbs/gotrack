@@ -75,7 +75,6 @@ class MenuViewController: UIViewController {
         print("sender: \(segue.identifier)")
         if segue.identifier == settingsSegueIdentifier {
             let destinationVC = segue.destination as! SettingsViewController
-        
             destinationVC.cityStateLabelString = cityStateLabelString
         }
 
