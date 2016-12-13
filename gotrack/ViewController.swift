@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import RealmSwift
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
@@ -23,6 +24,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         let camera = GMSCameraPosition.camera(withLatitude: -33.868, longitude: 151.2086, zoom: 16)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        
+        
+        
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
         // Listen to the myLocation property of GMSMapView.
@@ -39,6 +43,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         DispatchQueue.main.async(execute: {() -> Void in
             self.mapView.isMyLocationEnabled = true
         })
+        
+        let image = UIImage(named: "HamburgerMenu") as UIImage?
+        let button   = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(x: 15, y: 20, width: 45, height: 45)
+        button.setImage(image, for: .normal)
+        self.view.addSubview(button)
+        button.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
@@ -59,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
         let mapView = self.view as! GMSMapView
         mapView.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
-        NSLog("Latitude: \(location.coordinate.latitude), Longitude \(location.coordinate.longitude)")
+        //NSLog("Latitude: \(location.coordinate.latitude), Longitude \(location.coordinate.longitude)")
         
         if tracking {
             // Record each location for a new run
@@ -82,22 +93,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func saveTracking() -> Void {
-        //let SaveRun = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext!) as! Run
-        let context = getContext()
-        let saveRun = NSEntityDescription.insertNewObject(forEntityName: "Run", into: context) as! Run
-        saveRun.timestamp = NSDate()
+        print("1")
+
+        let newRun = Run()
+        newRun.timestamp = Date()
         
-        var savedLocations = [Location]()
+        
         for location in locations {
-            let saveLocation = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context) as! Location
-            saveLocation.latitude = Float(location.coordinate.latitude)
-            saveLocation.longitude = Float(location.coordinate.longitude)
+            print("2")
+
+            let newLocation = Location()
+            newLocation.latitude = Float(location.coordinate.latitude)
+            newLocation.longitude = Float(location.coordinate.longitude)
+            newLocation.save()
+            newRun.locations.append(newLocation)
         }
         
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
+        newRun.save()
+        
+        // Fetch data
+        do{
+            let realm = try Realm()
+            let allRuns = realm.objects(Run.self)
+            print(allRuns)
+
+            for run in allRuns {
+                NSLog("Run at: \(run.timestamp)")
+                for location in run.locations {
+                    NSLog("Coordinates: \(location.latitude), \(location.longitude)")
+                    
+                }
+            }
+            
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
         }
         
     }
