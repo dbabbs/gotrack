@@ -23,7 +23,6 @@
 		948F36841DFCD51D00E3525A /* WelcomeRedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F36831DFCD51D00E3525A /* WelcomeRedirectViewController.swift */; };
 		94D29A281DF7B126002955BB /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D29A271DF7B126002955BB /* Menu.storyboard */; };
 		94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A331DF7BAEB002955BB /* Utilities.swift */; };
-		94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D29A351DF7D5A0002955BB /* MainViewController.swift */; };
 		94EDD0E31DFCB69E0007D5A8 /* SideMenuRedirect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0E21DFCB69E0007D5A8 /* SideMenuRedirect.storyboard */; };
 		94EDD0E81DFCBF820007D5A8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDD0E71DFCBF820007D5A8 /* Home.storyboard */; };
 		94EDD0EB1DFCC0430007D5A8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */; };
@@ -80,7 +79,6 @@
 		94D29A271DF7B126002955BB /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		94D29A2A1DF7B30E002955BB /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		94D29A331DF7BAEB002955BB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		94D29A351DF7D5A0002955BB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		94EDD0E21DFCB69E0007D5A8 /* SideMenuRedirect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenuRedirect.storyboard; sourceTree = "<group>"; };
 		94EDD0E71DFCBF820007D5A8 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		94EDD0EA1DFCC0430007D5A8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -169,14 +167,6 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		94D29A291DF7B2B3002955BB /* Keegans Code */ = {
-			isa = PBXGroup;
-			children = (
-				94D29A351DF7D5A0002955BB /* MainViewController.swift */,
-			);
-			name = "Keegans Code";
-			sourceTree = "<group>";
-		};
 		94EDD0E91DFCBFC20007D5A8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +236,6 @@
 				94EDD0EE1DFCC49C0007D5A8 /* ViewControllers */,
 				94EDD0E91DFCBFC20007D5A8 /* Storyboards */,
 				A4341A6C1DFCCB2E007E91FA /* Dylan's code */,
-				94D29A291DF7B2B3002955BB /* Keegans Code */,
 				A49C6C481DEEAFAF00622ACC /* AppDelegate.swift */,
 				3CE529361DFCF337005465D6 /* DataObjects.swift */,
 				A49C6C4A1DEEAFAF00622ACC /* ViewController.swift */,
@@ -481,7 +470,6 @@
 			files = (
 				010798961DFFA006003F0878 /* TableViewCell.swift in Sources */,
 				948F36841DFCD51D00E3525A /* WelcomeRedirectViewController.swift in Sources */,
-				94D29A361DF7D5A0002955BB /* MainViewController.swift in Sources */,
 				A40B33721DFE82540066EADA /* MenuViewController.swift in Sources */,
 				94D29A341DF7BAEB002955BB /* Utilities.swift in Sources */,
 				94205C7D1DFFE348006BC368 /* HomeViewController.swift in Sources */,
