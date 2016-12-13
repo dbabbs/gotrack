@@ -1,6 +1,6 @@
 //
 //  TableViewCell.swift
-//  HistoryViewController
+//  gotrack
 //
 //  Created by Zhanna Voloshina on 12/12/16.
 //  Copyright © 2016 Zhanna Voloshina. All rights reserved.

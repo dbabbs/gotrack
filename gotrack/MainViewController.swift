@@ -18,12 +18,14 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        // hide navigation bar on this page
         self.navigationController?.navigationBar.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        // show navigation bar on other pages
         self.navigationController?.navigationBar.isHidden = false
     }
 
@@ -33,8 +35,5 @@ class MainViewController: UIViewController {
 
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         self.sideMenuViewController?.presentLeftMenuViewController()
-
-        Log.info("self: \(self)")
-        Log.info("navigationController: \(self.navigationController)")
     }
 }

@@ -50,18 +50,18 @@ class MenuViewController: UIViewController {
 
     private func goTo(page: Page) {
         let storyboardName = page.rawValue
-        let settingsStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
-        let settingsVC = settingsStoryboard.instantiateInitialViewController()!
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let nextPageVC = storyboard.instantiateInitialViewController()!
         let contentVC = self.sideMenuViewController?.contentViewController
 
         Log.info(in: self, "going to \(page) page...")
 
         // transition content view controller to next page
         if let navVC: UINavigationController = (contentVC as? UINavigationController) ?? contentVC?.navigationController {
-            navVC.pushViewController(settingsVC, animated: true)
+            navVC.pushViewController(nextPageVC, animated: true)
         } else {
             Log.error(in: self, because: "the side menu's content view controller does not have a navigation controller")
-            contentVC?.present(settingsVC, animated: true, completion: nil)
+            contentVC?.present(nextPageVC, animated: true, completion: nil)
         }
 
         // hide side menu

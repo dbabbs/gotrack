@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  HistoryViewController
+//  PreviousTripsViewController.swift
+//  gotrack
 //
 //  Created by Zhanna Voloshina on 12/12/16.
 //  Copyright © 2016 Zhanna Voloshina. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class PreviousTripsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var objects = [String]()
@@ -57,9 +57,6 @@ class ViewController2: UIViewController {
         self.times.append("70 minutes")
         self.times.append("80 minutes")
         self.times.append("90 minutes")
-        
-        
-        
     }
     
     func numberOfSectionsInTableView(_ tableView: UITableView) -> Int
