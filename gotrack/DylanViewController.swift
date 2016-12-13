@@ -21,10 +21,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var currentCityState = ""
     var tracking = false
     var collectData = false
+    
     var firstLoc = false
     
+    var globalVelocity : [Double] = []
+    
+    
     var distanceGraph = [Float]()
-    var distanceGraph2 = [Float]()
+    var distanceGraph2 = [Double]()
     var distanceInMeters : Double = 0.0
     var realTimeDistance = CLLocation()
     var currentLoc = CLLocation()
@@ -34,6 +38,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var timeIsLess = true
     var totalSeconds : Int = 0
     
+    var totalTotalDistance : Double = 0
+    
+    var startTimeDylan : Date? = nil
 
     @IBOutlet weak var viewMap: GMSMapView!
     @IBOutlet weak var combinedChartView: CombinedChartView!
@@ -46,9 +53,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var distanceArrayTemp = calculateDistance()
-        
-        distanceDisplay.text = String(distanceArrayTemp[distanceArrayTemp.count - 1])
+        updateChartWithData(barData: [0], lineData: [0])//, lineData: [0])
         
         //current date
         let dateFormatter = DateFormatter()
@@ -63,7 +68,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
 //        viewMap.camera = camera
         viewMap.settings.myLocationButton = true
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
-        updateChartWithData() //update chart
+        //updateChartWithData() //update chart
 
         
         DispatchQueue.main.async(execute: {() -> Void in
@@ -103,6 +108,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Track location and move map with center
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
@@ -119,50 +125,60 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if tracking {
-            if (totalSeconds > 15) {
+            if (totalSeconds > 5) {
                 totalSeconds = 0
-                distanceGraph2.append(Float(totalDistance))
-                NSLog("testing GRAPH ARRAY \(distanceGraph2)")
+                distanceGraph2.append(Double(totalDistance))
+                //NSLog("testing GRAPH ARRAY \(distanceGraph2)")
                 totalDistance = 0.0
                 firstLoc = true
+                updateChartWithData(barData: distanceGraph2, lineData: globalVelocity)
             }
             
-            NSLog("testing if firstLoc is true \(firstLoc)")
+            //NSLog("testing if firstLoc is true \(firstLoc)")
             if firstLoc {
                 realTimeDistance = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 startTime = location.timestamp
-                NSLog("testing what start time is \(startTime)")
+                //NSLog("testing what start time is \(startTime)")
                 currentTime = location.timestamp
-                NSLog("testing what current time is \(currentTime)")
-                NSLog("testing what first location is \(realTimeDistance)")
+                //NSLog("testing what current time is \(currentTime)")
+                //NSLog("testing what first location is \(realTimeDistance)")
                 firstLoc = false
-                NSLog("testing if firstLoc is false \(firstLoc)")
-            }
-            else {
-            
+                //NSLog("testing if firstLoc is false \(firstLoc)")
+            } else {
+                
                 currentLoc = CLLocation (latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 currentTime = location.timestamp
                 totalSeconds = realTimeSeconds(startDate: startTime, endDate: currentTime)
-                NSLog("testing what seconds difference is \(totalSeconds)")
-                NSLog("testing what original location is \(realTimeDistance)")
-                NSLog("testing what current location is \(currentLoc)")
+                //NSLog("testing what seconds difference is \(totalSeconds)")
+                //NSLog("testing what original location is \(realTimeDistance)")
+                //NSLog("testing what current location is \(currentLoc)")
                 let meters = distanceCalc(coordinateOne: realTimeDistance, coordinateTwo: currentLoc)
                 totalDistance += meters
-            
-            NSLog("testing this function \(meters)")
-
+                totalTotalDistance += meters
+                //NSLog("testing this function \(meters)")
+                
             }
             
-           
             locations.append(location)
             
             realTimeDistance = currentLoc
-            NSLog("testing total distance \(totalDistance)")
+
+            // Record each location for a new run
             addPath(location : location)
             
-            updateChartWithData()
-            updateCounters()
+        
+            var distanceStepTwo = totalTotalDistance * 1.09361  //1.09361 is yards conversion
+            distanceDisplay.text = "\(Int(round(distanceStepTwo)))" 
+            
+            var elapsed = Date().timeIntervalSince(startTimeDylan!)
+            self.timeDisplay.text = "\(Int(round(elapsed)))"
+            
+            
+            var velocity = Double(distanceStepTwo * 0.000568182) / Double(elapsed / 3600) //yards to miles; seconds to hours
+            print("VELOCITY: \(velocity)")
+            globalVelocity.append(velocity)
+            self.velocityDisplay.text = "\(Int(round(velocity)))"
         }
         
         // Reverse Geocode location to "City, State"
@@ -171,13 +187,24 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         geocoder.reverseGeocodeCoordinate(location.coordinate) {
             response , error in
             if let address = response?.firstResult() {
-                self.currentCityState = "\(address.locality!), \(address.administrativeArea!)"
+                if address.locality == nil || address.administrativeArea == nil {
+                    self.currentCityState = "Somewhere on Planet Earth"
+                } else {
+                    self.currentCityState = "\(address.locality!), \(address.administrativeArea!)"
+                }
             }
         }
+        
+        
+        
+        
     }
     
-    var mileCount = 0
-    var timeCount = 0
+    func realTimeSeconds(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.second], from: startDate, to: endDate)
+        return components.second!
+    }
     
     func distanceCalc(coordinateOne: CLLocation, coordinateTwo: CLLocation) -> Double {
         var distance : Double = 0.0
@@ -210,16 +237,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func updateCounters() {
-        if collectData {
-            mileCount += 3
-            timeCount += 1
-            self.distanceDisplay.text = "\(mileCount)"
-            self.timeDisplay.text = "\(timeCount)"
-            self.velocityDisplay.text = "\(mileCount / timeCount)"
-        }
-    }
-    
     @IBAction func stopButtonPressed(_ sender: UIButton) {
         if tracking {
             stopTracking()
@@ -232,11 +249,12 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             startTracking()
             sender.backgroundColor = UIColor.red
             sender.setTitle("Stop", for: .normal)
+            startTimeDylan = Date()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("sender: \(segue.identifier)")
+        //print("sender: \(segue.identifier)")
         let destinationVC = segue.destination as! MenuViewController
         
         destinationVC.cityStateLabelString = currentCityState
@@ -264,12 +282,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.collectData = true
         self.trackStartTimeStamp = NSDate() as Date
         self.path = GMSMutablePath()
+        self.firstLoc = true
     }
     
     func stopTracking() {
         self.tracking = false
         self.collectData = false
-        grabData()
+        totalTotalDistance = 0.0
+        distanceGraph2.removeAll()
     }
     
     func saveTracking() -> Void {
@@ -424,115 +444,22 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         return temp
     }
     
-    func calculateDistance() -> [Double] {
-        var distanceAggregate: [Double] = []
-        do{
-            let realm = try Realm()
-            let allRuns = realm.objects(Run.self)
-            //print(allRuns)
-            var index = 0
-            /*for run in allRuns {
-                index += 1
-                var distanceInMeters : Double = 0.0
-                var coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
-                print("checkpoint 1")
-                for location in run.locations{
-                    let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-                    var distanceLog = distance(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-                    distanceInMeters += distanceLog
-                    coordinateOne = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-                    print("checkpoint 2")
-                }
-                print("checkpoint 3")
-                distanceAggregate.append(distanceInMeters)
-            }*/
-            
-            for run in allRuns{
-                var distanceInMeters : Double = 0.0
-                var locationIndex = 1
-                var coordinateOne = CLLocation()
-                
-                
-                for location in run.locations {
-                    if (locationIndex == 1){
-                        coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
-                    }
-                    
-                    let coordinateTwo = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
-                    
-                    
-                    distanceInMeters += distanceCalc(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-                    
-                    coordinateOne = CLLocation(latitude: Double(location.latitude), longitude: Double(location.longitude))
-                    locationIndex += 1
-                }
-                
-                
-                //finalDistance.append(String(distanceInMeters))
-                distanceInMeters = 0.0
-            }
-            
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
-        }
-        
-        print("checkpoint 4")
-        return [3.0]
-    }
+    //var barData : [Int] = [70, 80, 50, 30, 20, 40]
+    //var lineData : [Int] = [1, 2, 3, 4, 5, 6]
     
-    func grabData() {
-        do{
-            let realm = try Realm()
-            let allRuns = realm.objects(Run.self)
-            //print(allRuns)
-            var distanceAggregate: [Double] = []
-            var index = 0
-            
-            //Zhanna's code
-            /*for run in allRuns {
-                var distanceInMeters : Double = 0.0
-                var coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude), longitude: Double(run.locations[1].longitude))
-                //         let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-
-                NSLog("original coordinate one test \(coordinateOne)")
-                for location in run.locations{
-                //              let coordinateOne = CLLocation(latitude: Double(run.locations[1].latitude) , longitude: Double(run.locations[1].longitude))
-                let coordinateTwo = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-
-                var distanceLog = distance(coordinateOne: coordinateOne, coordinateTwo: coordinateTwo)
-                distanceInMeters += distanceLog
-                NSLog("distance is \(distanceInMeters)")
-                //   NSLog("coordinate two test \(coordinateTwo)")
-
-                //distanceInMeters += coordinateOne.distance(from: coordinateTwo)
-                //NSLog("Test of distance calc \(distanceInMeters) in meters")
-                coordinateOne = CLLocation(latitude: Double(location.latitude) , longitude: Double(location.longitude))
-                } 
-             }*/
-            
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
-        }
-
-    }
-    var barData : [Int] = []
-    var lineData : [Int] = []
-    
-    func updateChartWithData() {
+    func updateChartWithData(barData: [Double], lineData: [Double]) {
         var barEntries: [BarChartDataEntry] = []
         var lineEntries: [ChartDataEntry] = []
         
-        for _ in 0...12 {
-            barData.append(Int(arc4random_uniform(10) + 1))
-            lineData.append(Int(arc4random_uniform(600) + 1))
-        }
-        
         var updatedLineValues = synchronize(barData: barData, lineData: lineData)
-
-        for i in 0..<lineData.count {
+        
+        print("THIS IS BAR DATA \(barData)")
+        
+        for i in 0..<barData.count {
             let barEntry = BarChartDataEntry(x: Double(i), y: Double(barData[i]))
             barEntries.append(barEntry)
             let lineEntry = ChartDataEntry(x: Double(i), y: Double(updatedLineValues[i]))
+            //let lineEntry = ChartDataEntry(x: Double(i), y: Double(updatedLineValues[i]))
             lineEntries.append(lineEntry)
         }
         let chartDataSet = BarChartDataSet(values: barEntries, label: "")
@@ -589,7 +516,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func synchronize(barData: [Int], lineData: [Int]) -> [Double] {
+    func synchronize(barData: [Double], lineData: [Double]) -> [Double] {
         var maxBarValue = barData[0]
         for value in barData {
             if value > maxBarValue {
