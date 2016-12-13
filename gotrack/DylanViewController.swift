@@ -17,7 +17,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var locations = [CLLocation]()
     var trackStartTimeStamp : Date? = nil
     var path = GMSMutablePath()
-    
+    var firstRun = true
     
     var tracking = false
     var collectData = false
@@ -47,9 +47,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         viewMap.settings.myLocationButton = true
         viewMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
         
-        //if tracking {
+    
             updateChartWithData() //update chart
-        //}
+
         
         DispatchQueue.main.async(execute: {() -> Void in
             self.viewMap.isMyLocationEnabled = true
@@ -66,16 +66,18 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         //add start/stop button
         let startStopButton = UIButton(frame: CGRect(x: 325, y: 20, width: 44, height: 30))
         startStopButton.layer.cornerRadius = 8.0;
-        
-        if tracking {
-            startStopButton.backgroundColor = UIColor.red
-            startStopButton.setTitle("Stop", for: .normal)
-            startStopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
-        } else {
-            startStopButton.backgroundColor = UIColor.blue
-            startStopButton.setTitle("Start", for: .normal)
-            startStopButton.addTarget(self, action: #selector(self.startButtonPressed), for: .touchUpInside)
-        }
+        startStopButton.backgroundColor = UIColor.green
+        startStopButton.setTitle("Start", for: .normal)
+        startStopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+//        if tracking {
+//            startStopButton.backgroundColor = UIColor.red
+//            startStopButton.setTitle("Stop", for: .normal)
+//            startStopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+//        } else {
+//            startStopButton.backgroundColor = UIColor.blue
+//            startStopButton.setTitle("Start", for: .normal)
+//            startStopButton.addTarget(self, action: #selector(self.stopButtonPressed), for: .touchUpInside)
+//        }
         self.view.addSubview(startStopButton)
     }
     
@@ -86,11 +88,16 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         // Track location and move map with center
-        self.tracking = true
         let location = (change?[NSKeyValueChangeKey.newKey] as! CLLocation)
+        
         //code below moves the camera where GPS is
         //possible remove to allow pan/zoom for the user?
-        viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
+        
+        if firstRun {
+            viewMap.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 16)
+            firstRun = false
+        }
+        
         if tracking {
             // Record each location for a new run
             locations.append(location)
@@ -121,18 +128,19 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
-        stopTracking()
-        saveTracking()
-        collectData = false
-        tracking = false
+        if tracking {
+            stopTracking()
+            saveTracking()
+            self.viewMap.clear()
+            sender.backgroundColor = UIColor.green
+            sender.setTitle("Start", for: .normal) 
+        } else {
+            startTracking()
+            sender.backgroundColor = UIColor.red
+            sender.setTitle("Stop", for: .normal)
+        }
     }
-    
-    @IBAction func startButtonPressed(_ sender: UIButton) {
-        startTracking()
-        collectData = true
-        tracking = true
-    }
-    
+
     deinit {
         viewMap.removeObserver(self, forKeyPath: "myLocation", context: nil)
     }
@@ -150,11 +158,14 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         //self.locationManager.startUpdatingLocation()
         self.locations.removeAll(keepingCapacity: false)
         self.tracking = true
+        self.collectData = true
         self.trackStartTimeStamp = NSDate() as Date
+        self.path = GMSMutablePath()
     }
     
     func stopTracking() {
         self.tracking = false
+        self.collectData = false
     }
     
     func saveTracking() -> Void {
