@@ -48,6 +48,8 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var totalSeconds : Int = 0
         
     var totalTotalDistance : Double = 0
+
+    var elapsed: TimeInterval = 0
     
     var startTimeDylan : Date? = nil
 
@@ -164,14 +166,12 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             let camera = GMSCameraUpdate.setTarget(location.coordinate)
             self.viewMap.animate(with: camera)
         }
-        let settingsViewController = SettingsViewController()
 
         if tracking {
-            
-            if (totalSeconds > 5) {
-                
+            let elapsedSeconds = Int(round(elapsed))
+
+            if ((elapsedSeconds / SettingsViewController.barGraphInterval) > distanceGraph2.count) {
                 /*print("NEW USER INDICATED SECONDS: \(userIndicatedSeconds)")*/
-                totalSeconds = 0
                 distanceGraph2.append(Double(totalDistance))
                 //NSLog("testing GRAPH ARRAY \(distanceGraph2)")
                 totalDistance = 0.0
@@ -215,7 +215,7 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             var distanceStepTwo = totalTotalDistance * 1.09361  //1.09361 is yards conversion
             distanceDisplay.text = "\(Int(round(distanceStepTwo)))" 
             
-            var elapsed = Date().timeIntervalSince(startTimeDylan!)
+            elapsed = Date().timeIntervalSince(startTimeDylan!)
             self.timeDisplay.text = "\(Int(round(elapsed)))"
             
             
@@ -303,7 +303,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
         self.collectData = true
         self.trackStartTimeStamp = NSDate() as Date
         self.path = GMSMutablePath()
-        self.firstLoc = true
         night()
     }
     

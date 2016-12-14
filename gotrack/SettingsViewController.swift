@@ -14,21 +14,41 @@ import FacebookCore
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var sliderValueIndicator: UILabel!
-    @IBOutlet weak var connectToFBButton: UIButton!
-    
-    override func viewDidLoad() {
+    static var barGraphInterval: Int = 5
 
+    @IBOutlet weak var sliderLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var settingsStack: UIStackView!
+
+    private var barGraphIntervalSegmentSize: Int = 5
+
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
-        view.addSubview(loginButton)
+        addFBLogin()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setBarGraphInterval(SettingsViewController.barGraphInterval)
+    }
+
+    func addFBLogin() {
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        settingsStack.addArrangedSubview(loginButton)
+    }
+
+    @IBAction func barGraphIntervalSliderChanged(_ sender: UISlider) {
+        let newValue = Int(sender.value)
+
+        if newValue != SettingsViewController.barGraphInterval && newValue % barGraphIntervalSegmentSize == 0 {
+            setBarGraphInterval(newValue)
+        }
+    }
+
+    func setBarGraphInterval(_ value: Int) {
+        SettingsViewController.barGraphInterval = value
+        sliderLabel.text = "Bar Graph Interval: \(value) seconds"
     }
 }

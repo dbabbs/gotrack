@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4U9-kF-Oyg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4U9-kF-Oyg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,8 +21,37 @@
                     <view key="view" contentMode="scaleToFill" id="YG4-sZ-4Di">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wwL-8H-xK2">
+                                <rect key="frame" x="16" y="304.5" width="343" height="58.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Graph Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djF-4w-2DT">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="5" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-fI-KtH">
+                                        <rect key="frame" x="-2" y="28.5" width="347" height="31"/>
+                                        <connections>
+                                            <action selector="barGraphIntervalSliderChanged:" destination="4U9-kF-Oyg" eventType="valueChanged" id="2M9-eq-h8C"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="wwL-8H-xK2" secondAttribute="leading" id="S3o-Gz-ifN"/>
+                            <constraint firstItem="wwL-8H-xK2" firstAttribute="centerY" secondItem="YG4-sZ-4Di" secondAttribute="centerY" id="clm-I7-Bed"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wwL-8H-xK2" secondAttribute="trailing" id="nLq-DL-QCM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsStack" destination="wwL-8H-xK2" id="gG1-b6-EMx"/>
+                        <outlet property="slider" destination="hWe-fI-KtH" id="1Rs-OC-eqw"/>
+                        <outlet property="sliderLabel" destination="djF-4w-2DT" id="dEf-7r-KFV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okP-lj-HGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
