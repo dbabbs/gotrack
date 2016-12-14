@@ -15,9 +15,9 @@ import FBSDKLoginKit
 class MenuViewController: UIViewController, RESideMenuDelegate {
 
     static var shouldFetchFBData: Bool = true
+    static var currentCityState = "Unknown Location"
 
     let settingsSegueIdentifier = "settingsViewSegue"
-    var cityStateLabelString = "Unknown Location"
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -57,7 +57,7 @@ class MenuViewController: UIViewController, RESideMenuDelegate {
         }
 
         // Set state label
-        cityStateLabel.text = cityStateLabelString
+        cityStateLabel.text = MenuViewController.currentCityState
     }
 
     //------------------------------------------------------------
@@ -103,12 +103,12 @@ class MenuViewController: UIViewController, RESideMenuDelegate {
     private func getFacebookUserInfo() {
         Log.info("getFacebookUserInfo()")
 
-        MenuViewController.shouldFetchFBData = false
-
         guard FBSDKAccessToken.current() != nil else {
             Log.error(in: self, because: "FBSDKAccessToken is nil!")
             return
         }
+
+        MenuViewController.shouldFetchFBData = false
 
         //print permissions, such as public_profile
         Log.info("FB Access Token permissions: \(FBSDKAccessToken.current().permissions)")
@@ -142,19 +142,6 @@ class MenuViewController: UIViewController, RESideMenuDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        print("sender: \(segue.identifier)")
-        if segue.identifier == settingsSegueIdentifier {
-            let destinationVC = segue.destination as! SettingsViewController
-            destinationVC.cityStateLabelString = cityStateLabelString
-        }
-
-    }
-    
+    }   
 
 }

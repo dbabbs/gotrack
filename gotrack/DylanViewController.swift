@@ -29,7 +29,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
     var trackStartTimeStamp : Date? = nil
     var path = GMSMutablePath()
     var firstRun = true
-    var currentCityState = ""
     var tracking = false
     var collectData = false
     
@@ -233,9 +232,9 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             response , error in
             if let address = response?.firstResult() {
                 if address.locality == nil || address.administrativeArea == nil {
-                    self.currentCityState = "Somewhere on Planet Earth"
+                    MenuViewController.currentCityState = "Somewhere on Planet Earth"
                 } else {
-                    self.currentCityState = "\(address.locality!), \(address.administrativeArea!)"
+                    MenuViewController.currentCityState = "\(address.locality!), \(address.administrativeArea!)"
                 }
             }
         }
@@ -279,13 +278,6 @@ class DylanViewController: UIViewController, CLLocationManagerDelegate {
             sender.setTitle("Stop", for: .normal)
             startTimeDylan = Date()
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //print("sender: \(segue.identifier)")
-        let destinationVC = segue.destination as! MenuViewController
-        
-        destinationVC.cityStateLabelString = currentCityState
     }
 
     deinit {
